@@ -1,99 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CatiaAnbindung
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Double m  ;  //m=Modul
-            Double p  ;  //p=Teilung
-            Double d  ;  //d=Teilkreisdurchmesser
-            Double da ; //da=Kopfkreisdurchmesser
-            Double df ; //df=Frußkreisdurchmesser
-            Double z  ;  //z=Zähnezahl
-            Double h  ;  //h=Zahnhöhe
-            Double ha ; //ha=Zahnkopfhöhe
-            Double hf ; //hf=Zahnfußhöhe
-            Double c  ;  //c=Kopfspiel
-            Double a  ;  //a=Achsenabstand
-            Double alpha;//Normaleingriffswinkel
-            Double dg ;  //dg=Grundkreisdurchmesser
-            
-
-            c = 0.167;   //ist häufig der Fall
-            alpha = 20;  //Nach Norm (Angabe in Grad
-
-
-            Console.WriteLine("Wollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
-            Console.WriteLine("Wollen sie die Modul und Zähnezahl vorgeben press 2");
-            Console.WriteLine("Wollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
-            Console.WriteLine("und bestätigen sie ihre Eingabe mit Enter");
-
-            int ii= Convert.ToInt32(Console.ReadLine());
-           
-            if (ii == 1)
-            {
-                Console.WriteLine("Bitte geben sie das Modul ein.");
-                m = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
-                d = Convert.ToDouble(Console.ReadLine());
-                z = d / m;
-                Console.WriteLine(z);// nur zum testen
-
-            }
-            else if(ii == 2)
-            {
-                Console.WriteLine("Bitte geben sie das Modul ein.");
-                m = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie die Zähnezahl an:");
-                z = Convert.ToDouble(Console.ReadLine());
-                d = m * z;
-            }
-            else if (ii == 3)
-            {
-                Console.WriteLine("Bitte geben sie das Teilkreisdurchmesser in mm ein.");
-                d = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie die Zähnezahl an:");
-                z = Convert.ToDouble(Console.ReadLine());
-                m = d / z;
-            }
-            else
-            {
-                Console.WriteLine("Falsche Eingabe");
-            }
-
-            //Teilung
-            p = Math.PI * m;  //Pi genauer eingeben?
-
-            //Fußkreisdurchmesser
-            df = d - (2 * (m + c));
-
-            //Zahnhöhe
-            h = 2 * m + c;
-
-            //Grundkreisdurchmesser
-            alpha = Math.PI / 180 * alpha;
-            dg = d * Math.Cos(alpha);
-
-
-            //Kontrolle
-            Console.WriteLine(ii);
-            Console.WriteLine(z);
-            Console.WriteLine(d);
-            Console.WriteLine(m);
-            Console.WriteLine(p);
-            Console.WriteLine(df);
-            Console.WriteLine(h);
-            Console.WriteLine(dg);
-
-            Console.ReadKey();
-
-          
-        }
-    }
-}
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatiaAnbindung", "CatiaAnbindung\CatiaAnbindung.csproj", "{C32A7275-FF80-4943-BE4B-A7D00ACA3791}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C32A7275-FF80-4943-BE4B-A7D00ACA3791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32A7275-FF80-4943-BE4B-A7D00ACA3791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32A7275-FF80-4943-BE4B-A7D00ACA3791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32A7275-FF80-4943-BE4B-A7D00ACA3791}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9524D78B-E8BB-41F8-BCE7-27AFB87B5F94}
+	EndGlobalSection
+EndGlobal
