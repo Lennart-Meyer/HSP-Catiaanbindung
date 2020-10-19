@@ -27,7 +27,7 @@ namespace CatiaAnbindung
             Console.WriteLine("Wollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
             Console.WriteLine("und bestätigen sie ihre Eingabe mit Enter");
 
-            int ii= Convert.ToInt32(Console.Readkey());
+            int ii= Convert.ToInt32(Console.ReadLine());
            
             if (ii == 1)
             {
@@ -36,14 +36,21 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
 
+
             }
-            
-            
-            
-            
-            
-            
-            
+            else if(ii == 2)
+            {
+
+            }
+            else if (ii == 3)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+            }
+
             Console.WriteLine(ii);
             Console.ReadKey();
 
