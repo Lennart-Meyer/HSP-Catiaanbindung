@@ -23,7 +23,7 @@ namespace CatiaAnbindung
             Double a  ;  //a=Achsenabstand
 
             Console.WriteLine("Wollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
-            Console.WriteLine("Wollen sie die Msduodul und Zähnezahl vorgeben press 2");
+            Console.WriteLine("Wollen sie die Modul und Zähnezahl vorgeben press 2");
             Console.WriteLine("Wollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
             Console.WriteLine("und bestätigen sie ihre Eingabe mit Enter");
 
