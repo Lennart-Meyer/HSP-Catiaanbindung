@@ -41,11 +41,20 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
-
+                h = 2 * m + c;
+                p = Math.PI * m;
+                df = d - (2 * (m + c));
+                alpha = Math.PI / 180 * alpha;
+                dg = d * Math.Cos(alpha);
+                Console.WriteLine(ii);
+                Console.WriteLine(z);
+                Console.WriteLine(d);
+                Console.WriteLine(m);
+                Console.WriteLine(p);
+                Console.WriteLine(df);
+                Console.WriteLine(h);
+                Console.WriteLine(dg);
             }
-            
-
-            
             else if (ii == 2)
             {
                 Console.WriteLine("Bitte geben sie das Modul ein.");
@@ -53,6 +62,19 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
+                h = 2 * m + c;
+                p = Math.PI * m;
+                df = d - (2 * (m + c));
+                alpha = Math.PI / 180 * alpha;
+                dg = d * Math.Cos(alpha);
+                Console.WriteLine(ii);
+                Console.WriteLine(z);
+                Console.WriteLine(d);
+                Console.WriteLine(m);
+                Console.WriteLine(p);
+                Console.WriteLine(df);
+                Console.WriteLine(h);
+                Console.WriteLine(dg);
             }
             else if (ii == 3)
             {
@@ -61,6 +83,19 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
+                h = 2 * m + c;
+                p = Math.PI * m;
+                df = d - (2 * (m + c));
+                alpha = Math.PI / 180 * alpha;
+                dg = d * Math.Cos(alpha);
+                Console.WriteLine(ii);
+                Console.WriteLine(z);
+                Console.WriteLine(d);
+                Console.WriteLine(m);
+                Console.WriteLine(p);
+                Console.WriteLine(df);
+                Console.WriteLine(h);
+                Console.WriteLine(dg);
             }
             else
             {
@@ -68,28 +103,20 @@ namespace CatiaAnbindung
             }
 
             //Teilung
-            p = Math.PI * m;  //Pi genauer eingeben?
+              //Pi genauer eingeben?
 
             //Fußkreisdurchmesser
-            df = d - (2 * (m + c));
+            
 
             //Zahnhöhe
-            h = 2 * m + c;
+            
 
             //Grundkreisdurchmesser
-            alpha = Math.PI / 180 * alpha;
-            dg = d * Math.Cos(alpha);
+            
 
 
             //Kontrolle
-            Console.WriteLine(ii);
-            Console.WriteLine(z);
-            Console.WriteLine(d);
-            Console.WriteLine(m);
-            Console.WriteLine(p);
-            Console.WriteLine(df);
-            Console.WriteLine(h);
-            Console.WriteLine(dg);
+            
 
             Console.ReadKey();
 
