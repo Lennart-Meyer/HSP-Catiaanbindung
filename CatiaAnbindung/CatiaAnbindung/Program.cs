@@ -21,6 +21,8 @@ namespace CatiaAnbindung
             Double hf ; //hf=Zahnfußhöhe
             Double c  ;  //c=Kopfspiel
             Double a  ;  //a=Achsenabstand
+            Double alpha = 20; 
+            Double dg;
 
             Console.WriteLine("Wollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
             Console.WriteLine("Wollen sie die Modul und Zähnezahl vorgeben press 2");
