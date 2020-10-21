@@ -40,7 +40,7 @@ namespace CatiaAnbindung
             }
             else if(ii == 2)
             {
-                hallo;
+                hallo2;
             }
             else if (ii == 3)
             {
