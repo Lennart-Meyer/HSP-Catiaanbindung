@@ -21,8 +21,11 @@ namespace CatiaAnbindung
             Double hf ; //hf=Zahnfußhöhe
             Double c  ;  //c=Kopfspiel
             Double a  ;  //a=Achsenabstand
-            Double alpha = 20; 
-            Double dg;
+            Double alpha;//Nachnorm 20 
+            Double dg;   //dg=Grundkreisdurchmesser
+
+            alpha = 20; //Zum testen
+            c = 0.167; //vorgabe
 
             Console.WriteLine("Wollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
             Console.WriteLine("Wollen sie die Modul und Zähnezahl vorgeben press 2");
@@ -37,19 +40,12 @@ namespace CatiaAnbindung
                 m = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
-
-
-            }
-            if (ii == 1)
-            {
-                Console.WriteLine("Bitte geben sie das Modul ein.");
-                m = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
-                d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
-                Console.WriteLine(z);// nur zum testen
 
             }
+            
+
+            
             else if (ii == 2)
             {
                 Console.WriteLine("Bitte geben sie das Modul ein.");
