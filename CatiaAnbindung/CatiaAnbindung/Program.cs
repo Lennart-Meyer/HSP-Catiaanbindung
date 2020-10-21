@@ -38,23 +38,64 @@ namespace CatiaAnbindung
 
 
             }
-            else if(ii == 2)
+            if (ii == 1)
             {
-                hallo2;
+                Console.WriteLine("Bitte geben sie das Modul ein.");
+                m = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
+                d = Convert.ToDouble(Console.ReadLine());
+                z = d / m;
+                Console.WriteLine(z);// nur zum testen
+
+            }
+            else if (ii == 2)
+            {
+                Console.WriteLine("Bitte geben sie das Modul ein.");
+                m = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben sie die Zähnezahl an:");
+                z = Convert.ToDouble(Console.ReadLine());
+                d = m * z;
             }
             else if (ii == 3)
             {
-
+                Console.WriteLine("Bitte geben sie das Teilkreisdurchmesser in mm ein.");
+                d = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Bitte geben sie die Zähnezahl an:");
+                z = Convert.ToDouble(Console.ReadLine());
+                m = d / z;
             }
             else
             {
                 Console.WriteLine("Falsche Eingabe");
             }
 
+            //Teilung
+            p = Math.PI * m;  //Pi genauer eingeben?
+
+            //Fußkreisdurchmesser
+            df = d - (2 * (m + c));
+
+            //Zahnhöhe
+            h = 2 * m + c;
+
+            //Grundkreisdurchmesser
+            alpha = Math.PI / 180 * alpha;
+            dg = d * Math.Cos(alpha);
+
+
+            //Kontrolle
             Console.WriteLine(ii);
+            Console.WriteLine(z);
+            Console.WriteLine(d);
+            Console.WriteLine(m);
+            Console.WriteLine(p);
+            Console.WriteLine(df);
+            Console.WriteLine(h);
+            Console.WriteLine(dg);
+
             Console.ReadKey();
 
-          
+
         }
     }
 }
