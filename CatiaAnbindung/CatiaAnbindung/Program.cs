@@ -14,7 +14,7 @@ namespace CatiaAnbindung
             Double p  ;  //p=Teilung
             Double d  ;  //d=Teilkreisdurchmesser
             Double da ; //da=Kopfkreisdurchmesser
-            Double df ; //df=Frußkreisdurchmesser
+            Double df ; //df=Fußkreisdurchmesser
             Double z  ;  //z=Zähnezahl
             Double h  ;  //h=Zahnhöhe
             Double ha ; //ha=Zahnkopfhöhe
@@ -41,11 +41,15 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
+                //Zahnhöhe
                 h = 2 * m + c;
                 p = Math.PI * m;
+                //Fußkreisdurchmesser
                 df = d - (2 * (m + c));
+                //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
                 dg = d * Math.Cos(alpha);
+                //Kontrolle
                 Console.WriteLine(ii);
                 Console.WriteLine(z);
                 Console.WriteLine(d);
@@ -62,11 +66,17 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
+                //Zahnhöhe
                 h = 2 * m + c;
+                //Teilung
+                //Pi genauer eingeben?
                 p = Math.PI * m;
+                //Fußkreisdurchmesser
                 df = d - (2 * (m + c));
+                //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
                 dg = d * Math.Cos(alpha);
+                //Kontrolle
                 Console.WriteLine(ii);
                 Console.WriteLine(z);
                 Console.WriteLine(d);
@@ -83,11 +93,17 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
+                //Zahnhöhe
                 h = 2 * m + c;
+                //Teilung
+                //Pi genauer eingeben?
                 p = Math.PI * m;
+                //Fußkreisdurchmesser
                 df = d - (2 * (m + c));
+                //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
                 dg = d * Math.Cos(alpha);
+                //Kontrolle
                 Console.WriteLine(ii);
                 Console.WriteLine(z);
                 Console.WriteLine(d);
@@ -105,17 +121,17 @@ namespace CatiaAnbindung
             //Teilung
               //Pi genauer eingeben?
 
-            //Fußkreisdurchmesser
+            
             
 
-            //Zahnhöhe
+            
             
 
-            //Grundkreisdurchmesser
+            
             
 
 
-            //Kontrolle
+            
             
 
             Console.ReadKey();
