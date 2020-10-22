@@ -81,7 +81,7 @@ namespace CatiaAnbindung
             {
                 Console.WriteLine(ii);
                 Console.WriteLine("Zähnezahl: "+z);
-                Console.WriteLine(": "+d);
+                Console.WriteLine("Teilkreisdurchmesser: " + d);
                 Console.WriteLine("Modul: " + m);
                 Console.WriteLine("Teilung: " + p);
                 Console.WriteLine("Fußkreisdurchmesser: " + df);
