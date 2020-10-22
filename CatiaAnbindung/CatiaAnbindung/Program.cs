@@ -80,13 +80,13 @@ namespace CatiaAnbindung
             void ausgabe() 
             {
                 Console.WriteLine(ii);
-                Console.WriteLine(z);
-                Console.WriteLine(d);
-                Console.WriteLine(m);
-                Console.WriteLine(p);
-                Console.WriteLine(df);
-                Console.WriteLine(h);
-                Console.WriteLine(dg);
+                Console.WriteLine("Zähnezahl: "+z);
+                Console.WriteLine(": "+d);
+                Console.WriteLine("Modul: " + m);
+                Console.WriteLine("Teilung: " + p);
+                Console.WriteLine("Fußkreisdurchmesser: " + df);
+                Console.WriteLine("Zahnhöhe: " + h);
+                Console.WriteLine("Grundkreisdurchmesser: " + dg);
             }
 
             void berechnung()
