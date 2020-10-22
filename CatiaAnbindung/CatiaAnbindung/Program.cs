@@ -32,8 +32,11 @@ namespace CatiaAnbindung
             Console.WriteLine("Wollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
             Console.WriteLine("und bestätigen sie ihre Eingabe mit Enter");
 
-            int ii= Convert.ToInt32(Console.ReadLine());
-           
+            string eingabe = Console.ReadLine(); // Eingabe
+            int ii;
+
+            Int32.TryParse(eingabe, out ii); //versucht den string in einen int umzuwandeln. Wenn der String Buchstaben enthält wird ii = 0
+            
             if (ii == 1)
             {
                 Console.WriteLine("Bitte geben sie das Modul ein.");
@@ -50,7 +53,7 @@ namespace CatiaAnbindung
                 df = d - (2 * (m + c));
                 //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
-                dg = d * Math.Cos(alpha);
+                dg = d * Math.Cos(alpha);   
                 //Ausgabe
                 ausgabe();
             }
@@ -96,10 +99,11 @@ namespace CatiaAnbindung
             }
             else
             {
+                Console.WriteLine(ii);
                 Console.WriteLine("Falsche Eingabe");
             }
 
-            //Unterfunktion 
+            //Unterfunktion
             void ausgabe() 
             {
                 Console.WriteLine(ii);
