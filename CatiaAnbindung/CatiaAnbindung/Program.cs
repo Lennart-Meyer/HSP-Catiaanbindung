@@ -27,7 +27,7 @@ namespace CatiaAnbindung
             alpha = 20; //Zum testen
             c = 0.167; //vorgabe
 
-            int Eingabe = 0;
+            int Eingabe = 0; //Eingabe als Int deklarieren
 
             do
             {
@@ -37,9 +37,9 @@ namespace CatiaAnbindung
                 Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
                 Console.WriteLine("\n\t\t\tund bestätigen sie ihre Eingabe mit Enter");
 
-                Eingabe = Convert.ToInt32(Console.ReadLine());    // Eingabe
+                Eingabe = Convert.ToInt32(Console.ReadLine());    // Eingabe und convert
 
-                if (Eingabe >= 4 || Eingabe <= 0)
+                if (Eingabe >= 4 || Eingabe <= 0) //Fehlermeldung
                 {
                     Console.Clear();
                     Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\t Eingabe Wiederholen!\n");
@@ -49,7 +49,7 @@ namespace CatiaAnbindung
 
             }
 
-            while (Eingabe >= 4 || Eingabe <= 0);
+            while (Eingabe >= 4 || Eingabe <= 0); //Wenn Eingabe Falsch: Neustart
 
 
             if (Eingabe == 1)
