@@ -10,19 +10,19 @@ namespace CatiaAnbindung
     {
         static void Main(string[] args)
         {
-            Double m  ;  //m=Modul
-            Double p  ;  //p=Teilung
-            Double d  ;  //d=Teilkreisdurchmesser
-            Double da ; //da=Kopfkreisdurchmesser
-            Double df ; //df=Fußkreisdurchmesser
-            Double z  ;  //z=Zähnezahl
-            Double h  ;  //h=Zahnhöhe
-            Double ha ; //ha=Zahnkopfhöhe
-            Double hf ; //hf=Zahnfußhöhe
-            Double c  ;  //c=Kopfspiel
-            Double a  ;  //a=Achsenabstand
-            Double alpha;//Nachnorm 20 
-            Double dg;   //dg=Grundkreisdurchmesser
+            Double m;       //m = Modul
+            Double p;       //p = Teilung
+            Double d;       //d = Teilkreisdurchmesser
+            Double da;      //da = Kopfkreisdurchmesser
+            Double df;      //df = Fußkreisdurchmesser
+            Double z;       //z = Zähnezahl
+            Double h;       //h = Zahnhöhe
+            Double ha;      //ha = Zahnkopfhöhe
+            Double hf;      //hf = Zahnfußhöhe
+            Double c;       //c = Kopfspiel
+            Double a;       //a = Achsenabstand
+            Double alpha;   //Nachnorm 20 
+            Double dg;      //dg = Grundkreisdurchmesser
 
             alpha = 20; //Zum testen
             c = 0.167; //vorgabe
