@@ -32,10 +32,10 @@ namespace CatiaAnbindung
             Console.WriteLine("Wollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
             Console.WriteLine("und bestätigen sie ihre Eingabe mit Enter");
 
-            string eingabe = Console.ReadLine(); // Eingabe
+            string eingabe = Console.ReadLine();    // Eingabe
             int ii;
 
-            Int32.TryParse(eingabe, out ii); //versucht den string in einen int umzuwandeln und gibt diesen als ii aus. Wenn der String Buchstaben enthält wird ii = 0
+            Int32.TryParse(eingabe, out ii);    //versucht den string in einen int umzuwandeln und gibt diesen als ii aus. Wenn der String Buchstaben enthält wird ii = 0
             
             if (ii == 1)
             {
@@ -44,18 +44,9 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
-                //Zahnhöhe
-                h = 2 * m + c;
-                //Teilung
-                //Pi genauer eingeben?
-                p = Math.PI * m;
-                //Fußkreisdurchmesser
-                df = d - (2 * (m + c));
-                //Grundkreisdurchmesser
-                alpha = Math.PI / 180 * alpha;
-                dg = d * Math.Cos(alpha);   
-                //Ausgabe
-                ausgabe();
+
+                berechnung();   //Berechnung die in der Unterfunktion stattfindet
+                ausgabe();      //Ausgabe
             }
             else if (ii == 2)
             {
@@ -64,18 +55,9 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
-                //Zahnhöhe
-                h = 2 * m + c;
-                //Teilung
-                //Pi genauer eingeben?
-                p = Math.PI * m;
-                //Fußkreisdurchmesser
-                df = d - (2 * (m + c));
-                //Grundkreisdurchmesser
-                alpha = Math.PI / 180 * alpha;
-                dg = d * Math.Cos(alpha);
-                //Ausgabe
-                ausgabe();
+
+                berechnung();   //Berechnung die in der Unterfunktion stattfindet
+                ausgabe();      //Ausgabe
             }
             else if (ii == 3)
             {
@@ -84,18 +66,9 @@ namespace CatiaAnbindung
                 Console.WriteLine("Bitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
-                //Zahnhöhe
-                h = 2 * m + c;
-                //Teilung
-                //Pi genauer eingeben?
-                p = Math.PI * m;
-                //Fußkreisdurchmesser
-                df = d - (2 * (m + c));
-                //Grundkreisdurchmesser
-                alpha = Math.PI / 180 * alpha;
-                dg = d * Math.Cos(alpha);
-                //Ausgabe
-                ausgabe();
+
+                berechnung();   //Berechnung die in der Unterfunktion stattfindet
+                ausgabe();      //Ausgabe
             }
             else
             {
@@ -114,6 +87,20 @@ namespace CatiaAnbindung
                 Console.WriteLine(df);
                 Console.WriteLine(h);
                 Console.WriteLine(dg);
+            }
+
+            void berechnung()
+            {
+                //Zahnhöhe
+                h = 2 * m + c;
+                //Teilung
+                //Pi genauer eingeben?
+                p = Math.PI * m;
+                //Fußkreisdurchmesser
+                df = d - (2 * (m + c));
+                //Grundkreisdurchmesser
+                alpha = Math.PI / 180 * alpha;
+                dg = d * Math.Cos(alpha);
             }
             Console.ReadKey();
 
