@@ -72,7 +72,6 @@ namespace CatiaAnbindung
             }
             else
             {
-                Console.WriteLine(ii);
                 Console.WriteLine("Falsche Eingabe");
             }
 
