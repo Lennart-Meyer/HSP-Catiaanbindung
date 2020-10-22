@@ -35,7 +35,7 @@ namespace CatiaAnbindung
             string eingabe = Console.ReadLine(); // Eingabe
             int ii;
 
-            Int32.TryParse(eingabe, out ii); //versucht den string in einen int umzuwandeln. Wenn der String Buchstaben enthält wird ii = 0
+            Int32.TryParse(eingabe, out ii); //versucht den string in einen int umzuwandeln und gibt diesen als ii aus. Wenn der String Buchstaben enthält wird ii = 0
             
             if (ii == 1)
             {
