@@ -27,17 +27,32 @@ namespace CatiaAnbindung
             alpha = 20; //Zum testen
             c = 0.167; //vorgabe
 
-            Console.WriteLine("Wollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
-            Console.WriteLine("Wollen sie die Modul und Zähnezahl vorgeben press 2");
-            Console.WriteLine("Wollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
-            Console.WriteLine("und bestätigen sie ihre Eingabe mit Enter");
+            int Eingabe = 0;
 
-            string eingabe = Console.ReadLine();    // Eingabe
-            int ii;
+            do
+            {
+                Console.WriteLine("\n\t\t\tZahnradberechnungsprogramm von Gruppe H");
+                Console.WriteLine("\n\t\tWollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
+                Console.WriteLine("\n\t\tWollen sie die Modul und Zähnezahl vorgeben press 2");
+                Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
+                Console.WriteLine("\n\t\t\tund bestätigen sie ihre Eingabe mit Enter");
 
-            Int32.TryParse(eingabe, out ii);    //versucht den string in einen int umzuwandeln und gibt diesen als ii aus. Wenn der String Buchstaben enthält wird ii = 0
-            
-            if (ii == 1)
+                Eingabe = Convert.ToInt32(Console.ReadLine());    // Eingabe
+
+                if (Eingabe >= 4 || Eingabe <= 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\t Eingabe Wiederholen!\n");
+
+                }
+
+
+            }
+
+            while (Eingabe >= 4 || Eingabe <= 0);
+
+
+            if (Eingabe == 1)
             {
                 Console.WriteLine("Bitte geben sie das Modul ein.");
                 m = Convert.ToDouble(Console.ReadLine());
@@ -45,10 +60,11 @@ namespace CatiaAnbindung
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
 
-                berechnung();   //Berechnung die in der Unterfunktion stattfindet
-                ausgabe();      //Ausgabe
+                berechnung();
+                ausgabe();
+
             }
-            else if (ii == 2)
+            else if (Eingabe == 2)
             {
                 Console.WriteLine("Bitte geben sie das Modul ein.");
                 m = Convert.ToDouble(Console.ReadLine());
@@ -56,10 +72,11 @@ namespace CatiaAnbindung
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
 
-                berechnung();   //Berechnung die in der Unterfunktion stattfindet
-                ausgabe();      //Ausgabe
+                berechnung();
+                ausgabe();
+
             }
-            else if (ii == 3)
+            else if (Eingabe == 3)
             {
                 Console.WriteLine("Bitte geben sie das Teilkreisdurchmesser in mm ein.");
                 d = Convert.ToDouble(Console.ReadLine());
@@ -67,19 +84,16 @@ namespace CatiaAnbindung
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
 
-                berechnung();   //Berechnung die in der Unterfunktion stattfindet
-                ausgabe();      //Ausgabe
-            }
-            else
-            {
-                Console.WriteLine("Falsche Eingabe");
+                berechnung();
+                ausgabe();
+
             }
 
-            //Unterfunktion
-            void ausgabe() 
+            //Unterprogramme
+            void ausgabe()
             {
-                Console.WriteLine(ii);
-                Console.WriteLine("Zähnezahl: "+z);
+                Console.WriteLine(Eingabe);
+                Console.WriteLine("Zähnezahl: " + z);
                 Console.WriteLine("Teilkreisdurchmesser: " + d);
                 Console.WriteLine("Modul: " + m);
                 Console.WriteLine("Teilung: " + p);
@@ -102,8 +116,8 @@ namespace CatiaAnbindung
                 dg = d * Math.Cos(alpha);
             }
             Console.ReadKey();
-
-
         }
+
     }
 }
+
