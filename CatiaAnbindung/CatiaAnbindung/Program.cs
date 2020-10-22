@@ -43,21 +43,16 @@ namespace CatiaAnbindung
                 z = d / m;
                 //Zahnhöhe
                 h = 2 * m + c;
+                //Teilung
+                //Pi genauer eingeben?
                 p = Math.PI * m;
                 //Fußkreisdurchmesser
                 df = d - (2 * (m + c));
                 //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
                 dg = d * Math.Cos(alpha);
-                //Kontrolle
-                Console.WriteLine(ii);
-                Console.WriteLine(z);
-                Console.WriteLine(d);
-                Console.WriteLine(m);
-                Console.WriteLine(p);
-                Console.WriteLine(df);
-                Console.WriteLine(h);
-                Console.WriteLine(dg);
+                //Ausgabe
+                ausgabe();
             }
             else if (ii == 2)
             {
@@ -76,15 +71,8 @@ namespace CatiaAnbindung
                 //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
                 dg = d * Math.Cos(alpha);
-                //Kontrolle
-                Console.WriteLine(ii);
-                Console.WriteLine(z);
-                Console.WriteLine(d);
-                Console.WriteLine(m);
-                Console.WriteLine(p);
-                Console.WriteLine(df);
-                Console.WriteLine(h);
-                Console.WriteLine(dg);
+                //Ausgabe
+                ausgabe();
             }
             else if (ii == 3)
             {
@@ -103,7 +91,17 @@ namespace CatiaAnbindung
                 //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha;
                 dg = d * Math.Cos(alpha);
-                //Kontrolle
+                //Ausgabe
+                ausgabe();
+            }
+            else
+            {
+                Console.WriteLine("Falsche Eingabe");
+            }
+
+            //Unterfunktion 
+            void ausgabe() 
+            {
                 Console.WriteLine(ii);
                 Console.WriteLine(z);
                 Console.WriteLine(d);
@@ -113,27 +111,6 @@ namespace CatiaAnbindung
                 Console.WriteLine(h);
                 Console.WriteLine(dg);
             }
-            else
-            {
-                Console.WriteLine("Falsche Eingabe");
-            }
-
-            //Teilung
-              //Pi genauer eingeben?
-
-            
-            
-
-            
-            
-
-            
-            
-
-
-            
-            
-
             Console.ReadKey();
 
 
