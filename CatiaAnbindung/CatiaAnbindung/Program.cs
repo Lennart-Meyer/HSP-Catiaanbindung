@@ -54,9 +54,9 @@ namespace CatiaAnbindung
 
             if (Eingabe == 1)
             {
-                Console.WriteLine("Bitte geben sie das Modul ein.");
+                Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
                 m = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie den Teilkreisdurchmesser in mm an");
+                Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
 
@@ -66,9 +66,9 @@ namespace CatiaAnbindung
             }
             else if (Eingabe == 2)
             {
-                Console.WriteLine("Bitte geben sie das Modul ein.");
+                Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
                 m = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie die Zähnezahl an:");
+                Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
 
@@ -78,9 +78,9 @@ namespace CatiaAnbindung
             }
             else if (Eingabe == 3)
             {
-                Console.WriteLine("Bitte geben sie das Teilkreisdurchmesser in mm ein.");
+                Console.WriteLine("\n\t\t\tBitte geben sie das Teilkreisdurchmesser in mm ein.");
                 d = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("Bitte geben sie die Zähnezahl an:");
+                Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
 
@@ -92,14 +92,14 @@ namespace CatiaAnbindung
             //Unterprogramme
             void ausgabe()
             {
-                Console.WriteLine(Eingabe);
-                Console.WriteLine("Zähnezahl: " + z);
-                Console.WriteLine("Teilkreisdurchmesser: " + d);
-                Console.WriteLine("Modul: " + m);
-                Console.WriteLine("Teilung: " + p);
-                Console.WriteLine("Fußkreisdurchmesser: " + df);
-                Console.WriteLine("Zahnhöhe: " + h);
-                Console.WriteLine("Grundkreisdurchmesser: " + dg);
+                Console.WriteLine("\n\t\t\t"+Eingabe);
+                Console.WriteLine("\t\t\tZähnezahl: " + z);
+                Console.WriteLine("\t\t\tTeilkreisdurchmesser: " + d);
+                Console.WriteLine("\t\t\tModul: " + m);
+                Console.WriteLine("\t\t\tTeilung: " + p);
+                Console.WriteLine("\t\t\tFußkreisdurchmesser: " + df);
+                Console.WriteLine("\t\t\tZahnhöhe: " + h);
+                Console.WriteLine("\t\t\tGrundkreisdurchmesser: " + dg);
             }
 
             void berechnung()
