@@ -16,7 +16,7 @@ namespace CatiaAnbindung
             Double da;      //da = Kopfkreisdurchmesser
             Double df;      //df = Fußkreisdurchmesser
             Double z;       //z = Zähnezahl
-            Double h;       //h = Zahnhöhe
+            Double h;       //h = Zahnhöhe   
             Double ha;      //ha = Zahnkopfhöhe
             Double hf;      //hf = Zahnfußhöhe
             Double c;       //c = Kopfspiel
