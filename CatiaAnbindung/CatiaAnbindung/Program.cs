@@ -27,7 +27,8 @@ namespace CatiaAnbindung
             alpha = 20; //Zum testen
             c = 0.167; //vorgabe
 
-            int eingabe = 0; //Eingabe als Int deklarieren
+            string eingabe; //Eingabe als string deklarieren
+            int eingabeInt = 0;     //späterer Speicherort für die Eingabe als Int
 
             do
             {
@@ -37,18 +38,19 @@ namespace CatiaAnbindung
                 Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
                 Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
-                eingabe = Convert.ToInt32(Console.ReadLine());    // Eingabe und convert
+                eingabe = Console.ReadLine();    // Eingabe und convert
+                Int32.TryParse(eingabe, out eingabeInt);
 
-                if (eingabe >= 4 || eingabe <= 0) //Fehlermeldung
+                if (eingabeInt >= 4 || eingabeInt <= 0) //Fehlermeldung
                 {
                     Console.Clear();
                     Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
                 }
             }
-            while (eingabe >= 4 || eingabe <= 0); //Wenn Eingabe Falsch: Neustart
+            while (eingabeInt >= 4 || eingabeInt <= 0); //Wenn Eingabe Falsch: Neustart
 
 
-            if (eingabe == 1)
+            if (eingabeInt == 1)
             {
                 Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
                 m = Convert.ToDouble(Console.ReadLine());
@@ -58,9 +60,8 @@ namespace CatiaAnbindung
 
                 berechnung();
                 ausgabe();
-
             }
-            else if (eingabe == 2)
+            else if (eingabeInt == 2)
             {
                 Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
                 m = Convert.ToDouble(Console.ReadLine());
@@ -70,9 +71,8 @@ namespace CatiaAnbindung
 
                 berechnung();
                 ausgabe();
-
             }
-            else if (eingabe == 3)
+            else if (eingabeInt == 3)
             {
                 Console.WriteLine("\n\t\t\tBitte geben sie das Teilkreisdurchmesser in mm ein.");
                 d = Convert.ToDouble(Console.ReadLine());
