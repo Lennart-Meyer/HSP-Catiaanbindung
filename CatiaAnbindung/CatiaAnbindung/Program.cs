@@ -21,10 +21,10 @@ namespace CatiaAnbindung
             Double hf;      //hf = Zahnfußhöhe
             Double c;       //c = Kopfspiel
             Double a;       //a = Achsenabstand
-            Double alpha;   //Nachnorm 20 
+            Double alpha;   //Nachnorm 20°
             Double dg;      //dg = Grundkreisdurchmesser
 
-            alpha = 20; //Zum testen
+            alpha = 20; //Zum testen [in Grad]
             c = 0.167; //vorgabe
 
             string eingabe; //Eingabe als string deklarieren
@@ -33,9 +33,9 @@ namespace CatiaAnbindung
             do
             {
                 Console.WriteLine("\n\t\t\tZahnradberechnungsprogramm von Gruppe H");
-                Console.WriteLine("\n\t\tWollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
-                Console.WriteLine("\n\t\tWollen sie die Modul und Zähnezahl vorgeben press 2");
-                Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
+                Console.WriteLine("\n\t\tWollen sie die Modul und Teilkreisdurchmesser vorgeben press: 1");
+                Console.WriteLine("\n\t\tWollen sie die Modul und Zähnezahl vorgeben press: 2");
+                Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press: 3");
                 Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
                 eingabe = Console.ReadLine();    // Eingabe und convert
@@ -48,7 +48,6 @@ namespace CatiaAnbindung
                 }
             }
             while (eingabeInt >= 4 || eingabeInt <= 0); //Wenn Eingabe Falsch: Neustart
-
 
             if (eingabeInt == 1)
             {
@@ -87,7 +86,6 @@ namespace CatiaAnbindung
             //Unterprogramme
             void ausgabe()
             {
-                Console.WriteLine("\n\t\t\t" + eingabe);
                 Console.WriteLine("\t\t\tZähnezahl: " + z);
                 Console.WriteLine("\t\t\tTeilkreisdurchmesser: " + d);
                 Console.WriteLine("\t\t\tModul: " + m);
@@ -95,6 +93,7 @@ namespace CatiaAnbindung
                 Console.WriteLine("\t\t\tFußkreisdurchmesser: " + df);
                 Console.WriteLine("\t\t\tZahnhöhe: " + h);
                 Console.WriteLine("\t\t\tGrundkreisdurchmesser: " + dg);
+                Console.WriteLine("\n\t\t\t" + eingabe);
             }
 
             void berechnung()
@@ -102,12 +101,11 @@ namespace CatiaAnbindung
                 //Zahnhöhe
                 h = 2 * m + c;
                 //Teilung
-                //Pi genauer eingeben?
                 p = Math.PI * m;
                 //Fußkreisdurchmesser
                 df = d - (2 * (m + c));
                 //Grundkreisdurchmesser
-                alpha = Math.PI / 180 * alpha;
+                alpha = Math.PI / 180 * alpha; // Winkel in Radiant umrechnen
                 dg = d * Math.Cos(alpha);
             }
             Console.ReadKey();
