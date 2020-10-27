@@ -25,7 +25,9 @@ namespace CatiaAnbindung
             Double dg;      //dg = Grundkreisdurchmesser
 
             alpha = 20; //Zum testen [in Grad]
-            c = 0.167; //vorgabe
+            //c = 0.167; //vorgabe
+
+
 
             string eingabe; //Eingabe als string deklarieren
             int eingabeInt = 0;     //späterer Speicherort für die Eingabe als Int
@@ -57,6 +59,7 @@ namespace CatiaAnbindung
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
 
+                Kopfspiel();
                 berechnung();
                 ausgabe();
             }
@@ -68,6 +71,7 @@ namespace CatiaAnbindung
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
 
+                Kopfspiel();
                 berechnung();
                 ausgabe();
             }
@@ -79,6 +83,7 @@ namespace CatiaAnbindung
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
 
+                Kopfspiel();
                 berechnung();
                 ausgabe();
             }
@@ -109,8 +114,53 @@ namespace CatiaAnbindung
                 dg = d * Math.Cos(alpha);
             }
             Console.ReadKey();
-        }
 
+
+            void Kopfspiel()
+            {
+
+                string gg; //Eingabe als string deklarieren
+                int ggInt = 0;     //späterer Speicherort für die Eingabe als Int
+
+                do
+                {
+
+                    Console.WriteLine("\n\t\tWollen Sie das Kopfspiel selbstbesimmen? press: 1");
+                    Console.WriteLine("\n\t\tOder wollen sie ,dass für das Kopfspiel der Normwert=0,167mm angenommen wird? press: 2");
+
+                    Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
+
+                    gg = Console.ReadLine();    // Eingabe und convert
+                    Int32.TryParse(gg, out ggInt);
+
+                    if (ggInt >= 3 || ggInt <= 0) //Fehlermeldung
+                    {
+                        Console.Clear();
+                        Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
+                    }
+                }
+                while (ggInt >= 3 || ggInt <= 0); //Wenn Eingabe Falsch: Neustart
+
+                if (ggInt == 1)
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie das Kopfspiel in mm ein, Empfohlen 0,1 bis 0,3mm");
+                    c = Convert.ToDouble(Console.ReadLine());
+
+                }
+                else 
+                {
+                     c = 0.167;
+                }
+
+            }
+
+
+
+
+
+
+        }
     }
 }
+
 
