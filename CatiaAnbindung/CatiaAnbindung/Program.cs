@@ -25,10 +25,6 @@ namespace CatiaAnbindung
             Double dg;      //dg = Grundkreisdurchmesser
             Double Br;      //Br = Breite des Zahnrades
 
-            //alpha = 20; //Zum testen [in Grad]
-            //c = 0.167; //vorgabe
-
-
 
             string eingabe; //Eingabe als string deklarieren
             int eingabeInt = 0;     //späterer Speicherort für die Eingabe als Int
@@ -127,7 +123,6 @@ namespace CatiaAnbindung
                 Console.WriteLine("\t\t\tFußkreisdurchmesser: " + df);
                 Console.WriteLine("\t\t\tZahnhöhe: " + h);
                 Console.WriteLine("\t\t\tGrundkreisdurchmesser: " + dg);
-                Console.WriteLine("\n\t\t\t" + eingabe);
             }
 
             void berechnung()
