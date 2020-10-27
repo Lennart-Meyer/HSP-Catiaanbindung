@@ -24,7 +24,7 @@ namespace CatiaAnbindung
             Double alpha;   //Nachnorm 20°
             Double dg;      //dg = Grundkreisdurchmesser
 
-            alpha = 20; //Zum testen [in Grad]
+            //alpha = 20; //Zum testen [in Grad]
             //c = 0.167; //vorgabe
 
 
@@ -59,6 +59,7 @@ namespace CatiaAnbindung
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
 
+                Winkel();
                 Kopfspiel();
                 berechnung();
                 ausgabe();
@@ -71,6 +72,7 @@ namespace CatiaAnbindung
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
 
+                Winkel();
                 Kopfspiel();
                 berechnung();
                 ausgabe();
@@ -83,6 +85,7 @@ namespace CatiaAnbindung
                 z = Convert.ToDouble(Console.ReadLine());
                 m = d / z;
 
+                Winkel();
                 Kopfspiel();
                 berechnung();
                 ausgabe();
@@ -152,14 +155,53 @@ namespace CatiaAnbindung
                      c = 0.167;
                 }
 
+
+            }
+
+             void Winkel()
+            {
+                string ww; //Eingabe als string deklarieren
+                int wwInt = 0;     //späterer Speicherort für die Eingabe als Int
+
+                do
+                {
+
+                    Console.WriteLine("\n\t\tWollen Sie das Zahnflankenwinkel selbstbesimmen? press: 1");
+                    Console.WriteLine("\n\t\tOder wollen sie ,dass für den Zahnflankenwinkel 20° angenommen wird? press: 2");
+
+                    Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
+
+                    ww = Console.ReadLine();    // Eingabe und convert
+                    Int32.TryParse(ww, out wwInt);
+
+                    if (wwInt >= 3 || wwInt <= 0) //Fehlermeldung
+                    {
+                        Console.Clear();
+                        Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
+                    }
+                }
+                while (wwInt >= 3 || wwInt <= 0); //Wenn Eingabe Falsch: Neustart
+
+                if (wwInt == 1)
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie den Zahnfalanken Winkel in Grad an. Norm ist 20°");
+                    alpha = Convert.ToDouble(Console.ReadLine());
+
+                }
+                else
+                {
+                    alpha = 20;
+                }
+
             }
 
 
 
 
 
-
         }
+
+       
     }
 }
 
