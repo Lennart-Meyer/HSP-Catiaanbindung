@@ -23,6 +23,7 @@ namespace CatiaAnbindung
             Double a;       //a = Achsenabstand
             Double alpha;   //Nachnorm 20°
             Double dg;      //dg = Grundkreisdurchmesser
+            Double Br;      //Br = Breite des Zahnrades
 
             //alpha = 20; //Zum testen [in Grad]
             //c = 0.167; //vorgabe
@@ -53,8 +54,17 @@ namespace CatiaAnbindung
 
             if (eingabeInt == 1)
             {
-                Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
-                m = Convert.ToDouble(Console.ReadLine());
+                do
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
+                    m = Convert.ToDouble(Console.ReadLine());
+                    if (m <= 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht =0 sein!");
+                    }
+
+                } while (m <= 0);
                 Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
@@ -66,8 +76,17 @@ namespace CatiaAnbindung
             }
             else if (eingabeInt == 2)
             {
-                Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
-                m = Convert.ToDouble(Console.ReadLine());
+                do
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
+                    m = Convert.ToDouble(Console.ReadLine());
+                    if (m <= 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht =0 sein!");
+                    }
+
+                } while (m <= 0);
                 Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
@@ -90,6 +109,13 @@ namespace CatiaAnbindung
                 berechnung();
                 ausgabe();
             }
+            //Eingabe der Breite des Zahnrades
+            Console.Write("Geben Sie die Breite des Zahnrades an:");
+            Br = Convert.ToDouble(Console.ReadLine());
+
+            //Eingabe Material
+            Console.Write("Bitte geben Sie das Material ein:");
+            string Material = Console.ReadLine();
 
             //Unterprogramme
             void ausgabe()
