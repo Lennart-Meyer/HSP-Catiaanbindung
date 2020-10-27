@@ -25,7 +25,6 @@ namespace CatiaAnbindung
             Double dg;      //dg = Grundkreisdurchmesser
 
 
-
             string eingabe; //Eingabe als string deklarieren
             int eingabeInt = 0;     //späterer Speicherort für die Eingabe als Int
 
