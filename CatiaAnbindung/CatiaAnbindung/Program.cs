@@ -24,9 +24,6 @@ namespace CatiaAnbindung
             Double alpha;   //Nachnorm 20°
             Double dg;      //dg = Grundkreisdurchmesser
 
-            //alpha = 20; //Zum testen [in Grad]
-            //c = 0.167; //vorgabe
-
 
 
             string eingabe; //Eingabe als string deklarieren
@@ -101,7 +98,6 @@ namespace CatiaAnbindung
                 Console.WriteLine("\t\t\tFußkreisdurchmesser: " + df);
                 Console.WriteLine("\t\t\tZahnhöhe: " + h);
                 Console.WriteLine("\t\t\tGrundkreisdurchmesser: " + dg);
-                Console.WriteLine("\n\t\t\t" + eingabe);
             }
 
             void berechnung()
