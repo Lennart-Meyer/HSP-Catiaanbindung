@@ -31,10 +31,10 @@ namespace CatiaAnbindung
 
             do
             {
-                Console.WriteLine("\n\t\t\tZahnradberechnungsprogramm von Gruppe H");
-                Console.WriteLine("\n\t\tWollen sie die Modul und Teilkreisdurchmesser vorgeben? press: 1");
-                Console.WriteLine("\n\t\tWollen sie die Modul und Zähnezahl vorgeben? press: 2");
-                Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben? press: 3");
+                Console.WriteLine("\n\t\t\tZahnradkonfigurator von Gruppe H");
+                Console.WriteLine("\n\t\tWollen sie das Modul und den Teilkreisdurchmesser vorgeben? press: 1");
+                Console.WriteLine("\n\t\tWollen sie das Modul und die Zähnezahl vorgeben? press: 2");
+                Console.WriteLine("\n\t\tWollen sie die Zähnezahl und den Teilkreisdurchmesser vorgeben? press: 3");
                 Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
                 eingabe = Console.ReadLine();    // Eingabe und convert
@@ -57,7 +57,7 @@ namespace CatiaAnbindung
                     if (m <= 0)
                     {
                         Console.Clear();
-                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht =0 sein!");
+                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
                     }
 
                 } while (m <= 0);
@@ -79,7 +79,7 @@ namespace CatiaAnbindung
                     if (m <= 0)
                     {
                         Console.Clear();
-                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht =0 sein!");
+                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
                     }
 
                 } while (m <= 0);
@@ -94,7 +94,7 @@ namespace CatiaAnbindung
             }
             else if (eingabeInt == 3)
             {
-                Console.WriteLine("\n\t\t\tBitte geben sie das Teilkreisdurchmesser in mm ein.");
+                Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm ein.");
                 d = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
@@ -150,7 +150,7 @@ namespace CatiaAnbindung
                 {
 
                     Console.WriteLine("\n\t\tWollen Sie das Kopfspiel selbstbesimmen? press: 1");
-                    Console.WriteLine("\n\t\tOder wollen sie ,dass für das Kopfspiel der Normwert=0,167mm angenommen wird? press: 2");
+                    Console.WriteLine("\n\t\tOder wollen sie, dass für das Kopfspiel der Normwert = 0,167mm angenommen wird? press: 2");
 
                     Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
@@ -159,7 +159,6 @@ namespace CatiaAnbindung
 
                     if (ggInt >= 3 || ggInt <= 0) //Fehlermeldung
                     {
-                        Console.Clear();
                         Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
                     }
                 }
@@ -169,7 +168,6 @@ namespace CatiaAnbindung
                 {
                     Console.WriteLine("\n\t\t\tBitte geben sie das Kopfspiel in mm ein, Empfohlen 0,1 bis 0,3mm");
                     c = Convert.ToDouble(Console.ReadLine());
-
                 }
                 else 
                 {
@@ -187,8 +185,8 @@ namespace CatiaAnbindung
                 do
                 {
 
-                    Console.WriteLine("\n\t\tWollen Sie das Zahnflankenwinkel selbstbesimmen? press: 1");
-                    Console.WriteLine("\n\t\tOder wollen sie ,dass für den Zahnflankenwinkel 20° angenommen wird? press: 2");
+                    Console.WriteLine("\n\t\tWollen Sie den Zahnflankenwinkel selbst bestimmen? press: 1");
+                    Console.WriteLine("\n\t\tOder wollen sie, dass für den Zahnflankenwinkel 20° angenommen wird? press: 2");
 
                     Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
@@ -197,7 +195,6 @@ namespace CatiaAnbindung
 
                     if (wwInt >= 3 || wwInt <= 0) //Fehlermeldung
                     {
-                        Console.Clear();
                         Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
                     }
                 }
@@ -207,7 +204,6 @@ namespace CatiaAnbindung
                 {
                     Console.WriteLine("\n\t\t\tBitte geben sie den Zahnfalanken Winkel in Grad an. Norm ist 20°");
                     alpha = Convert.ToDouble(Console.ReadLine());
-
                 }
                 else
                 {
