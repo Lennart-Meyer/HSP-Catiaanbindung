@@ -148,7 +148,6 @@ namespace CatiaAnbindung
 
                 do
                 {
-
                     Console.WriteLine("\n\t\tWollen Sie das Kopfspiel selbstbesimmen? press: 1");
                     Console.WriteLine("\n\t\tOder wollen sie, dass für das Kopfspiel der Normwert = 0,167mm angenommen wird? press: 2");
 
@@ -184,7 +183,6 @@ namespace CatiaAnbindung
 
                 do
                 {
-
                     Console.WriteLine("\n\t\tWollen Sie den Zahnflankenwinkel selbst bestimmen? press: 1");
                     Console.WriteLine("\n\t\tOder wollen sie, dass für den Zahnflankenwinkel 20° angenommen wird? press: 2");
 
