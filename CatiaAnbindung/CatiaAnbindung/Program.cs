@@ -51,8 +51,7 @@ namespace CatiaAnbindung
             if (eingabeInt == 1)
             {
                 modul();
-                Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm an");
-                d = Convert.ToDouble(Console.ReadLine());
+                teilkreisdurchmesser();
                 z = d / m;
 
                 Winkel();
@@ -63,8 +62,7 @@ namespace CatiaAnbindung
             else if (eingabeInt == 2)
             {
                 modul();
-                Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
-                z = Convert.ToDouble(Console.ReadLine());
+                zaehnezahl();
                 d = m * z;
 
                 Winkel();
@@ -74,10 +72,8 @@ namespace CatiaAnbindung
             }
             else if (eingabeInt == 3)
             {
-                Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm ein.");
-                d = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
-                z = Convert.ToDouble(Console.ReadLine());
+                teilkreisdurchmesser();
+                zaehnezahl();
                 m = d / z;
 
                 Winkel();
@@ -189,6 +185,7 @@ namespace CatiaAnbindung
                 }
             }
 
+            //Unterprogramm zur Kontrolle der Moduleingabe
             void modul()
             {
                 do
@@ -197,14 +194,41 @@ namespace CatiaAnbindung
                     Double.TryParse(Console.ReadLine(), out m);
                     if (m <= 0)
                     {
-                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
+                        Console.WriteLine("Eingabe Wiederholen!");
                     }
 
                 } while (m <= 0);
             }
 
+            //Unterprogramm zur Kontrolle der Zähnezahleingabe
+            void zaehnezahl()
+            {
+                do
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
+                    Double.TryParse(Console.ReadLine(), out z);
+                    if (z <= 0)
+                    {
+                        Console.WriteLine("Eingabe Wiederholen!");
+                    }
 
+                } while (z <= 0);
+            }
 
+            //Unterprogramm zur Kontrolle der Teilkreisdurchmessereingabe
+            void teilkreisdurchmesser()
+            {
+                do
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm ein.");
+                    Double.TryParse(Console.ReadLine(), out d);
+                    if (d <= 0)
+                    {
+                        Console.WriteLine("Eingabe Wiederholen!");
+                    }
+
+                } while (d <= 0);
+            }
 
         }
 
