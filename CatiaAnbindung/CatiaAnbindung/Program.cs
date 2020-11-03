@@ -50,17 +50,7 @@ namespace CatiaAnbindung
 
             if (eingabeInt == 1)
             {
-                do
-                {
-                    Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
-                    m = Convert.ToDouble(Console.ReadLine());
-                    if (m <= 0)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
-                    }
-
-                } while (m <= 0);
+                modul();
                 Console.WriteLine("\n\t\t\tBitte geben sie den Teilkreisdurchmesser in mm an");
                 d = Convert.ToDouble(Console.ReadLine());
                 z = d / m;
@@ -72,17 +62,7 @@ namespace CatiaAnbindung
             }
             else if (eingabeInt == 2)
             {
-                do
-                {
-                    Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
-                    m = Convert.ToDouble(Console.ReadLine());
-                    if (m <= 0)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
-                    }
-
-                } while (m <= 0);
+                modul();
                 Console.WriteLine("\n\t\t\tBitte geben sie die Zähnezahl an:");
                 z = Convert.ToDouble(Console.ReadLine());
                 d = m * z;
@@ -207,9 +187,22 @@ namespace CatiaAnbindung
                 {
                     alpha = 20;
                 }
-
             }
 
+            void modul()
+            {
+                do
+                {
+                    Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
+                    m = Convert.ToDouble(Console.ReadLine());
+                    if (m <= 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
+                    }
+
+                } while (m <= 0);
+            }
 
 
 
