@@ -141,8 +141,16 @@ namespace CatiaAnbindung
 
                 if (ggInt == 1)
                 {
-                    Console.WriteLine("\n\t\t\tBitte geben sie das Kopfspiel in mm ein, Empfohlen 0,1 bis 0,3mm");
-                    c = Convert.ToDouble(Console.ReadLine());
+                    do
+                    {
+                        Console.WriteLine("\n\t\t\tBitte geben sie das Kopfspiel in mm ein. Empfohlen ist 0,1 bis 0,3mm");
+                        Double.TryParse(Console.ReadLine(), out c);
+                        if (c <= 0)
+                        {
+                            Console.WriteLine("Eingabe Wiederholen!");
+                        }
+
+                    } while (c <= 0);
                 }
                 else 
                 {
@@ -176,13 +184,23 @@ namespace CatiaAnbindung
 
                 if (wwInt == 1)
                 {
-                    Console.WriteLine("\n\t\t\tBitte geben sie den Zahnfalanken Winkel in Grad an. Norm ist 20°");
-                    alpha = Convert.ToDouble(Console.ReadLine());
+                    do
+                    {
+                        Console.WriteLine("\n\t\t\tBitte geben sie den Zahnflanken Winkel in Grad an. Norm ist 20°");
+                        Double.TryParse(Console.ReadLine(), out alpha);
+                        if (alpha <= 0)
+                        {
+                            Console.WriteLine("Eingabe Wiederholen!");
+                        }
+
+                    } while (alpha <= 0);
                 }
                 else
                 {
                     alpha = 20;
                 }
+                
+                
             }
 
             //Unterprogramm zur Kontrolle der Moduleingabe
