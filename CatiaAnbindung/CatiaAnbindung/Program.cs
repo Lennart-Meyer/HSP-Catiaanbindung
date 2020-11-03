@@ -82,11 +82,11 @@ namespace CatiaAnbindung
                 ausgabe();
             }
             //Eingabe der Breite des Zahnrades
-            Console.Write("Geben Sie die Breite des Zahnrades an:");
+            Console.Write("\n\t\t\tGeben Sie die Breite des Zahnrades an:");
             Br = Convert.ToDouble(Console.ReadLine());
 
             //Eingabe Material
-            Console.Write("Bitte geben Sie das Material ein:");
+            Console.Write("\n\t\t\tBitte geben Sie das Material ein:");
             string Material = Console.ReadLine();
 
             //Unterprogramme
