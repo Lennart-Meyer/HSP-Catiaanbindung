@@ -194,10 +194,9 @@ namespace CatiaAnbindung
                 do
                 {
                     Console.WriteLine("\n\t\t\tBitte geben sie das Modul ein.");
-                    m = Convert.ToDouble(Console.ReadLine());
+                    Double.TryParse(Console.ReadLine(), out m);
                     if (m <= 0)
                     {
-                        Console.Clear();
                         Console.WriteLine("Eingabe Wiederholen, dass Modul darf nicht = 0 sein!");
                     }
 
