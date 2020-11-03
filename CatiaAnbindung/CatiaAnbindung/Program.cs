@@ -164,7 +164,7 @@ namespace CatiaAnbindung
 
                     Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
-                    ww = Console.ReadLine();    // Eingabe und convert
+                    ww = Console.ReadLine();     // Eingabe und convert
                     Int32.TryParse(ww, out wwInt);
 
                     if (wwInt >= 3 || wwInt <= 0) //Fehlermeldung
