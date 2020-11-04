@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace CatiaAnbindung
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             Double m;       //m = Modul
@@ -26,29 +29,31 @@ namespace CatiaAnbindung
             Double Br;      //Br = Breite des Zahnrades
 
 
-            string eingabe; //Eingabe als string deklarieren
-            int eingabeInt = 0;     //späterer Speicherort für die Eingabe als Int
+            int berechnungsWahl = 0;     //späterer Speicherort für die Eingabe als Int
 
+
+            bool isValid = false;
+            Console.WriteLine("\n\t\t\tZahnradkonfigurator von Gruppe H");
+            Console.WriteLine("\n\t\tWollen sie das Modul und den Teilkreisdurchmesser vorgeben? press: 1");
+            Console.WriteLine("\n\t\tWollen sie das Modul und die Zähnezahl vorgeben? press: 2");
+            Console.WriteLine("\n\t\tWollen sie die Zähnezahl und den Teilkreisdurchmesser vorgeben? press: 3");
+            Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
             do
             {
-                Console.WriteLine("\n\t\t\tZahnradkonfigurator von Gruppe H");
-                Console.WriteLine("\n\t\tWollen sie das Modul und den Teilkreisdurchmesser vorgeben? press: 1");
-                Console.WriteLine("\n\t\tWollen sie das Modul und die Zähnezahl vorgeben? press: 2");
-                Console.WriteLine("\n\t\tWollen sie die Zähnezahl und den Teilkreisdurchmesser vorgeben? press: 3");
-                Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
-                eingabe = Console.ReadLine();    // Eingabe und convert
-                Int32.TryParse(eingabe, out eingabeInt);
+                Int32.TryParse(Console.ReadLine(), out berechnungsWahl);
 
-                if (eingabeInt >= 4 || eingabeInt <= 0) //Fehlermeldung
+                isValid = (berechnungsWahl > 0 && berechnungsWahl < 4);
+
+                if (!isValid) //Fehlermeldung
                 {
-                    Console.Clear();
+                    
                     Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
                 }
             }
-            while (eingabeInt >= 4 || eingabeInt <= 0); //Wenn Eingabe Falsch: Neustart
+            while (!isValid); //Wenn Eingabe Falsch: Neustart
 
-            if (eingabeInt == 1)
+            if (berechnungsWahl == 1)
             {
                 modul();
                 teilkreisdurchmesser();
@@ -59,7 +64,7 @@ namespace CatiaAnbindung
                 berechnung();
                 ausgabe();
             }
-            else if (eingabeInt == 2)
+            else if (berechnungsWahl == 2)
             {
                 modul();
                 zaehnezahl();
@@ -70,7 +75,7 @@ namespace CatiaAnbindung
                 berechnung();
                 ausgabe();
             }
-            else if (eingabeInt == 3)
+            else if (berechnungsWahl == 3)
             {
                 teilkreisdurchmesser();
                 zaehnezahl();
@@ -212,7 +217,7 @@ namespace CatiaAnbindung
                     Double.TryParse(Console.ReadLine(), out m);
                     if (m <= 0)
                     {
-                        Console.WriteLine("Eingabe Wiederholen!");
+                        Console.WriteLine("Fehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!");
                     }
 
                 } while (m <= 0);
@@ -227,7 +232,7 @@ namespace CatiaAnbindung
                     Double.TryParse(Console.ReadLine(), out z);
                     if (z <= 0)
                     {
-                        Console.WriteLine("Eingabe Wiederholen!");
+                        Console.WriteLine("Fehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!");
                     }
 
                 } while (z <= 0);
@@ -250,7 +255,7 @@ namespace CatiaAnbindung
 
         }
 
-       
+        
     }
 }
 
