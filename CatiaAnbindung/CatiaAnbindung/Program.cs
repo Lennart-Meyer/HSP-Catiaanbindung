@@ -9,8 +9,6 @@ namespace CatiaAnbindung
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             Double m;       //m = Modul
@@ -159,7 +157,6 @@ namespace CatiaAnbindung
                         {
                             Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                         }
-
                     } while (c <= 0);
                 }
                 else 
@@ -168,7 +165,7 @@ namespace CatiaAnbindung
                 }
             }
 
-             void Winkel()
+            void Winkel()
             {
                 string ww; //Eingabe als string deklarieren
                 int wwInt = 0;     //späterer Speicherort für die Eingabe als Int
