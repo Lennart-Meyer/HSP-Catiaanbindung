@@ -14,14 +14,14 @@ namespace CatiaAnbindung
             Double m;       //m = Modul
             Double p;       //p = Teilung
             Double d;       //d = Teilkreisdurchmesser
-            Double da;      //da = Kopfkreisdurchmesser
+            //Double da;      //da = Kopfkreisdurchmesser               Wird aktuell nicht verwendet
             Double df;      //df = Fußkreisdurchmesser
             Double z;       //z = Zähnezahl
             Double h;       //h = Zahnhöhe   
             Double ha;      //ha = Zahnkopfhöhe
             Double hf;      //hf = Zahnfußhöhe
             Double c;       //c = Kopfspiel
-            Double a;       //a = Achsenabstand
+            //Double a;       //a = Achsenabstand                       Wird aktuell nicht verwenden
             Double alpha;   //Nachnorm 20°
             Double dg;      //dg = Grundkreisdurchmesser
             Double br;      //Br = Breite des Zahnrades
