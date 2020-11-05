@@ -9,8 +9,6 @@ namespace CatiaAnbindung
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             Double m;       //m = Modul
@@ -28,30 +26,27 @@ namespace CatiaAnbindung
             Double dg;      //dg = Grundkreisdurchmesser
             Double br;      //Br = Breite des Zahnrades
             string material;
-
-
             int berechnungsWahl = 0;     //späterer Speicherort für die Eingabe als Int
-
-
             bool isValid = false;
-            Console.WriteLine("\n\t\tZahnradkonfigurator von Gruppe H");
-            Console.WriteLine("\n\t\tWählen sie die Eingabeparameter:");
-            Console.WriteLine("\n\t\t1 - Modul und Teilkreisdurchmesser");
-            Console.WriteLine("\n\t\t2 - Modul und Zähnezahl");
-            Console.WriteLine("\n\t\t3 - Zähnezahl und Teilkreisdurchmesser");
-            Console.WriteLine("\n\t\t4 - Abbrechen");
-            Console.WriteLine("\n\t\tBestätigen sie ihre Eingabe mit Enter");
+
+            Console.WriteLine("\nZahnradkonfigurator von Gruppe H");
+            Console.WriteLine("\n\nWählen sie die Eingabeparameter:");
+            Console.WriteLine("\n\t1 - Modul und Teilkreisdurchmesser");
+            Console.WriteLine("\n\t2 - Modul und Zähnezahl");
+            Console.WriteLine("\n\t3 - Zähnezahl und Teilkreisdurchmesser");
+            Console.WriteLine("\n\t4 - Abbrechen");
+            Console.WriteLine("\nBestätigen sie ihre Eingabe mit Enter");
+
             do
             {
-
+                Console.Write("\t");
                 Int32.TryParse(Console.ReadLine(), out berechnungsWahl);
 
                 isValid = (berechnungsWahl > 0 && berechnungsWahl < 5);
 
                 if (!isValid) //Fehlermeldung
                 {
-                    
-                    Console.WriteLine("\n\t\t\t\tFehler! Falsche Eingabe!\n\t\t\t\tEingabe Wiederholen!\n");
+                    Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                 }
             }
             while (!isValid); //Wenn Eingabe Falsch: Neustart
@@ -100,21 +95,18 @@ namespace CatiaAnbindung
                 return;
             }
             
-             
-
-
             //Unterprogramme
             void ausgabe()
             {
-                Console.WriteLine("\n\t\tZähnezahl: " + z);
-                Console.WriteLine("\t\tTeilkreisdurchmesser: " + d + "mm");
-                Console.WriteLine("\t\tModul: " + m);
-                Console.WriteLine("\t\tTeilung: " + p);
-                Console.WriteLine("\t\tFußkreisdurchmesser: " + df + "mm");
-                Console.WriteLine("\t\tZahnhöhe: " + h + "mm");
-                Console.WriteLine("\t\tGrundkreisdurchmesser: " + dg + "mm");
-                Console.WriteLine("\t\tBreite: " + br + "mm");
-                Console.WriteLine("\t\tMaterial: " + material);
+                Console.WriteLine("\n\tModul: " + m);
+                Console.WriteLine("\tZähnezahl: " + z);
+                Console.WriteLine("\tZahnhöhe: " + h + "mm");
+                Console.WriteLine("\tTeilung: " + p);
+                Console.WriteLine("\tTeilkreisdurchmesser: " + d + "mm");
+                Console.WriteLine("\tGrundkreisdurchmesser: " + dg + "mm");
+                Console.WriteLine("\tFußkreisdurchmesser: " + df + "mm");
+                Console.WriteLine("\tBreite: " + br + "mm");
+                Console.WriteLine("\tMaterial: " + material);
             }
 
             void berechnung()
@@ -134,24 +126,23 @@ namespace CatiaAnbindung
 
             void Kopfspiel()
             {
-
                 string gg; //Eingabe als string deklarieren
                 int ggInt = 0;     //späterer Speicherort für die Eingabe als Int
 
                 do
                 {
-                    Console.WriteLine("\n\t\tWollen sie:");
-                    Console.WriteLine("\n\t\t1 - das Kopfspiel selbst bestimmen?");
-                    Console.WriteLine("\n\t\t2 - den Normwert 0,167mm verwenden?");
+                    Console.WriteLine("\nWollen sie:");
+                    Console.WriteLine("\n\t1 - das Kopfspiel selbst bestimmen?");
+                    Console.WriteLine("\n\t2 - den Normwert 0,167mm verwenden?");
 
-                    Console.WriteLine("\n\t\tBestätigen sie ihre Eingabe mit Enter");
-
+                    Console.WriteLine("\n\tBestätigen sie ihre Eingabe mit Enter");
+                    Console.Write("\t");
                     gg = Console.ReadLine();    // Eingabe und convert
                     Int32.TryParse(gg, out ggInt);
 
                     if (ggInt >= 3 || ggInt <= 0) //Fehlermeldung
                     {
-                        Console.WriteLine("\n\t\t\tFehler! Falsche Eingabe!\n\t\t\tEingabe Wiederholen!\n");
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                     }
                 }
                 while (ggInt >= 3 || ggInt <= 0); //Wenn Eingabe Falsch: Neustart
@@ -160,42 +151,39 @@ namespace CatiaAnbindung
                 {
                     do
                     {
-                        Console.WriteLine("\n\t\t\tBitte geben sie das Kopfspiel in mm ein. Empfohlen ist 0,1 bis 0,3mm");
+                        Console.WriteLine("\n\tBitte geben sie das Kopfspiel in mm ein. Empfohlen ist 0,1 bis 0,3mm");
                         Double.TryParse(Console.ReadLine(), out c);
                         if (c <= 0)
                         {
-                            Console.WriteLine("Eingabe Wiederholen!");
+                            Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                         }
-
                     } while (c <= 0);
                 }
                 else 
                 {
                      c = 0.167;
                 }
-
-
             }
 
-             void Winkel()
+            void Winkel()
             {
                 string ww; //Eingabe als string deklarieren
                 int wwInt = 0;     //späterer Speicherort für die Eingabe als Int
 
+                Console.WriteLine("\nWollen sie:");
+                Console.WriteLine("\n\t1 - den Zahnflankenwinkel selbst bestimmen?");
+                Console.WriteLine("\n\t2 - den Standardwert 20° verwenden?");
+                Console.WriteLine("\n\tBestätigen sie ihre Eingabe mit Enter");
+                
                 do
                 {
-                    Console.WriteLine("\n\t\tWollen sie:");
-                    Console.WriteLine("\n\t\t1 - den Zahnflankenwinkel selbst bestimmen?");
-                    Console.WriteLine("\n\t\t2 - den Standardwert 20° verwenden?");
-
-                    Console.WriteLine("\n\t\tBestätigen sie ihre Eingabe mit Enter");
-
+                    Console.Write("\t");
                     ww = Console.ReadLine();     // Eingabe und convert
                     Int32.TryParse(ww, out wwInt);
 
                     if (wwInt >= 3 || wwInt <= 0) //Fehlermeldung
                     {
-                        Console.WriteLine("\n\t\tFehler! Falsche Eingabe!\n\t\tEingabe Wiederholen!\n");
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                     }
                 }
                 while (wwInt >= 3 || wwInt <= 0); //Wenn Eingabe Falsch: Neustart
@@ -204,12 +192,12 @@ namespace CatiaAnbindung
                 {
                     do
                     {
-                        Console.WriteLine("\n\t\tBitte geben sie den Zahnflanken Winkel in Grad an. Norm ist 20°");
+                        Console.WriteLine("\n\tBitte geben sie den Zahnflanken Winkel in Grad an. Norm ist 20°");
+
                         Double.TryParse(Console.ReadLine(), out alpha);
+
                         if (alpha <= 0)
-                        {
-                            Console.WriteLine("Eingabe Wiederholen!");
-                        }
+                            Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
 
                     } while (alpha <= 0);
                 }
@@ -217,8 +205,6 @@ namespace CatiaAnbindung
                 {
                     alpha = 20;
                 }
-                
-                
             }
 
             //Unterprogramm zur Kontrolle der Moduleingabe
@@ -226,13 +212,13 @@ namespace CatiaAnbindung
             {
                 do
                 {
-                    Console.WriteLine("\n\t\tBitte geben sie das Modul ein.");
-                    Double.TryParse(Console.ReadLine(), out m);
-                    if (m <= 0)
-                    {
-                        Console.WriteLine("Fehler! Falsche Eingabe!\n\t\tEingabe Wiederholen!");
-                    }
+                    Console.WriteLine("\n\tBitte geben sie das Modul ein.");
+                    Console.Write("\t");
 
+                    Double.TryParse(Console.ReadLine(), out m);
+
+                    if (m <= 0)
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                 } while (m <= 0);
             }
 
@@ -241,13 +227,13 @@ namespace CatiaAnbindung
             {
                 do
                 {
-                    Console.WriteLine("\n\t\tBitte geben sie die Zähnezahl an:");
-                    Double.TryParse(Console.ReadLine(), out z);
-                    if (z <= 0)
-                    {
-                        Console.WriteLine("Fehler! Falsche Eingabe!\n\t\tEingabe Wiederholen!");
-                    }
+                    Console.WriteLine("\n\tBitte geben sie die Zähnezahl an:");
+                    Console.Write("\t");
 
+                    Double.TryParse(Console.ReadLine(), out z);
+
+                    if (z <= 0)
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                 } while (z <= 0);
             }
 
@@ -256,31 +242,45 @@ namespace CatiaAnbindung
             {
                 do
                 {
-                    Console.WriteLine("\n\t\tBitte geben sie den Teilkreisdurchmesser in mm ein.");
-                    Double.TryParse(Console.ReadLine(), out d);
-                    if (d <= 0)
-                    {
-                        Console.WriteLine("Eingabe Wiederholen!");
-                    }
+                    Console.WriteLine("\n\tBitte geben sie den Teilkreisdurchmesser in mm ein.");
+                    Console.Write("\t");
 
+                    Double.TryParse(Console.ReadLine(), out d);
+
+                    if (d <= 0)
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
                 } while (d <= 0);
             }
             
             void materialAuswahl()
             {
                 //Eingabe Material
-                Console.WriteLine("\n\t\tBitte geben Sie das Material ein:");
-                material = Console.ReadLine();
+                do
+                {
+                    Console.WriteLine("\n\tBitte geben Sie das Material ein:");
+                    Console.Write("\t");
+
+                    material = Console.ReadLine();
+
+                    if (material.Length == 0)
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
+                } while (material.Length == 0);
             }
 
             void breite()
             {
                 // Eingabe der Breite des Zahnrades
-                Console.WriteLine("\n\t\tGeben Sie die Breite des Zahnrades an:");
-                br = Convert.ToDouble(Console.ReadLine());
+                do
+                {
+                    Console.WriteLine("\n\tGeben Sie die Breite des Zahnrades in mm an:");
+                    Console.Write("\t");
+
+                    Double.TryParse(Console.ReadLine(), out br);
+
+                    if (br <= 0)
+                        Console.WriteLine("\n\tFehler! Falsche Eingabe!\n\tEingabe Wiederholen!");
+                } while (br <= 0);
             }
         }
-
-        
     }
 }
