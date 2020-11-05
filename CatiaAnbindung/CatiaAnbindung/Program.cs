@@ -275,7 +275,7 @@ namespace CatiaAnbindung
                 // Eingabe der Breite des Zahnrades
                 do
                 {
-                    Console.WriteLine("\n\tGeben Sie die Breite des Zahnrades an:");
+                    Console.WriteLine("\n\tGeben Sie die Breite des Zahnrades in mm an:");
                     Console.Write("\t");
 
                     Double.TryParse(Console.ReadLine(), out br);
