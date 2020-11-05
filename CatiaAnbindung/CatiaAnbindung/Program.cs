@@ -11,21 +11,21 @@ namespace CatiaAnbindung
     {
         static void Main(string[] args)
         {
-            Double m;       //m = Modul
-            Double p;       //p = Teilung
-            Double d;       //d = Teilkreisdurchmesser
-            //Double da;      //da = Kopfkreisdurchmesser               Wird aktuell nicht verwendet
-            Double df;      //df = Fußkreisdurchmesser
-            Double z;       //z = Zähnezahl
-            Double h;       //h = Zahnhöhe   
-            Double ha;      //ha = Zahnkopfhöhe
-            Double hf;      //hf = Zahnfußhöhe
-            Double c;       //c = Kopfspiel
-            //Double a;       //a = Achsenabstand                       Wird aktuell nicht verwenden
-            Double alpha;   //Nachnorm 20°
-            Double dg;      //dg = Grundkreisdurchmesser
-            Double br;      //Br = Breite des Zahnrades
-            string material;
+            Double m;        //m = Modul
+            Double p;        //p = Teilung
+            Double d;        //d = Teilkreisdurchmesser
+            //Double da;     //da = Kopfkreisdurchmesser               Wird aktuell nicht verwendet
+            Double df;       //df = Fußkreisdurchmesser
+            Double z;        //z = Zähnezahl
+            Double h;        //h = Zahnhöhe   
+            Double ha;       //ha = Zahnkopfhöhe
+            Double hf;       //hf = Zahnfußhöhe
+            Double c;        //c = Kopfspiel
+            //Double a;      //a = Achsenabstand                       Wird aktuell nicht verwenden
+            Double alpha;    //Nachnorm 20°
+            Double dg;       //dg = Grundkreisdurchmesser
+            Double br;       //Br = Breite des Zahnrades
+            string material; //Material
             int berechnungsWahl = 0;     //späterer Speicherort für die Eingabe als Int
             bool isValid = false;
 
