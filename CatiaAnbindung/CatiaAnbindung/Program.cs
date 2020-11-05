@@ -101,6 +101,8 @@ namespace CatiaAnbindung
                 Console.WriteLine("\n\tModul: " + m);
                 Console.WriteLine("\tZähnezahl: " + z);
                 Console.WriteLine("\tZahnhöhe: " + h + "mm");
+                Console.WriteLine("\tZahnfußhöhe: " + hf + "mm");
+                Console.WriteLine("\tZahnkopfhöhe: " + ha + "mm");
                 Console.WriteLine("\tTeilung: " + p);
                 Console.WriteLine("\tTeilkreisdurchmesser: " + d + "mm");
                 Console.WriteLine("\tGrundkreisdurchmesser: " + dg + "mm");
@@ -120,6 +122,8 @@ namespace CatiaAnbindung
                 //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha; // Winkel in Radiant umrechnen
                 dg = d * Math.Cos(alpha);
+                ha = m;
+                hf = m + c;
             }
             Console.ReadKey();
 
