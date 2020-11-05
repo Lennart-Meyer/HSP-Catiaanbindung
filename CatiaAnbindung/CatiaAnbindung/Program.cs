@@ -122,7 +122,9 @@ namespace CatiaAnbindung
                 //Grundkreisdurchmesser
                 alpha = Math.PI / 180 * alpha; // Winkel in Radiant umrechnen
                 dg = d * Math.Cos(alpha);
+                //Zahnkopfhöhe
                 ha = m;
+                //Zahnfußhöhe
                 hf = m + c;
             }
             Console.ReadKey();
