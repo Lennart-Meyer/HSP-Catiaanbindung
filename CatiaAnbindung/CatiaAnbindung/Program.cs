@@ -34,7 +34,7 @@ namespace CatiaAnbindung
             {
                 Console.WriteLine("\n\t\t\tZahnradberechnungsprogramm von Gruppe H");
                 Console.WriteLine("\n\t\tWollen sie die Modul und Teilkreisdurchmesser vorgeben press 1");
-                Console.WriteLine("\n\t\tWollen sie die Modul und Zähnezahl vorgeben press 2");
+                Console.WriteLine("\n\t\tWollen sie die Modul und Zähnezahl vorgeben press 2"); 
                 Console.WriteLine("\n\t\tWollen sie die Zähnezahl und Teilkreisdurchmesser vorgeben press 3");
                 Console.WriteLine("\n\t\t\tBestätigen sie ihre Eingabe mit Enter");
 
