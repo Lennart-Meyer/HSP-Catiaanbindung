@@ -29,6 +29,12 @@ namespace Sprint_2
         {
             txtBox_Modul_1.IsEnabled = true;
             txtBox_Teilkreis_1.IsEnabled = true;
+
+            txtBox_Modul_2.Clear();
+            txtBox_Zähnezahl_1.Clear();
+            txtBox_Teilkreis_2.Clear();
+            txtBox_Zähnezahl_2.Clear();
+
         }
 
         private void rb_m_t_Unchecked(object sender, RoutedEventArgs e)
@@ -41,6 +47,11 @@ namespace Sprint_2
         {
             txtBox_Modul_2.IsEnabled = true;
             txtBox_Zähnezahl_1.IsEnabled = true;
+
+            txtBox_Modul_1.Clear();
+            txtBox_Teilkreis_1.Clear();
+            txtBox_Teilkreis_2.Clear();
+            txtBox_Zähnezahl_2.Clear();
         }
 
         private void rb_m_z_Unchecked(object sender, RoutedEventArgs e)
@@ -53,6 +64,11 @@ namespace Sprint_2
         {
             txtBox_Teilkreis_2.IsEnabled = true;
             txtBox_Zähnezahl_2.IsEnabled = true;
+
+            txtBox_Modul_1.Clear();
+            txtBox_Teilkreis_1.Clear();
+            txtBox_Modul_2.Clear();
+            txtBox_Zähnezahl_1.Clear();
         }
 
         private void rb_t_z_Unchecked(object sender, RoutedEventArgs e)
