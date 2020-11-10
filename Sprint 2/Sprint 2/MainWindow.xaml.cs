@@ -111,7 +111,7 @@ namespace Sprint_2
                 lbl_Modul.Content = "Modul:" + m;
                 lbl_Teilekreis.Content = "Teilkreis:" + d;
                 lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-
+                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }
 
             if (rb_m_z.IsChecked == true)
@@ -124,6 +124,7 @@ namespace Sprint_2
                 lbl_Modul.Content = "Modul:" + m;
                 lbl_Teilekreis.Content = "Teilkreis:" + d;
                 lbl_Zähnezahl.Content = "Zähnezahl:" + z;
+                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }
 
             if (rb_t_z.IsChecked == true)
@@ -136,6 +137,7 @@ namespace Sprint_2
                 lbl_Modul.Content = "Modul:" + m;
                 lbl_Teilekreis.Content = "Teilkreis:" + d;
                 lbl_Zähnezahl.Content = "Zähnezahl:" + z;
+                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }
         }
     }

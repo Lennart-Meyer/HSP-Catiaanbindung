@@ -13,7 +13,7 @@
         </StackPanel>
         <TabControl Name="Tab" TabStripPlacement="Left">
             <TabItem Header="Berechnung">
-                <Label >
+                <Label>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -42,14 +42,14 @@
 
 
                         <RadioButton x:Name="rb_m_t" GroupName="Auswahl" Checked="rb_m_t_Checked" Unchecked="rb_m_t_Unchecked" 
-                     Margin="20,20,0,0" Grid.Row="2" TextBlock.FontSize="16">Modul und Teilkreis</RadioButton>
+                        Margin="20,20,0,0" Grid.Row="2" TextBlock.FontSize="16">Modul und Teilkreis</RadioButton>
                         <Label Margin="35,20,0,0" Grid.Row="3" TextBlock.FontSize="16">Modul:</Label>
                         <TextBox IsEnabled="False" x:Name="txtBox_Modul_1" Margin="35,0,100,0" Grid.Row="4" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
                         <Label Margin="35,20,0,0" Grid.Row="5" TextBlock.FontSize="16">Teilkreis in mm:</Label>
                         <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
 
                         <RadioButton x:Name="rb_m_z" GroupName="Auswahl" Checked="rb_m_z_Checked" Unchecked="rb_m_z_Unchecked"
-                     Margin="20,20,0,0" Grid.Row="2" Grid.Column="1" TextBlock.FontSize="16">Modul und Zähnezahl</RadioButton>
+                        Margin="20,20,0,0" Grid.Row="2" Grid.Column="1" TextBlock.FontSize="16">Modul und Zähnezahl</RadioButton>
                         <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="1" TextBlock.FontSize="16">Modul:</Label>
                         <TextBox IsEnabled="False" x:Name="txtBox_Modul_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
                         <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="1" TextBlock.FontSize="16">Zähnezahl:</Label>
@@ -58,7 +58,7 @@
 
 
                         <RadioButton x:Name="rb_t_z" GroupName="Auswahl" Checked="rb_t_z_Checked" Unchecked="rb_t_z_Unchecked"
-                     Margin="20,20,0,0" Grid.Row="2" Grid.Column="2" TextBlock.FontSize="16">Teilkreis und Zähnezahl</RadioButton>
+                        Margin="20,20,0,0" Grid.Row="2" Grid.Column="2" TextBlock.FontSize="16">Teilkreis und Zähnezahl</RadioButton>
                         <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="2" TextBlock.FontSize="16">Teilkreis in mm:</Label>
                         <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
                         <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="2" TextBlock.FontSize="16">Zähnezahl:</Label>
@@ -77,9 +77,10 @@
                 <Label Content="Zahnradtyp"/>
             </TabItem>
             <TabItem Header="Ergebnis">
-                <Label Content="Ergebnis"/>
+                <Label>
+                    <TextBlock Name="ergebnis" Text="Ergebnis:"/>
+                </Label>
             </TabItem>
         </TabControl>
     </DockPanel>
-    
 </Window>
