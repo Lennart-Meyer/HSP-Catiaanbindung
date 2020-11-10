@@ -6,61 +6,80 @@
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition></RowDefinition>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="2,5">
+            <Button Name="btnPreviousTab" Margin="2" Click="btnZurueck_Click">Zurück</Button>
+            <Button Name="btnWeiter" Margin="2" Click="btnWeiter_Click">Weiter</Button>
+        </StackPanel>
+        <TabControl Name="Tab" TabStripPlacement="Left">
+            <TabItem Header="Berechnung">
+                <Label >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition></RowDefinition>
 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
 
-        </Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>
 
-        <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Berechnungsprogramm für Zahnräder Gruppe H</Label>
-        <Label Margin="20,0,0,0" HorizontalContentAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2" TextBlock.FontSize="16">Bitte wählen Sie die Eingabemöglichkeit aus:</Label>
+                        <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Berechnungsprogramm für Zahnräder Gruppe H</Label>
+                        <Label Margin="20,0,0,0" HorizontalContentAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2" TextBlock.FontSize="16">Bitte wählen Sie die Eingabemöglichkeit aus:</Label>
 
 
-        <RadioButton x:Name="rb_m_t" GroupName="Auswahl" Checked="rb_m_t_Checked" Unchecked="rb_m_t_Unchecked" 
+                        <RadioButton x:Name="rb_m_t" GroupName="Auswahl" Checked="rb_m_t_Checked" Unchecked="rb_m_t_Unchecked" 
                      Margin="20,20,0,0" Grid.Row="2" TextBlock.FontSize="16">Modul und Teilkreis</RadioButton>
-        <Label Margin="35,20,0,0" Grid.Row="3" TextBlock.FontSize="16">Modul:</Label>
-        <TextBox IsEnabled="False" x:Name="txtBox_Modul_1" Margin="35,0,100,0" Grid.Row="4" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
-        <Label Margin="35,20,0,0" Grid.Row="5" TextBlock.FontSize="16">Teilkreis in mm:</Label>
-        <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
+                        <Label Margin="35,20,0,0" Grid.Row="3" TextBlock.FontSize="16">Modul:</Label>
+                        <TextBox IsEnabled="False" x:Name="txtBox_Modul_1" Margin="35,0,100,0" Grid.Row="4" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
+                        <Label Margin="35,20,0,0" Grid.Row="5" TextBlock.FontSize="16">Teilkreis in mm:</Label>
+                        <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
 
-        <RadioButton x:Name="rb_m_z" GroupName="Auswahl" Checked="rb_m_z_Checked" Unchecked="rb_m_z_Unchecked"
+                        <RadioButton x:Name="rb_m_z" GroupName="Auswahl" Checked="rb_m_z_Checked" Unchecked="rb_m_z_Unchecked"
                      Margin="20,20,0,0" Grid.Row="2" Grid.Column="1" TextBlock.FontSize="16">Modul und Zähnezahl</RadioButton>
-        <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="1" TextBlock.FontSize="16">Modul:</Label>
-        <TextBox IsEnabled="False" x:Name="txtBox_Modul_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
-        <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="1" TextBlock.FontSize="16">Zähnezahl:</Label>
-        <TextBox IsEnabled="False" x:Name="txtBox_Zähnezahl_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
+                        <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="1" TextBlock.FontSize="16">Modul:</Label>
+                        <TextBox IsEnabled="False" x:Name="txtBox_Modul_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
+                        <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="1" TextBlock.FontSize="16">Zähnezahl:</Label>
+                        <TextBox IsEnabled="False" x:Name="txtBox_Zähnezahl_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
 
 
 
-        <RadioButton x:Name="rb_t_z" GroupName="Auswahl" Checked="rb_t_z_Checked" Unchecked="rb_t_z_Unchecked"
+                        <RadioButton x:Name="rb_t_z" GroupName="Auswahl" Checked="rb_t_z_Checked" Unchecked="rb_t_z_Unchecked"
                      Margin="20,20,0,0" Grid.Row="2" Grid.Column="2" TextBlock.FontSize="16">Teilkreis und Zähnezahl</RadioButton>
-        <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="2" TextBlock.FontSize="16">Teilkreis in mm:</Label>
-        <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
-        <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="2" TextBlock.FontSize="16">Zähnezahl:</Label>
-        <TextBox IsEnabled="False" x:Name="txtBox_Zähnezahl_2" Margin="35,0,100,0" Grid.Row="6" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
+                        <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="2" TextBlock.FontSize="16">Teilkreis in mm:</Label>
+                        <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
+                        <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="2" TextBlock.FontSize="16">Zähnezahl:</Label>
+                        <TextBox IsEnabled="False" x:Name="txtBox_Zähnezahl_2" Margin="35,0,100,0" Grid.Row="6" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
 
-        <Label Margin="20,30,0,0" Grid.Row="7" Grid.Column="0" TextBlock.FontSize="16" >Ergebnis:</Label>
-        <Label x:Name="lbl_Modul" Margin="0,0,0,0" Grid.Row="8" TextBlock.FontSize="16" ></Label>
-        <Label x:Name="lbl_Teilekreis" Grid.Row="9" TextBlock.FontSize="16" ></Label>
-        <Label x:Name="lbl_Zähnezahl" Grid.Row="10" TextBlock.FontSize="16" ></Label>
-        <Button Margin="10,0,10,0" Grid.Row="10" Grid.Column="2" Click="Button_Click" RenderTransformOrigin="0.5,0.5" TextBlock.FontSize="16" >Berechnen
-        </Button>
-    </Grid>
+                        <Label Margin="20,30,0,0" Grid.Row="7" Grid.Column="0" TextBlock.FontSize="16" >Ergebnis:</Label>
+                        <Label x:Name="lbl_Modul" Margin="0,0,0,0" Grid.Row="8" TextBlock.FontSize="16" ></Label>
+                        <Label x:Name="lbl_Teilekreis" Grid.Row="9" TextBlock.FontSize="16" ></Label>
+                        <Label x:Name="lbl_Zähnezahl" Grid.Row="10" TextBlock.FontSize="16" ></Label>
+                        <Button Margin="10,0,10,0" Grid.Row="10" Grid.Column="2" Click="Button_Click" RenderTransformOrigin="0.5,0.5" TextBlock.FontSize="16" >Berechnen
+                        </Button>
+                    </Grid>
+                </Label>
+            </TabItem>
+            <TabItem Header="Zahnradtyp">
+                <Label Content="Zahnradtyp"/>
+            </TabItem>
+            <TabItem Header="Ergebnis">
+                <Label Content="Ergebnis"/>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+    
 </Window>

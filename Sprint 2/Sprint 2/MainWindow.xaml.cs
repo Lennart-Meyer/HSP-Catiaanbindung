@@ -25,6 +25,22 @@ namespace Sprint_2
             InitializeComponent();
         }
 
+        private void btnWeiter_Click(object sender, RoutedEventArgs e)
+        {
+            int newTab = Tab.SelectedIndex + 1;
+
+            if (newTab >= Tab.Items.Count)
+                newTab = 0;
+            Tab.SelectedIndex = newTab;
+        }
+        private void btnZurueck_Click(object sender, RoutedEventArgs e)
+        {
+            int newTab = Tab.SelectedIndex - 1;
+
+            if (newTab < 0)
+                newTab = Tab.Items.Count - 1;
+            Tab.SelectedIndex = newTab;
+        }
         private void rb_m_t_Checked(object sender, RoutedEventArgs e)
         {
             txtBox_Modul_1.IsEnabled = true;
@@ -122,6 +138,5 @@ namespace Sprint_2
                 lbl_Zähnezahl.Content = "Zähnezahl:" + z;
             }
         }
-
     }
 }
