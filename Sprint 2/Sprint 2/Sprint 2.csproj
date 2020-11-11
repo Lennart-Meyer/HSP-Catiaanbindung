@@ -8,13 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Beispielbild Zahnrad.jpg" />
     <None Remove="icon.ico" />
     <None Remove="icon.jpg" />
+    <None Remove="Innenverzahnung.jpg" />
+    <None Remove="Kegelrad.png" />
+    <None Remove="Schneckengetriebe.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Beispielbild Zahnrad.jpg" />
     <Resource Include="icon.ico" />
-    <Resource Include="icon.jpg" />
+    <Resource Include="Innenverzahnung.jpg" />
+    <Resource Include="Kegelrad.png" />
+    <Resource Include="Schneckengetriebe.png" />
   </ItemGroup>
 
 </Project>
