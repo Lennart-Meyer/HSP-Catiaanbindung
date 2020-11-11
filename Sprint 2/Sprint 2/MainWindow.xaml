@@ -15,33 +15,63 @@
             <TabItem Header="Zahnradtyp">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
 
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                       
 
                     </Grid.ColumnDefinitions>
 
-                    <Label Padding="20" HorizontalAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="20" >Bitte wählen sie den Zanhnradtypen aus:</Label>
+                    <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Bitte wählen Sie einen Zahnrad Typ aus:</Label>
 
-                    <Label Grid.Row="1" Grid.Column="0" >
-                        <Image Source="/Bilder/" ></Image>
+                    <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+                        <RadioButton TextBlock.FontSize="16" >Stirnrad</RadioButton>
                     </Label>
-                    
+                    <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
+                        <Image Source= "/Beispielbild Zahnrad.jpg" Height="135" ></Image>
+                    </Label>
+
+
+                    <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+                        <RadioButton TextBlock.FontSize="16" >Innenverzahnung</RadioButton>
+                    </Label>
+                    <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
+                        <Image  Source= "/Innenverzahnung.jpg" Height="135"  ></Image>
+                    </Label>
+
+
+                    <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">
+                        <RadioButton TextBlock.FontSize="16" >Kegelrad</RadioButton>
+                    </Label>
+                    <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">
+                        <Image  Source= "/Kegelrad.png" Height="135"  ></Image>
+                    </Label>
+
+                    <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center">
+                        <RadioButton TextBlock.FontSize="16" >Schneckentrieb</RadioButton>
+                    </Label>
+                    <Label Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
+                        <Image  Source= "/Schneckengetriebe.png" Height="135"  ></Image>
+                    </Label>
+
+                   
+
+
+
                 </Grid>
             </TabItem>
             <TabItem Header="Berechnung">
                 <Label>
                     <Grid Width="697">
-                        
+
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -100,7 +130,7 @@
                     </Grid>
                 </Label>
             </TabItem>
-            
+
             <TabItem Header="Ergebnis">
                 <Label>
                     <TextBlock Name="ergebnis" Text="Ergebnis:"/>
