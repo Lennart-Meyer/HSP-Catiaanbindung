@@ -13,11 +13,31 @@
         </StackPanel>
         <TabControl Name="Tab" TabStripPlacement="Left">
             <TabItem Header="Zahnradtyp">
-                <Label Content="Zahnradtyp"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label Padding="20" HorizontalAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="20" >Bitte wählen sie den Zanhnradtypen aus:</Label>
+                    
+                </Grid>
             </TabItem>
             <TabItem Header="Berechnung">
                 <Label>
-                    <Grid>
+                    <Grid Width="697">
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
