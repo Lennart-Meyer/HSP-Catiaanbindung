@@ -31,6 +31,10 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Padding="20" HorizontalAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="20" >Bitte wählen sie den Zanhnradtypen aus:</Label>
+
+                    <Label Grid.Row="1" Grid.Column="0" >
+                        <Image Source="/Bilder/" ></Image>
+                    </Label>
                     
                 </Grid>
             </TabItem>
