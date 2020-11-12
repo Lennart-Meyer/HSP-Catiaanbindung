@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Berechnungprogram für Zahnräder " Height="600" Width="800">
     <DockPanel >
+        
+        
+        
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="2,5">
             <Button Name="btnPreviousTab" Margin="2" Click="btnZurueck_Click">Zurück</Button>
             <Button Name="btnWeiter" Margin="2" Click="btnWeiter_Click">Weiter</Button>
