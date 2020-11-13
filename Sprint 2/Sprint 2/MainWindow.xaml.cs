@@ -140,5 +140,25 @@ namespace Sprint_2
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }
         }
+
+        private void Button_bes(object sender, RoutedEventArgs e)
+        {
+            if (rb_Stahl.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Stahl gewählt";
+            }
+            else if (rb_Messing.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Messing gewählt";
+            }
+            else if (rb_Plastik.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Plastik gewählt";
+            }
+            else if (rb_Sonstige.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Sonstige gewählt";
+            }
+        }
     }
 }
