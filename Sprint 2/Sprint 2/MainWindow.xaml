@@ -134,6 +134,21 @@
                     </Grid>
                 </Label>
             </TabItem>
+            
+            <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" >
+                <StackPanel>
+                    <Label>Wählen Sie das Material des Zahnrades aus:</Label>
+                    <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material">Stahl</RadioButton>
+                    <RadioButton x:Name="rb_Messing" GroupName="Material">Messing</RadioButton>
+                    <RadioButton x:Name="rb_Plastik" GroupName="Material">Plastik</RadioButton>
+                    <RadioButton x:Name="rb_Sonstige" GroupName="Material">Sonstige</RadioButton>
+
+                    <Button Click="Button_Click">Bestätige</Button>
+                    <Label x:Name="lbl_Material"/>
+
+
+                </StackPanel>
+            </TabItem>
 
             <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" >
                 <Label>
