@@ -28,7 +28,6 @@ namespace Sprint_2
         private void btnWeiter_Click(object sender, RoutedEventArgs e)
         {
             int newTab = Tab.SelectedIndex + 1;
-
             if (newTab >= Tab.Items.Count)
                 newTab = 0;
             Tab.SelectedIndex = newTab;
@@ -36,11 +35,73 @@ namespace Sprint_2
         private void btnZurueck_Click(object sender, RoutedEventArgs e)
         {
             int newTab = Tab.SelectedIndex - 1;
-
-            if (newTab < 0)
+            if (newTab < 0 )
                 newTab = Tab.Items.Count - 1;
             Tab.SelectedIndex = newTab;
         }
+        //Zahnradauswahl        
+        public int zahnradAuswahl()
+        {
+            if (Stirnrad.IsChecked == true)
+            {
+                return 1;
+            }
+            else if (Innenverzahnung.IsChecked == true)
+            {
+                return 2;
+            }
+            else if (Kegelrad.IsChecked == true)
+            {
+                return 3;
+            }
+            else if (Schneckentrieb.IsChecked == true)
+            {
+                return 4;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        private void stirnrad_Checked(object sender, RoutedEventArgs e)
+        {
+            if(Stirnrad.IsChecked == true)
+            {
+                Innenverzahnung.IsChecked = false;
+                Kegelrad.IsChecked = false;
+                Schneckentrieb.IsChecked = false;
+            }
+        }
+        private void innenverzahnung_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Innenverzahnung.IsChecked == true)
+            {
+                Stirnrad.IsChecked = false;
+                Kegelrad.IsChecked = false;
+                Schneckentrieb.IsChecked = false;
+            }
+        }
+        private void kegelrad_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Kegelrad.IsChecked == true)
+            {
+                Stirnrad.IsChecked = false;
+                Innenverzahnung.IsChecked = false;
+                Schneckentrieb.IsChecked = false;
+            }
+        }
+        private void schneckentrieb_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Schneckentrieb.IsChecked == true)
+            {
+                Stirnrad.IsChecked = false;
+                Innenverzahnung.IsChecked = false;
+                Kegelrad.IsChecked = false;
+            }
+        }
+
+       
+
         private void rb_m_t_Checked(object sender, RoutedEventArgs e)
         {
             txtBox_Modul_1.IsEnabled = true;
@@ -119,45 +180,50 @@ namespace Sprint_2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
-            if (rb_m_t.IsChecked == true)
+            if (zahnradAuswahl() != 0)
             {
-                Double.TryParse(txtBox_Modul_1.Text, out m);
-                Double.TryParse(txtBox_Teilkreis_1.Text, out d);
+                if (rb_m_t.IsChecked == true)
+                {
+                    Double.TryParse(txtBox_Modul_1.Text, out m);
+                    Double.TryParse(txtBox_Teilkreis_1.Text, out d);
 
-                z = d / m;
+                    z = d / m;
 
-                lbl_Modul.Content = "Modul:" + m;
-                lbl_Teilekreis.Content = "Teilkreis:" + d;
-                lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                    lbl_Modul.Content = "Modul:" + m;
+                    lbl_Teilekreis.Content = "Teilkreis:" + d;
+                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
+                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                }
+
+                if (rb_m_z.IsChecked == true)
+                {
+                    Double.TryParse(txtBox_Modul_2.Text, out m);
+                    Double.TryParse(txtBox_Zähnezahl_1.Text, out z);
+
+                    d = z * m;
+
+                    lbl_Modul.Content = "Modul:" + m;
+                    lbl_Teilekreis.Content = "Teilkreis:" + d;
+                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
+                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                }
+
+                if (rb_t_z.IsChecked == true)
+                {
+                    Double.TryParse(txtBox_Teilkreis_2.Text, out d);
+                    Double.TryParse(txtBox_Zähnezahl_2.Text, out z);
+
+                    m = d / z;
+
+                    lbl_Modul.Content = "Modul:" + m;
+                    lbl_Teilekreis.Content = "Teilkreis:" + d;
+                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
+                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                }
             }
-
-            if (rb_m_z.IsChecked == true)
+            else
             {
-                Double.TryParse(txtBox_Modul_2.Text, out m);
-                Double.TryParse(txtBox_Zähnezahl_1.Text, out z);
-
-                d = z * m;
-
-                lbl_Modul.Content = "Modul:" + m;
-                lbl_Teilekreis.Content = "Teilkreis:" + d;
-                lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-            }
-
-            if (rb_t_z.IsChecked == true)
-            {
-                Double.TryParse(txtBox_Teilkreis_2.Text, out d);
-                Double.TryParse(txtBox_Zähnezahl_2.Text, out z);
-
-                m = d / z;
-
-                lbl_Modul.Content = "Modul:" + m;
-                lbl_Teilekreis.Content = "Teilkreis:" + d;
-                lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                MessageBox.Show("Zahnradtyp wurde nicht ausgewählt", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

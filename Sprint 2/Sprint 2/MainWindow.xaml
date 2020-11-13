@@ -39,7 +39,7 @@
                     <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Bitte wählen Sie einen Zahnrad Typ aus:</Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton TextBlock.FontSize="16" >Stirnrad</RadioButton>
+                        <RadioButton Name="Stirnrad" Checked="stirnrad_Checked" TextBlock.FontSize="16" >Stirnrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
                         <Image Source= "/Beispielbild Zahnrad.jpg" Height="135" ></Image>
@@ -47,7 +47,7 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton TextBlock.FontSize="16" >Innenverzahnung</RadioButton>
+                        <RadioButton Name="Innenverzahnung" Checked="innenverzahnung_Checked" TextBlock.FontSize="16" >Innenverzahnung</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
                         <Image  Source= "/Innenverzahnung.jpg" Height="135"  ></Image>
@@ -55,14 +55,14 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton TextBlock.FontSize="16" >Kegelrad</RadioButton>
+                        <RadioButton Name="Kegelrad" Checked="kegelrad_Checked" TextBlock.FontSize="16" >Kegelrad</RadioButton>
                     </Label>
                     <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">
                         <Image  Source= "/Kegelrad.png" Height="135"  ></Image>
                     </Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton TextBlock.FontSize="16" >Schneckentrieb</RadioButton>
+                        <RadioButton Name="Schneckentrieb" Checked="schneckentrieb_Checked" TextBlock.FontSize="16" >Schneckentrieb</RadioButton>
                     </Label>
                     <Label Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
                         <Image  Source= "/Schneckengetriebe.png" Height="135"  ></Image>
