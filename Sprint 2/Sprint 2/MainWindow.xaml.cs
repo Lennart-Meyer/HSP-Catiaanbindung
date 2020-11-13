@@ -113,7 +113,7 @@ namespace Sprint_2
             }
             else if (rb_Sonstige.IsChecked == true)
             {
-                lbl_Material.Content = "Es wurde Sonstige gewählt";
+                lbl_Material.Content = "Es wurde Sonstige gewählt:\n" + txt_sonstige.Text;
             }
         }
 
