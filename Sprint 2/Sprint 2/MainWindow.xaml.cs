@@ -97,6 +97,26 @@ namespace Sprint_2
         double m;
         double d;
 
+        private void Button_bes(object sender, RoutedEventArgs e)
+        {
+            if (rb_Stahl.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Stahl gewählt";
+            }
+            else if (rb_Messing.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Messing gewählt";
+            }
+            else if (rb_Plastik.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Plastik gewählt";
+            }
+            else if (rb_Sonstige.IsChecked == true)
+            {
+                lbl_Material.Content = "Es wurde Sonstige gewählt";
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -138,26 +158,6 @@ namespace Sprint_2
                 lbl_Teilekreis.Content = "Teilkreis:" + d;
                 lbl_Zähnezahl.Content = "Zähnezahl:" + z;
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-            }
-        }
-
-        private void Button_bes(object sender, RoutedEventArgs e)
-        {
-            if (rb_Stahl.IsChecked == true)
-            {
-                lbl_Material.Content = "Es wurde Stahl gewählt";
-            }
-            else if (rb_Messing.IsChecked == true)
-            {
-                lbl_Material.Content = "Es wurde Messing gewählt";
-            }
-            else if (rb_Plastik.IsChecked == true)
-            {
-                lbl_Material.Content = "Es wurde Plastik gewählt";
-            }
-            else if (rb_Sonstige.IsChecked == true)
-            {
-                lbl_Material.Content = "Es wurde Sonstige gewählt";
             }
         }
     }
