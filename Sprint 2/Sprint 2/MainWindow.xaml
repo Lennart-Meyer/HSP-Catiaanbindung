@@ -6,10 +6,23 @@
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
         Title="Berechnungprogram für Zahnräder " Height="600" Width="800">
+
+
     <DockPanel >
-        
-        
-        
+
+        <Window Width="60" >
+            <Window.Background>
+                <LinearGradientBrush EndPoint="0.9,1" StartPoint="0.5,0" >
+
+                        <GradientStop Color="#FF89CEFD" Offset="0" />
+                        <GradientStop Color="#FF5400A8" Offset="1" />
+                 
+                </LinearGradientBrush>
+            </Window.Background>
+        </Window>
+
+
+
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="2,5">
             <Button Name="btnPreviousTab" Margin="2" Click="btnZurueck_Click">Zurück</Button>
             <Button Name="btnWeiter" Margin="2" Click="btnWeiter_Click">Weiter</Button>
