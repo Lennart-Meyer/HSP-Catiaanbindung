@@ -143,6 +143,10 @@
                     <RadioButton x:Name="rb_Plastik" GroupName="Material">Plastik</RadioButton>
                     <RadioButton x:Name="rb_Sonstige" GroupName="Material">Sonstige</RadioButton>
 
+                    <Label>Wenn Sonstige ausgewählt wurde hier das gewünschte Material eintragen:</Label>
+                    <TextBox x:Name="txt_sonstige"></TextBox>
+                    <Label x:Name="lbl_sonstige"/>
+
                     <Button Click="Button_bes">Bestätige</Button>
                     <Label x:Name="lbl_Material"/>
 
