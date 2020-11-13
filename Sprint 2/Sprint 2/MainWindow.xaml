@@ -144,10 +144,10 @@
                     <RadioButton x:Name="rb_Sonstige" GroupName="Material">Sonstige</RadioButton>
 
                     <Label>Wenn Sonstige ausgewählt wurde, hier das gewünschte Material eintragen:</Label>
-                    <TextBox x:Name="txt_sonstige" Margin="5,5,500,20" ></TextBox>
+                    <TextBox x:Name="txt_sonstige" Margin="5,5,350,20" ></TextBox>
                     <Label x:Name="lbl_sonstige"/>
 
-                    <Button Click="Button_bes" Margin="20,5" >Bestätige</Button>
+                    <Button Click="Button_bes" Margin="5,5,350,20" >Bestätige</Button>
                     <Label x:Name="lbl_Material"/>
 
 
