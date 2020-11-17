@@ -5,19 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
-        Title="Berechnungprogram für Zahnräder " Height="600" Width="800">
+        Title="Berechnungprogram für Zahnräder " Height="600" Width="800" Foreground="#FF0942EE">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFE8461D" Offset="0"/>
+            <GradientStop Color="#FF1207BA" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.OpacityMask>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF6A67D9" Offset="0.058"/>
+            <GradientStop Color="#FF1813F2" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.OpacityMask>
+    <Window.BorderBrush>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF240DD8" Offset="0.137"/>
+            <GradientStop Color="#FFE61919" Offset="1"/>
+            <GradientStop Color="#FFD01616" Offset="0.946"/>
+            <GradientStop Color="#FFD01616" Offset="0.946"/>
+            <GradientStop Color="#FFE61919" Offset="0.953"/>
+        </LinearGradientBrush>
+    </Window.BorderBrush>
     <DockPanel >
-        
-        
-        
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="2,5">
+
+
+
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="2,5" Background="{x:Null}">
             <Button Name="btnPreviousTab" Margin="2" Click="btnZurueck_Click">Zurück</Button>
             <Button Name="btnWeiter" Margin="2" Click="btnWeiter_Click">Weiter</Button>
         </StackPanel>
 
         <Label Padding="15" HorizontalAlignment="Center" DockPanel.Dock="Top" TextBlock.FontSize="30">Berechnungsprogramm für Zahnräder Gruppe H</Label>
-        
-        <TabControl Name="Tab" TabStripPlacement="Left" Width="797">
+
+        <TabControl Name="Tab" TabStripPlacement="Left" Width="797" Background="{x:Null}">
             <TabItem Height="Auto" Header="Zahnradtyp" TextBlock.FontSize="18">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -72,7 +93,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Height="Auto" Header="Berechnung" TextBlock.FontSize="18">
+            <TabItem Height="Auto" Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}">
                 <Label>
                     <Grid Width="670">
 
@@ -134,25 +155,25 @@
                     </Grid>
                 </Label>
             </TabItem>
-            <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" >
+            <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" Background="{x:Null}" >
                 <StackPanel>
-                        <Label>Wählen Sie das Material des Zahnrades aus:</Label>
-                        <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material">Stahl</RadioButton>
-                        <RadioButton x:Name="rb_Messing" GroupName="Material">Messing</RadioButton>
-                        <RadioButton x:Name="rb_Plastik" GroupName="Material">Plastik</RadioButton>
-                        <RadioButton x:Name="rb_Sonstige" GroupName="Material" >Sonstige</RadioButton>
+                    <Label>Wählen Sie das Material des Zahnrades aus:</Label>
+                    <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material">Stahl</RadioButton>
+                    <RadioButton x:Name="rb_Messing" GroupName="Material">Messing</RadioButton>
+                    <RadioButton x:Name="rb_Plastik" GroupName="Material">Plastik</RadioButton>
+                    <RadioButton x:Name="rb_Sonstige" GroupName="Material" >Sonstige</RadioButton>
 
-                        <Label>Wenn Sonstige ausgewählt wurde hier das gewünschte Material eintragen:</Label>
-                        <TextBox x:Name="txt_sonstige"></TextBox>
-                        <Label x:Name="lbl_sonstige"/>
+                    <Label>Wenn Sonstige ausgewählt wurde hier das gewünschte Material eintragen:</Label>
+                    <TextBox x:Name="txt_sonstige"></TextBox>
+                    <Label x:Name="lbl_sonstige"/>
 
-                        <Button Margin="0,20" Click="Button_bes">Bestätige</Button>
-                        <Label x:Name="lbl_Material"/>
+                    <Button Margin="0,20" Click="Button_bes">Bestätige</Button>
+                    <Label x:Name="lbl_Material"/>
 
-                    </StackPanel>
-      
+                </StackPanel>
+
             </TabItem>
-            <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" >
+            <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" Background="{x:Null}">
                 <Label>
                     <TextBlock Name="ergebnis" Text="Ergebnis:"/>
                 </Label>
