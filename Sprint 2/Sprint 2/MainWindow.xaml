@@ -98,7 +98,7 @@
 
                         </Grid.ColumnDefinitions>
 
-                        
+
                         <Label Margin="20,0,0,0" HorizontalContentAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2" TextBlock.FontSize="16">Bitte wählen Sie die Eingabemöglichkeit aus:</Label>
 
 
@@ -134,7 +134,24 @@
                     </Grid>
                 </Label>
             </TabItem>
+            <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" >
+                <StackPanel>
+                        <Label>Wählen Sie das Material des Zahnrades aus:</Label>
+                        <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material">Stahl</RadioButton>
+                        <RadioButton x:Name="rb_Messing" GroupName="Material">Messing</RadioButton>
+                        <RadioButton x:Name="rb_Plastik" GroupName="Material">Plastik</RadioButton>
+                        <RadioButton x:Name="rb_Sonstige" GroupName="Material" >Sonstige</RadioButton>
 
+                        <Label>Wenn Sonstige ausgewählt wurde hier das gewünschte Material eintragen:</Label>
+                        <TextBox x:Name="txt_sonstige"></TextBox>
+                        <Label x:Name="lbl_sonstige"/>
+
+                        <Button Margin="0,20" Click="Button_bes">Bestätige</Button>
+                        <Label x:Name="lbl_Material"/>
+
+                    </StackPanel>
+      
+            </TabItem>
             <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" >
                 <Label>
                     <TextBlock Name="ergebnis" Text="Ergebnis:"/>
