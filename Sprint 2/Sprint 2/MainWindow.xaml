@@ -102,9 +102,9 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
+                            <RowDefinition Height="50"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="40"></RowDefinition>
                             <RowDefinition Height="40"></RowDefinition>
@@ -113,44 +113,25 @@
 
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="183*"></ColumnDefinition>
+                            <ColumnDefinition Width="264*"></ColumnDefinition>
+                            <ColumnDefinition Width="223*"></ColumnDefinition>
 
                         </Grid.ColumnDefinitions>
 
 
                         <Label Margin="20,0,0,0" HorizontalContentAlignment="Left" Grid.Row="1" Grid.ColumnSpan="2" TextBlock.FontSize="16">Bitte wählen Sie die Eingabemöglichkeit aus:</Label>
+                        <Label Margin="35,20,0,51" Grid.Row="4" TextBlock.FontSize="16" Grid.RowSpan="2">Modul:</Label>
+                        <TextBox IsEnabled="True" x:Name="txtBox_Modul" Margin="0,20,150,0" Grid.Row="4" Grid.Column="1" TextBlock.FontSize="16" TextChanged="txtBox_Modul_TextChanged"></TextBox>
+                        <Label Margin="35,20,0,51" Grid.Row="5" TextBlock.FontSize="16" Grid.RowSpan="2">Teilkreis in mm:</Label>
+                        <TextBox IsEnabled="True" x:Name="txtBox_Teilkreis" Margin="0,20,150,0" Grid.Row="5" Grid.Column="1" TextBlock.FontSize="16" TextChanged="txtBox_Teilkreis_TextChanged"></TextBox>
+                        <Label Margin="35,20,0,40" Grid.Row="6" Grid.Column="0" TextBlock.FontSize="16" Grid.RowSpan="3">Zähnezahl:</Label>
+                        <TextBox IsEnabled="True" x:Name="txtBox_Zähnezahl" Margin="0,20,150,0" Grid.Row="6" Grid.Column="1" TextBlock.FontSize="16" TextChanged="txtBox_Zähnezahl_TextChanged"></TextBox>
 
-
-                        <RadioButton x:Name="rb_m_t" GroupName="Auswahl" Checked="rb_m_t_Checked" Unchecked="rb_m_t_Unchecked" 
-                        Margin="20,20,0,0" Grid.Row="2" TextBlock.FontSize="16">Modul und Teilkreis</RadioButton>
-                        <Label Margin="35,20,0,0" Grid.Row="3" TextBlock.FontSize="16">Modul:</Label>
-                        <TextBox IsEnabled="False" x:Name="txtBox_Modul_1" Margin="35,0,100,0" Grid.Row="4" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
-                        <Label Margin="35,20,0,0" Grid.Row="5" TextBlock.FontSize="16">Teilkreis in mm:</Label>
-                        <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="0" TextBlock.FontSize="16"></TextBox>
-
-                        <RadioButton x:Name="rb_m_z" GroupName="Auswahl" Checked="rb_m_z_Checked" Unchecked="rb_m_z_Unchecked"
-                        Margin="20,20,0,0" Grid.Row="2" Grid.Column="1" TextBlock.FontSize="16">Modul und Zähnezahl</RadioButton>
-                        <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="1" TextBlock.FontSize="16">Modul:</Label>
-                        <TextBox IsEnabled="False" x:Name="txtBox_Modul_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
-                        <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="1" TextBlock.FontSize="16">Zähnezahl:</Label>
-                        <TextBox IsEnabled="False" x:Name="txtBox_Zähnezahl_1" Margin="35,0,100,0" Grid.Row="6" Grid.Column="1" TextBlock.FontSize="16"></TextBox>
-
-
-
-                        <RadioButton x:Name="rb_t_z" GroupName="Auswahl" Checked="rb_t_z_Checked" Unchecked="rb_t_z_Unchecked"
-                        Margin="20,20,0,0" Grid.Row="2" Grid.Column="2" TextBlock.FontSize="16">Teilkreis und Zähnezahl</RadioButton>
-                        <Label Margin="35,20,0,0" Grid.Row="3" Grid.Column="2" TextBlock.FontSize="16">Teilkreis in mm:</Label>
-                        <TextBox IsEnabled="False" x:Name="txtBox_Teilkreis_2" Margin="35,0,100,0" Grid.Row="4" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
-                        <Label Margin="35,20,0,0" Grid.Row="5" Grid.Column="2" TextBlock.FontSize="16">Zähnezahl:</Label>
-                        <TextBox IsEnabled="False" x:Name="txtBox_Zähnezahl_2" Margin="35,0,100,0" Grid.Row="6" Grid.Column="2" TextBlock.FontSize="16"></TextBox>
-
-                        <Label Margin="20,30,0,0" Grid.Row="7" Grid.Column="0" TextBlock.FontSize="16" >Ergebnis:</Label>
-                        <Label x:Name="lbl_Modul" Margin="0,0,0,0" Grid.Row="8" TextBlock.FontSize="16" ></Label>
-                        <Label x:Name="lbl_Teilekreis" Grid.Row="9" TextBlock.FontSize="16" ></Label>
-                        <Label x:Name="lbl_Zähnezahl" Grid.Row="10" TextBlock.FontSize="16" ></Label>
-                        <Button Margin="10,0,10,0" Grid.Row="10" Grid.Column="2" Click="Button_Click" RenderTransformOrigin="0.5,0.5" TextBlock.FontSize="16" >Berechnen
+                        <Label x:Name="lbl_Modul" Margin="0,0,0,40" Grid.Row="8" TextBlock.FontSize="16" Grid.RowSpan="2" ></Label>
+                        <Label x:Name="lbl_Teilekreis" Grid.Row="9" TextBlock.FontSize="16" Margin="0,0,0,40" Grid.RowSpan="2" ></Label>
+                        <Label x:Name="lbl_Zähnezahl" Grid.Row="10" TextBlock.FontSize="16" Grid.RowSpan="2" ></Label>
+                        <Button Margin="10,0,10,0" Grid.Row="10" Grid.Column="2" Click="Button_Click" RenderTransformOrigin="0.5,0.5" TextBlock.FontSize="16" Grid.RowSpan="2" >Berechnen
                         </Button>
                     </Grid>
                 </Label>
