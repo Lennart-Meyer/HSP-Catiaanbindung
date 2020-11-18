@@ -27,10 +27,14 @@ namespace Sprint_2
 
         private void btnWeiter_Click(object sender, RoutedEventArgs e)
         {
+            if (Tab.SelectedIndex + 1 < Tab.Items.Count)
+                Tab.SelectedIndex++;
+            /*
             int newTab = Tab.SelectedIndex + 1;
             if (newTab >= Tab.Items.Count)
                 newTab = 0;
             Tab.SelectedIndex = newTab;
+            */
         }
         private void btnZurueck_Click(object sender, RoutedEventArgs e)
         {
@@ -63,42 +67,7 @@ namespace Sprint_2
                 return 0;
             }
         }
-        private void stirnrad_Checked(object sender, RoutedEventArgs e)
-        {
-            if(Stirnrad.IsChecked == true)
-            {
-                Innenverzahnung.IsChecked = false;
-                Kegelrad.IsChecked = false;
-                Schneckentrieb.IsChecked = false;
-            }
-        }
-        private void innenverzahnung_Checked(object sender, RoutedEventArgs e)
-        {
-            if (Innenverzahnung.IsChecked == true)
-            {
-                Stirnrad.IsChecked = false;
-                Kegelrad.IsChecked = false;
-                Schneckentrieb.IsChecked = false;
-            }
-        }
-        private void kegelrad_Checked(object sender, RoutedEventArgs e)
-        {
-            if (Kegelrad.IsChecked == true)
-            {
-                Stirnrad.IsChecked = false;
-                Innenverzahnung.IsChecked = false;
-                Schneckentrieb.IsChecked = false;
-            }
-        }
-        private void schneckentrieb_Checked(object sender, RoutedEventArgs e)
-        {
-            if (Schneckentrieb.IsChecked == true)
-            {
-                Stirnrad.IsChecked = false;
-                Innenverzahnung.IsChecked = false;
-                Kegelrad.IsChecked = false;
-            }
-        }
+        
 
 
         private void Button_bes(object sender, RoutedEventArgs e)
@@ -121,177 +90,74 @@ namespace Sprint_2
             }
         }
         
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        
         double z;
         double m;
         double d;
-        private void txtBox_Modul_TextChanged(object sender, TextChangedEventArgs e)
+        
+
+        
+
+        
+
+       
+        private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
-            if (zahnradAuswahl() != 0)
-            {
-                
-                string eingabeModul = txtBox_Modul.Text;
-                string eingabeTeilkreis = txtBox_Teilkreis.Text;
-                string eingabeZaehnezahl = txtBox_Zähnezahl.Text;
-
-                if(eingabeModul.Length > 0 && eingabeTeilkreis.Length > 0)
-                {
-                    Double.TryParse(eingabeModul, out m);
-                    Double.TryParse(eingabeTeilkreis, out d);
-
-                    if( m <= 0 || d <= 0)
-                    {
-                        MessageBox.Show("Werte können nicht negativ sein.\n Eingabe bitte wiederholen", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    z = d / m;
-                    txtBox_Zähnezahl.Text = Convert.ToString(z);
-                    lbl_Modul.Content = "Modul:" + m;
-                    lbl_Teilekreis.Content = "Teilkreis:" + d;
-                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                }else if(eingabeModul.Length > 0 && eingabeZaehnezahl.Length > 0)
-                {
-                    Double.TryParse(eingabeModul, out m);
-                    Double.TryParse(eingabeZaehnezahl, out z);
-
-                    d = m * z;
-                    if (m <= 0 || z <= 0)
-                    {
-                        MessageBox.Show("Werte können nicht negativ sein.\n Eingabe bitte wiederholen", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    txtBox_Teilkreis.Text = Convert.ToString(d);
-                    lbl_Modul.Content = "Modul:" + m;
-                    lbl_Teilekreis.Content = "Teilkreis:" + d;
-                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                }
-                else
-                {
-                    return;
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Zahnradtyp wurde nicht ausgewählt", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            txtBlock_EingabeName1.Text = "Modul";
+            txtBlock_EingabeName2.Text = "Teilkreisdurchmesser";
+            txtBox_Eingabe1.Text = "";
+            txtBox_Eingabe2.Text = "";
+            txtBlock_Ergebnis.Text = "Ergebnis: ";
         }
 
-        private void txtBox_Teilkreis_TextChanged(object sender, TextChangedEventArgs e)
+        private void rb_berechnung2_Checked(object sender, RoutedEventArgs e)
         {
-            if (zahnradAuswahl() != 0)
-            {
-
-                string eingabeModul = txtBox_Modul.Text;
-                string eingabeTeilkreis = txtBox_Teilkreis.Text;
-                string eingabeZaehnezahl = txtBox_Zähnezahl.Text;
-
-                if (eingabeTeilkreis.Length > 0 && eingabeModul.Length > 0)
-                {
-                    Double.TryParse(eingabeTeilkreis, out d);
-                    Double.TryParse(eingabeModul, out m);
-                    
-
-                    z = d / m;
-
-                    if (m <= 0 || d <= 0)
-                    {
-                        MessageBox.Show("Werte können nicht negativ sein.\n Eingabe bitte wiederholen", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-
-                    txtBox_Zähnezahl.Text = Convert.ToString(z);
-                    lbl_Modul.Content = "Modul:" + m;
-                    lbl_Teilekreis.Content = "Teilkreis:" + d;
-                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                }
-                else if (eingabeTeilkreis.Length > 0 && eingabeZaehnezahl.Length > 0)
-                {
-                    Double.TryParse(eingabeTeilkreis, out d);
-                    Double.TryParse(eingabeZaehnezahl, out z);
-
-                    m = d / z;
-
-                    if (z <= 0 || d <= 0)
-                    {
-                        MessageBox.Show("Werte können nicht negativ sein.\n Eingabe bitte wiederholen", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-
-                    txtBox_Modul.Text = Convert.ToString(m);
-                    lbl_Modul.Content = "Modul:" + m;
-                    lbl_Teilekreis.Content = "Teilkreis:" + d;
-                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                }
-                else
-                {
-                    return;
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Zahnradtyp wurde nicht ausgewählt", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            txtBlock_EingabeName1.Text = "Modul";
+            txtBlock_EingabeName2.Text = "Zähnezahl";
+            txtBox_Eingabe1.Text = "";
+            txtBox_Eingabe2.Text = "";
+            txtBlock_Ergebnis.Text = "Ergebnis: ";
         }
 
-        private void txtBox_Zähnezahl_TextChanged(object sender, TextChangedEventArgs e)
+        private void rb_berechnung3_Checked(object sender, RoutedEventArgs e)
         {
-            if (zahnradAuswahl() != 0)
+            txtBlock_EingabeName1.Text = "Teilkreisdurchmesser";
+            txtBlock_EingabeName2.Text = "Zähnezahl";
+            txtBox_Eingabe1.Text = "";
+            txtBox_Eingabe2.Text = "";
+            txtBlock_Ergebnis.Text = "Ergebnis: ";
+        }
+
+        private void btnAuswahl_Click(object sender, RoutedEventArgs e)
+        {
+            if(rb_berechnung1.IsChecked == true)
             {
+                Double.TryParse(txtBox_Eingabe1.Text, out m);
+                Double.TryParse(txtBox_Eingabe2.Text, out d);
 
-                string eingabeModul = txtBox_Modul.Text;
-                string eingabeTeilkreis = txtBox_Teilkreis.Text;
-                string eingabeZaehnezahl = txtBox_Zähnezahl.Text;
+                z = m / d;
 
-                if ( eingabeZaehnezahl.Length > 0 && eingabeModul.Length > 0)
-                {
-                    Double.TryParse(eingabeZaehnezahl, out z);
-                    Double.TryParse(eingabeModul, out m);
-
-                    d = z * m;
-
-                    if (z <= 0 || m <= 0)
-                    {
-                        MessageBox.Show("Werte können nicht negativ sein.\n Eingabe bitte wiederholen", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-
-                    txtBox_Teilkreis.Text = Convert.ToString(d);
-                    lbl_Modul.Content = "Modul:" + m;
-                    lbl_Teilekreis.Content = "Teilkreis:" + d;
-                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                }
-                else if (eingabeZaehnezahl.Length > 0 && eingabeTeilkreis.Length > 0)
-                {
-                    Double.TryParse(eingabeZaehnezahl, out z);
-                    Double.TryParse(eingabeTeilkreis, out d);
-
-                    m = d / z;
-
-                    if (z <= 0 || d <= 0)
-                    {
-                        MessageBox.Show("Werte können nicht negativ sein.\n Eingabe bitte wiederholen", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-
-                    txtBox_Modul.Text = Convert.ToString(m);
-                    lbl_Modul.Content = "Modul:" + m;
-                    lbl_Teilekreis.Content = "Teilkreis:" + d;
-                    lbl_Zähnezahl.Content = "Zähnezahl:" + z;
-                    ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                }
-                else
-                {
-                    return;
-                }
-
-            }
-            else
+                txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+            }else if(rb_berechnung2.IsChecked == true)
             {
-                MessageBox.Show("Zahnradtyp wurde nicht ausgewählt", "FehlerMeldung!", MessageBoxButton.OK, MessageBoxImage.Error);
+                Double.TryParse(txtBox_Eingabe1.Text, out m);
+                Double.TryParse(txtBox_Eingabe2.Text, out z);
+
+                d = m / z;
+
+                txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+            }else
+            if(rb_berechnung3.IsChecked == true)
+            {
+                Double.TryParse(txtBox_Eingabe1.Text, out d);
+                Double.TryParse(txtBox_Eingabe2.Text, out z);
+
+                m = d * z;
+
+                txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }
         }
     }
