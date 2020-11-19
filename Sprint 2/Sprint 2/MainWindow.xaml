@@ -140,21 +140,28 @@
                 
             </TabItem>
             <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" Background="{x:Null}" >
-                <StackPanel>
-                    <Label>Wählen Sie das Material des Zahnrades aus:</Label>
-                    <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material">Stahl</RadioButton>
-                    <RadioButton x:Name="rb_Messing" GroupName="Material">Messing</RadioButton>
-                    <RadioButton x:Name="rb_Plastik" GroupName="Material">Plastik</RadioButton>
-                    <RadioButton x:Name="rb_Sonstige" GroupName="Material" >Sonstige</RadioButton>
+                <Grid>
+                    <StackPanel>
+                        <Label Content="Wählen Sie das Material des Zahnrades aus:"/>
 
-                    <Label>Wenn Sonstige ausgewählt wurde hier das gewünschte Material eintragen:</Label>
-                    <TextBox x:Name="txt_sonstige"></TextBox>
-                    <Label x:Name="lbl_sonstige"/>
+                        <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material" Content="Stahl"/>
+                        <RadioButton x:Name="rb_Messing" GroupName="Material" Content="Messing"/>
+                        <RadioButton x:Name="rb_Plastik" GroupName="Material" Content="Plastik"/>
 
-                    <Button Margin="0,20" Click="Button_bes">Bestätige</Button>
-                    <Label x:Name="lbl_Material"/>
+                        <Grid>
+                            <Expander Margin="215,6,-483,-26" Content="Wählen Sie das Material des Zahnrades aus:"/>
+                            <Label Content="Information zum Material:"/>
+                        </Grid>
 
-                </StackPanel>
+                        <Button Margin="0,20" Click="Button_bes" Content="Bestätige"/>
+                        <Label x:Name="lbl_Material"/>
+                    </StackPanel>
+
+                    <StackPanel>
+                        <Label Content="Geben Sie die Breite (in mm) an:" Margin="0,200" Grid.ColumnSpan="3"/>
+                    </StackPanel>
+
+                </Grid>
 
             </TabItem>
             <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" Background="{x:Null}">
