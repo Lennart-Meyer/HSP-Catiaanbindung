@@ -192,5 +192,23 @@ namespace Sprint_2
         {
 
         }
+
+        private void cBox_Kopfspiel_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBox_Kopfspiel.Visibility = Visibility.Visible;
+            txtBlock_Kopfspiel.Visibility = Visibility.Visible;
+        }
+
+        private void cBox_Zahnflankenwinkel_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBox_Zahnflankenwinkel.Visibility = Visibility.Visible;
+            txtBlock_Zahnflankenwinkel.Visibility = Visibility.Visible;
+        }
+
+        private void cBox_Verdrehen_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBox_Verdrehen.Visibility = Visibility.Visible;
+            txtBlock_Verdrehen.Visibility = Visibility.Visible;
+        }
     }
 }

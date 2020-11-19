@@ -39,6 +39,9 @@
         <Label Padding="15" HorizontalAlignment="Center" DockPanel.Dock="Top" TextBlock.FontSize="30">Berechnungsprogramm für Zahnräder Gruppe H</Label>
 
         <TabControl Name="Tab" TabStripPlacement="Left" Width="797" Background="{x:Null}">
+            <!--
+            Zahnradtypauswahl
+            -->
             <TabItem Height="Auto" Header="Zahnradtyp" TextBlock.FontSize="18">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -93,8 +96,12 @@
                 </Grid>
 
             </TabItem>
+            <!--
+            Berechnungsauswahl
+            -->
             <TabItem Height="Auto" Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}">
                 <StackPanel>
+                    <!-- Auswahlgrid-->
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -119,10 +126,22 @@
                         <Label Grid.Row="3" Grid.Column="0">
                             <RadioButton Name="rb_berechnung3" GroupName="Berechnung" Checked="rb_berechnung3_Checked">Teilkreisdurchmesser und Zähnezahl</RadioButton>
                         </Label>
-
+                        <Label Grid.Row="1" Grid.Column="1">
+                            <CheckBox Name="cBox_Kopfspiel" Checked="cBox_Kopfspiel_Checked">Kopfspiel anpassen (Standard: 0,167mm)</CheckBox>                            
+                        </Label>
+                        <Label Grid.Row="2" Grid.Column="1">
+                            <CheckBox Name="cBox_Zahnflankenwinkel" Checked="cBox_Zahnflankenwinkel_Checked">Zahnflankenwinkel (Standard: 20°)</CheckBox>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="1">
+                            <CheckBox Name="cBox_Verdrehen" Checked="cBox_Verdrehen_Checked">Verdrehen</CheckBox>
+                        </Label>
                     </Grid>
+                    <!-- Eingabegrid-->
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -135,6 +154,7 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
+                        
                         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_EingabeName1"  Text="Eingabe 1"></TextBlock>
                         </Label>
@@ -147,30 +167,54 @@
                         <Label Grid.Row="1" Grid.Column="1">
                             <TextBox Name="txtBox_Eingabe2"  Width="100" Text=""></TextBox>
                         </Label>
-                        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right">
+                        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Dicke" Text="Dicke:"></TextBlock>
                         </Label>
-                        <Label Grid.Row="0" Grid.Column="3">
+                        <Label Grid.Row="2" Grid.Column="1">
                             <TextBox Name="txtBox_Dicke" Width="100" ></TextBox>
                         </Label>
-                        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">
+                        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_SchmaleSeite" Visibility="Hidden" HorizontalAlignment="Right">Durchmesser schmale Seite</TextBlock>
                         </Label>
-                        <Label Grid.Row="2" Grid.Column="1">
+                        <Label Grid.Row="3" Grid.Column="1">
                             <TextBox Name="txtBox_Schmaleseite" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
-                        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
+                        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_BreiteSeite"  Visibility="Hidden" HorizontalAlignment="Right">Durchmesser breite Seite</TextBlock>
                         </Label>
-                        <Label Grid.Row="3" Grid.Column="1">
+                        <Label Grid.Row="4" Grid.Column="1">
                             <TextBox Name="txtBox_Breiteseite" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
+                        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_Kopfspiel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfspiel:</TextBlock>
+                        </Label>
+                        <Label Grid.Row="5" Grid.Column="1">
+                            <TextBox Name="txtBox_Kopfspiel" Width="100" Visibility="Hidden"></TextBox>
+                        </Label>
+                        <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_Zahnflankenwinkel"  Visibility="Hidden" HorizontalAlignment="Right">Zahnflankenwinkel:</TextBlock>
+                        </Label>
+                        <Label Grid.Row="6" Grid.Column="1">
+                            <TextBox Name="txtBox_Zahnflankenwinkel" Width="100" Visibility="Hidden"></TextBox>
+                        </Label>
+                        <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_Verdrehen"  Visibility="Hidden" HorizontalAlignment="Right">Verdrehen um:</TextBlock>
+                        </Label>
+                        <Label Grid.Row="7" Grid.Column="1">
+                            <TextBox Name="txtBox_Verdrehen" Width="100" Visibility="Hidden"></TextBox>
+                        </Label>
+                        <Label Grid.Row="8" Grid.Column="1">
+                            <Button Margin="0,20" Click="btnAuswahl_Click" Width="200">Bestätige</Button>
+                        </Label>
                     </Grid>
-                    <Button Margin="0,20" Click="btnAuswahl_Click" Width="200">Bestätige</Button>
+                    
                     <TextBlock Name="txtBlock_Ergebnis" Margin="10,10" Text=""></TextBlock>
                 </StackPanel>
                 
             </TabItem>
+            <!--
+            Materialauswahl
+            -->
             <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" Background="{x:Null}" >
                 <Grid>
                     <StackPanel>
@@ -196,6 +240,9 @@
                 </Grid>
 
             </TabItem>
+            <!--
+            Ergebnis
+            -->
             <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" Background="{x:Null}">
                 <Label>
                     <TextBlock Name="ergebnis" Text="Ergebnis:"/>
