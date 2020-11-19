@@ -84,10 +84,6 @@ namespace Sprint_2
             {
                 lbl_Material.Content = "Es wurde Plastik gewählt";
             }
-            else if (rb_Sonstige.IsChecked == true)
-            {
-                lbl_Material.Content = "Es wurde Sonstige gewählt:\n" + txt_sonstige.Text;
-            }
         }
         
         
