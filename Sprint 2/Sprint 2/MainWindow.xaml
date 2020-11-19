@@ -127,13 +127,13 @@
                             <RadioButton Name="rb_berechnung3" GroupName="Berechnung" Checked="rb_berechnung3_Checked">Teilkreisdurchmesser und Zähnezahl</RadioButton>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1">
-                            <CheckBox Name="cBox_Kopfspiel" Checked="cBox_Kopfspiel_Checked">Kopfspiel anpassen (Standard: 0,167mm)</CheckBox>                            
+                            <CheckBox Name="cBox_Kopfspiel" Checked="cBox_Kopfspiel_Checked" Unchecked="cBox_Kopfspiel_Unchecked">Kopfspiel anpassen (Standard: 0,167mm)</CheckBox>                            
                         </Label>
                         <Label Grid.Row="2" Grid.Column="1">
-                            <CheckBox Name="cBox_Zahnflankenwinkel" Checked="cBox_Zahnflankenwinkel_Checked">Zahnflankenwinkel (Standard: 20°)</CheckBox>
+                            <CheckBox Name="cBox_Zahnflankenwinkel" Checked="cBox_Zahnflankenwinkel_Checked" Unchecked="cBox_Zahnflankenwinkel_Unchecked">Zahnflankenwinkel (Standard: 20°)</CheckBox>
                         </Label>
                         <Label Grid.Row="3" Grid.Column="1">
-                            <CheckBox Name="cBox_Verdrehen" Checked="cBox_Verdrehen_Checked">Verdrehen</CheckBox>
+                            <CheckBox Name="cBox_Verdrehen" Checked="cBox_Verdrehen_Checked" Unchecked="cBox_Verdrehen_Unchecked">Verdrehen</CheckBox>
                         </Label>
                     </Grid>
                     <!-- Eingabegrid-->
@@ -147,9 +147,10 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -171,7 +172,7 @@
                             <TextBlock Name="txtBlock_Dicke" Text="Dicke:"></TextBlock>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="1">
-                            <TextBox Name="txtBox_Dicke" Width="100" ></TextBox>
+                            <TextBox Name="txtBox_Dicke" Width="100"></TextBox>
                         </Label>
                         <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_SchmaleSeite" Visibility="Hidden" HorizontalAlignment="Right">Durchmesser schmale Seite</TextBlock>
@@ -203,8 +204,8 @@
                         <Label Grid.Row="7" Grid.Column="1">
                             <TextBox Name="txtBox_Verdrehen" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
-                        <Label Grid.Row="8" Grid.Column="1">
-                            <Button Margin="0,20" Click="btnAuswahl_Click" Width="200">Bestätige</Button>
+                        <Label Grid.Row="9" Grid.Column="1">
+                            <Button Click="btnAuswahl_Click" >Bestätigen</Button>
                         </Label>
                     </Grid>
                     
@@ -229,7 +230,7 @@
                             <Label Content="Information zum Material:"/>
                         </Grid>
 
-                        <Button Margin="0,20" Click="Button_bes" Content="Bestätige"/>
+                        <Button Margin="0,20" Click="Button_bes" Content="Bestätigen"/>
                         <Label x:Name="lbl_Material"/>
                     </StackPanel>
 

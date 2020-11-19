@@ -40,10 +40,7 @@ namespace Sprint_2
         {
             if (Tab.SelectedIndex - 1 >= 0)
                 Tab.SelectedIndex--;
-            else
-            {
-                btnZurueck.IsEnabled = false;
-            }
+            
             /*
             int newTab = Tab.SelectedIndex - 1;
             if (newTab < 0 )
@@ -209,6 +206,24 @@ namespace Sprint_2
         {
             txtBox_Verdrehen.Visibility = Visibility.Visible;
             txtBlock_Verdrehen.Visibility = Visibility.Visible;
+        }
+
+        private void cBox_Kopfspiel_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBox_Kopfspiel.Visibility = Visibility.Hidden;
+            txtBlock_Kopfspiel.Visibility = Visibility.Hidden;
+        }
+
+        private void cBox_Zahnflankenwinkel_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBox_Zahnflankenwinkel.Visibility = Visibility.Hidden;
+            txtBlock_Zahnflankenwinkel.Visibility = Visibility.Hidden;
+        }
+
+        private void cBox_Verdrehen_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBox_Verdrehen.Visibility = Visibility.Hidden;
+            txtBlock_Verdrehen.Visibility = Visibility.Hidden;
         }
     }
 }
