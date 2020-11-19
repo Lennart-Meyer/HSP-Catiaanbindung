@@ -38,10 +38,18 @@ namespace Sprint_2
         }
         private void btnZurueck_Click(object sender, RoutedEventArgs e)
         {
+            if (Tab.SelectedIndex - 1 >= 0)
+                Tab.SelectedIndex--;
+            else
+            {
+                btnZurueck.IsEnabled = false;
+            }
+            /*
             int newTab = Tab.SelectedIndex - 1;
             if (newTab < 0 )
                 newTab = Tab.Items.Count - 1;
             Tab.SelectedIndex = newTab;
+            */
         }
         //Zahnradauswahl        
         public int zahnradAuswahl()
@@ -68,8 +76,6 @@ namespace Sprint_2
             }
         }
         
-
-
         private void Button_bes(object sender, RoutedEventArgs e)
         {
             if (rb_Stahl.IsChecked == true)
@@ -86,17 +92,10 @@ namespace Sprint_2
             }
         }
         
-        
         double z;
         double m;
         double d;
         
-
-        
-
-        
-
-       
         private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
             txtBlock_EingabeName1.Text = "Modul";
@@ -155,6 +154,43 @@ namespace Sprint_2
                 txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }
+        }
+        
+        private void Stirnrad_Checked(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Innenverzahnung_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Kegelrad_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBlock_SchmaleSeite.Visibility = Visibility.Visible;
+            txtBlock_BreiteSeite.Visibility = Visibility.Visible;
+            txtBox_Schmaleseite.Visibility = Visibility.Visible;
+            txtBox_Breiteseite.Visibility = Visibility.Visible;
+        }
+
+        private void Kegelrad_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBlock_SchmaleSeite.Visibility = Visibility.Hidden;
+            txtBlock_BreiteSeite.Visibility = Visibility.Hidden;
+            txtBox_Schmaleseite.Visibility = Visibility.Hidden;
+            txtBox_Breiteseite.Visibility = Visibility.Hidden;
+        }
+
+
+        private void Schneckentrieb_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Kegelrad_Unchecked_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

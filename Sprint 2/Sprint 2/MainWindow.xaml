@@ -32,7 +32,7 @@
 
 
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="2,5" Background="{x:Null}">
-            <Button Name="btnPreviousTab" IsEnabled ="False" Margin="2" Click="btnZurueck_Click">Zurück</Button>
+            <Button Name="btnZurueck" IsEnabled ="True" Margin="2" Click="btnZurueck_Click">Zurück</Button>
             <Button Name="btnWeiter" Margin="2" Click="btnWeiter_Click">Weiter</Button>
         </StackPanel>
 
@@ -60,7 +60,7 @@
                     <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Bitte wählen Sie einen Zahnrad Typ aus:</Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="16" >Stirnrad</RadioButton>
+                        <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Stirnrad_Checked" >Stirnrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
                         <Image Source= "/Beispielbild Zahnrad.jpg" Height="135" ></Image>
@@ -68,7 +68,7 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Innenverzahnung"  GroupName="Zahnradtyp" TextBlock.FontSize="16" >Innenverzahnung</RadioButton>
+                        <RadioButton Name="Innenverzahnung"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Innenverzahnung_Checked" >Innenverzahnung</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
                         <Image  Source= "/Innenverzahnung.jpg" Height="135"  ></Image>
@@ -76,14 +76,14 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="16" >Kegelrad</RadioButton>
+                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Kegelrad_Checked" Unchecked="Kegelrad_Unchecked">Kegelrad</RadioButton>
                     </Label>
                     <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">
                         <Image  Source= "/Kegelrad.png" Height="135"  ></Image>
                     </Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Schneckentrieb"  GroupName="Zahnradtyp" TextBlock.FontSize="16" >Schneckentrieb</RadioButton>
+                        <RadioButton Name="Schneckentrieb"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Schneckentrieb_Checked" >Schneckentrieb</RadioButton>
                     </Label>
                     <Label Padding="0,0,0,20" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
                         <Image  Source= "/Schneckengetriebe.png" Height="135"  ></Image>
@@ -95,13 +95,6 @@
             </TabItem>
             <TabItem Height="Auto" Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}">
                 <StackPanel>
-                    <Label>Wählen sie die Berechnungsart aus:</Label>
-                    <RadioButton Name="rb_berechnung1" GroupName="Berechnung" Checked="rb_berechnung1_Checked">Modul und Teilkreisdurchemsser</RadioButton>
-                    <RadioButton Name="rb_berechnung2" GroupName="Berechnung" Checked="rb_berechnung2_Checked">Modul und Zähnezahl</RadioButton>
-                    <RadioButton Name="rb_berechnung3" GroupName="Berechnung" Checked="rb_berechnung3_Checked">Teilkreisdurchmesser und Zähnezahl</RadioButton>
-
-                    
-                    <TextBlock Name="txtBlock_Ergebnis" Margin="10,10" Text=""></TextBlock>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -111,31 +104,70 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="314.17"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0">
+                        <Label Grid.Row="0" Grid.Column="0">Wählen sie die Berechnungsart aus:</Label>
+                        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <RadioButton Name="rb_berechnung1" GroupName="Berechnung" Checked="rb_berechnung1_Checked">Modul und Teilkreisdurchemsser</RadioButton>
+                        </Label>
+                        <Label Grid.Row="2" Grid.Column="0">
+                            <RadioButton Name="rb_berechnung2" GroupName="Berechnung" Checked="rb_berechnung2_Checked">Modul und Zähnezahl</RadioButton>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="0">
+                            <RadioButton Name="rb_berechnung3" GroupName="Berechnung" Checked="rb_berechnung3_Checked">Teilkreisdurchmesser und Zähnezahl</RadioButton>
+                        </Label>
+
+                    </Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_EingabeName1"  Text="Eingabe 1"></TextBlock>
                         </Label>
                         <Label Grid.Row="0" Grid.Column="1">
                             <TextBox Name="txtBox_Eingabe1"  Width="100" Text="" ></TextBox>
                         </Label>
-                        <Label Grid.Row="1" Grid.Column="0">
-                            <TextBlock Name="txtBlock_EingabeName2"  Text="Eingabe 2"></TextBlock>
+                        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_EingabeName2"  Text="Eingabe 2" ></TextBlock>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1">
-                            <TextBox Name="txtBox_Eingabe2"  Width="100" Text="" ></TextBox>
+                            <TextBox Name="txtBox_Eingabe2"  Width="100" Text=""></TextBox>
                         </Label>
-                        <Label Grid.Row="0" Grid.Column="2">
-                            <TextBlock Name="txtBlock_Breite" Text="Breite:"></TextBlock>
+                        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_Dicke" Text="Dicke:"></TextBlock>
                         </Label>
                         <Label Grid.Row="0" Grid.Column="3">
-                            <TextBox Name="txtBox_Breite" Width="100"></TextBox>
+                            <TextBox Name="txtBox_Dicke" Width="100" ></TextBox>
+                        </Label>
+                        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_SchmaleSeite" Visibility="Hidden" HorizontalAlignment="Right">Durchmesser schmale Seite</TextBlock>
+                        </Label>
+                        <Label Grid.Row="2" Grid.Column="1">
+                            <TextBox Name="txtBox_Schmaleseite" Width="100" Visibility="Hidden"></TextBox>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_BreiteSeite"  Visibility="Hidden" HorizontalAlignment="Right">Durchmesser breite Seite</TextBlock>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="1">
+                            <TextBox Name="txtBox_Breiteseite" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
                     </Grid>
                     <Button Margin="0,20" Click="btnAuswahl_Click" Width="200">Bestätige</Button>
+                    <TextBlock Name="txtBlock_Ergebnis" Margin="10,10" Text=""></TextBlock>
                 </StackPanel>
                 
             </TabItem>
