@@ -158,7 +158,7 @@
                     </StackPanel>
 
                     <StackPanel>
-                        <Label Content="Geben Sie die Breite (in mm) an:" Margin="0,200" Grid.ColumnSpan="3"/>
+                        <Label Content="Geben Sie die Breite (in mm) an:" Margin="0,300" Grid.ColumnSpan="3"/>
                     </StackPanel>
 
                 </Grid>
