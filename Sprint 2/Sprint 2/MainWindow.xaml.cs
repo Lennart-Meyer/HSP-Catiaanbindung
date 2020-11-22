@@ -132,11 +132,11 @@ namespace Sprint_2
                 txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
             }else if(rb_berechnung2.IsChecked == true)
-            {
+            { 
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
 
-                d = m * z;
+                d = m / z;
 
                 txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
