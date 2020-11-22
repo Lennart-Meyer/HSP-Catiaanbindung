@@ -127,7 +127,7 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out d);
 
-                z = m / d;
+                z = d / m;
 
                 txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
@@ -136,7 +136,7 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
 
-                d = m / z;
+                d = m * z;
 
                 txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
@@ -146,7 +146,7 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe1.Text, out d);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
 
-                m = d * z;
+                m = d /z;
 
                 txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
                 ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
