@@ -247,10 +247,10 @@
             <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" Background="{x:Null}">
                 <DockPanel >
                     <Label DockPanel.Dock="Top" Padding="20" HorizontalAlignment="Center">
-                        <TextBlock x:Name="ergebnis" FontSize="25" >Ergebnis</TextBlock>
+                        <TextBlock FontSize="25" >Ergebnis</TextBlock>
                     </Label>
-                    <Label>
-                        
+                    <Label HorizontalAlignment="Center">
+                        <TextBlock x:Name="ergebnis" DockPanel.Dock="Top" >Ergebnis_ausgabe</TextBlock>
                     </Label>
                 </DockPanel>
                 
