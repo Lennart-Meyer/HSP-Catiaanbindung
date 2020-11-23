@@ -245,17 +245,48 @@
             Ergebnis
             -->
             <TabItem Height="Auto" Header="Ergebnis" TextBlock.FontSize="18" Background="{x:Null}">
-                <DockPanel >
-                    <Label DockPanel.Dock="Top" Padding="20" HorizontalAlignment="Center">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="160" ></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Padding="25" HorizontalAlignment="Center">
                         <TextBlock FontSize="25" >Ergebnis</TextBlock>
                     </Label>
-                    <Label HorizontalAlignment="Center">
-                        <TextBlock x:Name="ergebnis" DockPanel.Dock="Top" >Ergebnis_ausgabe</TextBlock>
-                    </Label>
-                </DockPanel>
-                
-                
-                
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Modul:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Teilkreisdurchmessser:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Zähnezahl:</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Kopfspiel:</TextBlock>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Zahnflankenwinkel:</TextBlock>
+
+
+                    <TextBlock x:Name="txtblock_Ausgabe_modul" Grid.Row="1" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_modul</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_teilkreis" Grid.Row="2" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_teilkreis</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_zähnezahl" Grid.Row="3" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_zähnezahl</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_kopfspiel" Grid.Row="4" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_kopfspiel</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_zahnflankenspiel" Grid.Row="5" Grid.Column="1"  Padding="10" FontSize="20" Width="Auto" >ergebnis_Zahnfalnkenspiel</TextBlock>
+
+                    <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="20" Width="Auto" >Dicke:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="20" Width="Auto" >Material:</TextBlock>
+
+
+                </Grid>
+
             </TabItem>
         </TabControl>
     </DockPanel>
