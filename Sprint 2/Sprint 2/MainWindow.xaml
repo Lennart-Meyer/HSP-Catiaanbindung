@@ -42,7 +42,7 @@
             <!--
             Zahnradtypauswahl
             -->
-            <TabItem Height="Auto" Header="Zahnradtyp" TextBlock.FontSize="18">
+            <TabItem Height="Auto" Header="Zahnradtyp" TextBlock.FontSize="18" Background="{x:Null}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
@@ -230,11 +230,11 @@
                             <Label Content="Information zum Material:"/>
                         </Grid>
 
-                        <Button Margin="0,20" Click="Button_bes" Content="Bestätigen"/>
+                        <Button Margin="50,20" Click="Button_bes" Content="Bestätigen" Width="108"/>
                         <Label x:Name="lbl_Material"/>
                     </StackPanel>
 
-                    <StackPanel>
+                    <StackPanel Margin="30,0,-30,0">
                         <Label Content="Geben Sie die Breite (in mm) an:" Margin="0,300" Grid.ColumnSpan="3"/>
                     </StackPanel>
 
