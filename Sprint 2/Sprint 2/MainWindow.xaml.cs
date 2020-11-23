@@ -92,7 +92,7 @@ namespace Sprint_2
         double z;
         double m;
         double d;
-        
+        double c;
         private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
             txtBlock_EingabeName1.Text = "Modul";
@@ -122,34 +122,45 @@ namespace Sprint_2
 
         private void btnAuswahl_Click(object sender, RoutedEventArgs e)
         {
-            if(rb_berechnung1.IsChecked == true)
+            if (rb_berechnung1.IsChecked == true)
             {
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out d);
 
                 z = d / m;
 
-                txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-            }else if(rb_berechnung2.IsChecked == true)
-            { 
+                txtblock_Ausgabe_modul.Text = ("" + m);
+                txtblock_Ausgabe_teilkreis.Text = ("" + d);
+                txtblock_Ausgabe_zähnezahl.Text = ("" + z);
+                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
+                txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
+            }
+            else if (rb_berechnung2.IsChecked == true)
+            {
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
 
-                d = m / z;
+                d = m * z;
 
-                txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-            }else
-            if(rb_berechnung3.IsChecked == true)
+                txtblock_Ausgabe_modul.Text = ("" + m);
+                txtblock_Ausgabe_teilkreis.Text = ("" + d);
+                txtblock_Ausgabe_zähnezahl.Text = ("" + z);
+                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
+                txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
+            }
+            else
+            if (rb_berechnung3.IsChecked == true)
             {
                 Double.TryParse(txtBox_Eingabe1.Text, out d);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
 
-                m = d /z;
+                m = d / z;
 
-                txtBlock_Ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
-                ergebnis.Text = ("Ergebnis: \n" + "Modul: " + m + "\nTeilkreis: " + d + "\nZähnezahl: " + z);
+                txtblock_Ausgabe_modul.Text = ("" + m);
+                txtblock_Ausgabe_teilkreis.Text = ("" + d);
+                txtblock_Ausgabe_zähnezahl.Text = ("" + z);
+                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
+                txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
             }
         }
         
@@ -194,6 +205,9 @@ namespace Sprint_2
         {
             txtBox_Kopfspiel.Visibility = Visibility.Visible;
             txtBlock_Kopfspiel.Visibility = Visibility.Visible;
+
+            double.TryParse(txtBox_Kopfspiel.Text, out c);
+            txtblock_Ausgabe_kopfspiel.Text = ("" + c);
         }
 
         private void cBox_Zahnflankenwinkel_Checked(object sender, RoutedEventArgs e)
