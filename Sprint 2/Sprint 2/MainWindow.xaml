@@ -284,7 +284,9 @@
                     <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="20" Width="Auto" >Dicke:</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="20" Width="Auto" >Material:</TextBlock>
 
-
+                    <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="1" Grid.Column="3" Padding="10" FontSize="20" Width="Auto" >ergebnis_dickel</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="2" Grid.Column="3" Padding="10" FontSize="20" Width="Auto" >ergebnis_material</TextBlock>
+                    
                 </Grid>
 
             </TabItem>
