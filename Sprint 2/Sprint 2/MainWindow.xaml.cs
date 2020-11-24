@@ -101,7 +101,11 @@ namespace Sprint_2
         double dg; //Grundkreisdurchmesser
         double ha; //Zahnkopfhöhe
         double hf; //Zahnfußhöhe
-        double alpha;
+        double alpha; // a in Rad
+        double beta; // Schrägungswinkel
+        double mt; //Stirnmodul
+        double pt; //Stirnteilung
+        double gamma; // beta in Rad
 
         private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
@@ -175,21 +179,55 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe2.Text, out d);
                 Double.TryParse(txtBox_Dicke.Text, out b);
 
-                z = d / m;
-
-                Int32.TryParse(Convert.ToString(z), out int i);
-                if (i == 0)
+                if (cBox_Verdrehen.IsChecked == true)
                 {
-                    MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
-                    txtblock_Ausgabe_zähnezahl.Text = "";
+                    double.TryParse(txtBox_Verdrehen.Text, out beta);
+
+                    gamma = beta * (Math.PI / 180);
+
+                    mt = m / Math.Cos(gamma);
+
+                    z = d / mt;
+
+                    Int32.TryParse(Convert.ToString(z), out int i);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        txtblock_Ausgabe_zähnezahl.Text = "";
+                    }
+                    else
+                    {
+                        z = Convert.ToDouble(i);
+                    }
+
+                    berechnung();
+
+                    pt = p / Math.Cos(beta);
+
+                    ausgabe();
+
                 }
+
                 else
                 {
-                    z = Convert.ToDouble(i);
-                }
+                    z = d / m;
 
-                berechnung();
-                ausgabe();
+                    Int32.TryParse(Convert.ToString(z), out int i);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        txtblock_Ausgabe_zähnezahl.Text = "";
+                    }
+                    else
+                    {
+                        z = Convert.ToDouble(i);
+                    }
+
+                    berechnung();
+                    ausgabe();
+
+
+                }
 
             }
             else if (rb_berechnung2.IsChecked == true)
@@ -198,45 +236,114 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
                 Double.TryParse(txtBox_Dicke.Text, out b);
 
-                d = m * z;
-
-                Int32.TryParse(Convert.ToString(z), out int i);
-                if (i == 0)
+                if (cBox_Verdrehen.IsChecked == true)
                 {
-                    MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
-                    txtblock_Ausgabe_zähnezahl.Text = "";
+                    double.TryParse(txtBox_Verdrehen.Text, out beta);
+
+                    gamma = beta * (Math.PI / 180);
+
+                    mt = m / Math.Cos(gamma);
+
+                    d = mt * z;
+
+                    Int32.TryParse(Convert.ToString(z), out int i);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        txtblock_Ausgabe_zähnezahl.Text = "";
+                    }
+                    else
+                    {
+                        z = Convert.ToDouble(i);
+                    }
+
+                    berechnung();
+
+                    pt = p / Math.Cos(gamma);
+
+                    ausgabe();
+
                 }
+
                 else
                 {
-                    z = Convert.ToDouble(i);
+
+                    d = m * z;
+
+
+
+                    Int32.TryParse(Convert.ToString(z), out int i);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        txtblock_Ausgabe_zähnezahl.Text = "";
+                    }
+                    else
+                    {
+                        z = Convert.ToDouble(i);
+                    }
+
+                    berechnung();
+                    ausgabe();
+
                 }
 
-                berechnung();
-                ausgabe();
-
             }
-            else
-            if (rb_berechnung3.IsChecked == true)
+
+            else if (rb_berechnung3.IsChecked == true)
             {
                 Double.TryParse(txtBox_Eingabe1.Text, out d);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
                 Double.TryParse(txtBox_Dicke.Text, out b);
 
-                m = d / z;
 
-                Int32.TryParse(Convert.ToString(z), out int i);
-                if (i == 0)
+                if (cBox_Verdrehen.IsChecked == true)
                 {
-                    MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
-                    txtblock_Ausgabe_zähnezahl.Text = "";
+                    double.TryParse(txtBox_Verdrehen.Text, out beta);
+
+                    gamma = beta * (Math.PI / 180);
+
+                    mt = m / Math.Cos(gamma);
+
+                    mt = d / z;
+
+                    Int32.TryParse(Convert.ToString(z), out int i);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        txtblock_Ausgabe_zähnezahl.Text = "";
+                    }
+                    else
+                    {
+                        z = Convert.ToDouble(i);
+                    }
+                    berechnung();
+
+                    pt = p / Math.Cos(beta);
+
+                    ausgabe();
                 }
+
+
                 else
                 {
-                    z = Convert.ToDouble(i);
+                    m = d / z;
+
+                    Int32.TryParse(Convert.ToString(z), out int i);
+                    if (i == 0)
+                    {
+                        MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        txtblock_Ausgabe_zähnezahl.Text = "";
+                    }
+                    else
+                    {
+                        z = Convert.ToDouble(i);
+                    }
+
+                    berechnung();
+                    ausgabe();
                 }
 
-                berechnung();
-                ausgabe();
 
             }
 
@@ -263,6 +370,12 @@ namespace Sprint_2
 
                 txtblock_Ausgabe_zahnflankenwinkel.Text = (a + "°");
                 txtblock_Ausgabe_grundkreisdurchmesser.Text = (dg + "mm");
+            }
+
+            if (cBox_Verdrehen.IsChecked == true) 
+            {
+            
+
             }
         }
 
