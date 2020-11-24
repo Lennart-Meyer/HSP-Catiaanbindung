@@ -18,10 +18,11 @@
 
   <ItemGroup>
     <Resource Include="Beispielbild Zahnrad.jpg" />
-    <Resource Include="icon.ico" />
-    <Resource Include="Innenverzahnung.jpg" />
     <Resource Include="Kegelrad.png" />
-    <Resource Include="Schneckengetriebe.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bilder\" />
   </ItemGroup>
 
 </Project>
