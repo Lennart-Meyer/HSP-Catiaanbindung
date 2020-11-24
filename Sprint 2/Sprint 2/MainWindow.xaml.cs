@@ -143,7 +143,7 @@ namespace Sprint_2
                 txtblock_Ausgabe_teilkreis.Text = ("" + d);
                 txtblock_Ausgabe_zähnezahl.Text = ("" + z);
                 
-                //txtblock_Ausgabe_kopfspiel.Text = ("" + c);
+                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
                 txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
                 txtblock_Ausgabe_dicke.Text = ("" + b);
             }
@@ -158,7 +158,7 @@ namespace Sprint_2
                 txtblock_Ausgabe_modul.Text = ("" + m);
                 txtblock_Ausgabe_teilkreis.Text = ("" + d);
                 txtblock_Ausgabe_zähnezahl.Text = ("" + z);
-                //txtblock_Ausgabe_kopfspiel.Text = ("" + c);
+                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
                 txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
                 txtblock_Ausgabe_dicke.Text = ("" + b);
             }
@@ -174,7 +174,7 @@ namespace Sprint_2
                 txtblock_Ausgabe_modul.Text = ("" + m);
                 txtblock_Ausgabe_teilkreis.Text = ("" + d);
                 txtblock_Ausgabe_zähnezahl.Text = ("" + z);
-                //txtblock_Ausgabe_kopfspiel.Text = ("" + c);
+                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
                 txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
                 txtblock_Ausgabe_dicke.Text = ("" + b);
             }
