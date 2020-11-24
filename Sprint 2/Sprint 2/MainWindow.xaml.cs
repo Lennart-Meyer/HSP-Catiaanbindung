@@ -55,7 +55,7 @@ namespace Sprint_2
             {
                 return 1;
             }
-            else if (Innenverzahnung.IsChecked == true)
+            else if (Kegelrad.IsChecked == true)
             {
                 return 2;
             }
