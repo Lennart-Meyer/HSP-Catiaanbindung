@@ -242,7 +242,7 @@
                                         <TextBlock><Run Text="Information zu Messing"/></TextBlock>
                                     </Expander.Header>
                                     <StackPanel>
-                                        <TextBlock> Für weniger stark beanspruchte Zahnräder, die sich durch andere Eigenschaften auszeichnen.</TextBlock>
+                                        <TextBlock> Für weniger stark beanspruchte Zahnräder.</TextBlock>
                                     </StackPanel>
                                 </Expander>
                                 <Expander>
