@@ -66,30 +66,15 @@
                         <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Stirnrad_Checked" >Stirnrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
-                        <Image Source= "/Beispielbild Zahnrad.jpg" Height="135" ></Image>
+                        <Image Source="/Beispielbild Zahnrad.jpg" Height="250" Width="300"  ></Image>
                     </Label>
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Innenverzahnung"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Innenverzahnung_Checked" >Innenverzahnung</RadioButton>
+                        <RadioButton Name="Innenverzahnung"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Innenverzahnung_Checked" >Kegelrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
-                        <Image  Source= "/Innenverzahnung.jpg" Height="135"  ></Image>
-                    </Label>
-
-
-                    <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Kegelrad_Checked" Unchecked="Kegelrad_Unchecked">Kegelrad</RadioButton>
-                    </Label>
-                    <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">
-                        <Image  Source= "/Kegelrad.png" Height="135"  ></Image>
-                    </Label>
-
-                    <Label VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Schneckentrieb"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Schneckentrieb_Checked" >Schneckentrieb</RadioButton>
-                    </Label>
-                    <Label Padding="0,0,0,20" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
-                        <Image  Source= "/Schneckengetriebe.png" Height="135"  ></Image>
+                        <Image Source="/Kegelrad.png" Height="250" Width="300" ></Image>
                     </Label>
 
 
