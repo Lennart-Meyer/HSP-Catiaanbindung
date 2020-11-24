@@ -94,13 +94,20 @@ namespace Sprint_2
                 txtblock_Ausgabe_material.Text = ("Plastik");
             }
         }
-        
-        double z;
-        double m;
-        double d;
-        double c = 0.167 ;
-        double a = 20;
-        double b;
+
+        double z; //Zähnezahl
+        double m; //Modul
+        double d; //Teilkreisdurchmesser
+        double c = 0.167; //Kopfspiel
+        double a = 20; //Zahnflankenwinkel
+        double b; //Breite
+        double h; //Zahnhöhe
+        double p; //Teilung
+        double df; //Fußkreisdurchmesser
+        double dg; //Grundkreisdurchmesser
+        double ha; //Zahnkopfhöhe
+        double hf; //Zahnfußhöhe
+        double alpha;
 
         private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
@@ -129,6 +136,43 @@ namespace Sprint_2
             txtBlock_Ergebnis.Text = "Ergebnis: ";
         }
 
+        public void berechnung() //Unterprogramm für die Berechnung
+        {
+            //Zahnhöhe
+            h = 2 * m + c;
+            //Teilung
+            p = Math.PI * m;
+            //Fußkreisdurchmesser
+            df = d - (2 * (m + c));
+            //Grundkreisdurchmesser
+            alpha = Math.PI / 180 * a; // Winkel in Radiant umrechnen
+            dg = d * Math.Cos(alpha);
+            //Zahnkopfhöhe
+            ha = m;
+            //Zahnfußhöhe
+            hf = m + c;
+        }
+
+
+        public void ausgabe() //Unterprogramm für die Ausgabe
+        {
+            txtblock_Ausgabe_modul.Text = (m + "mm");
+            txtblock_Ausgabe_teilkreis.Text = (d + "mm");
+            txtblock_Ausgabe_zähnezahl.Text = ("" + z);
+            txtblock_Ausgabe_kopfspiel.Text = (c + "mm");
+            txtblock_Ausgabe_zahnflankenwinkel.Text = (a + "°");
+            txtblock_Ausgabe_dicke.Text = (b + "mm");
+            txtblock_Ausgabe_fußkreisdurchmesser.Text = (df + "mm");
+            txtblock_Ausgabe_grundkreisdurchmesser.Text = (dg + "mm");
+            txtblock_Ausgabe_teilung.Text = (p + "");
+            txtblock_Ausgabe_zahnhöhe.Text = (h + "mm");
+            txtblock_Ausgabe_zahnkopfhöhe.Text = (ha + "mm");
+            txtblock_Ausgabe_zahnfußhöhe.Text = (hf + "mm");
+        }
+
+
+
+
         private void btnAuswahl_Click(object sender, RoutedEventArgs e)
         {
             if (rb_berechnung1.IsChecked == true)
@@ -150,13 +194,9 @@ namespace Sprint_2
                     z = Convert.ToDouble(i);
                 }
 
-                txtblock_Ausgabe_modul.Text = ("" + m);
-                txtblock_Ausgabe_teilkreis.Text = ("" + d);
-                txtblock_Ausgabe_zähnezahl.Text = ("" + z);
-                
-                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
-                txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
-                txtblock_Ausgabe_dicke.Text = ("" + b);
+                berechnung();
+                ausgabe();
+
             }
             else if (rb_berechnung2.IsChecked == true)
             {
@@ -177,12 +217,9 @@ namespace Sprint_2
                     z = Convert.ToDouble(i);
                 }
 
-                txtblock_Ausgabe_modul.Text = ("" + m);
-                txtblock_Ausgabe_teilkreis.Text = ("" + d);
-                txtblock_Ausgabe_zähnezahl.Text = ("" + z);
-                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
-                txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
-                txtblock_Ausgabe_dicke.Text = ("" + b);
+                berechnung();
+                ausgabe();
+
             }
             else
             if (rb_berechnung3.IsChecked == true)
@@ -204,14 +241,37 @@ namespace Sprint_2
                     z = Convert.ToDouble(i);
                 }
 
-                txtblock_Ausgabe_modul.Text = ("" + m);
-                txtblock_Ausgabe_teilkreis.Text = ("" + d);
-                txtblock_Ausgabe_zähnezahl.Text = ("" + z);
-                txtblock_Ausgabe_kopfspiel.Text = ("" + c);
-                txtblock_Ausgabe_zahnflankenspiel.Text = (a + "°");
-                txtblock_Ausgabe_dicke.Text = ("" + b);
+                berechnung();
+                ausgabe();
+
+            }
+
+            if (cBox_Kopfspiel.IsChecked == true)
+            {
+                double.TryParse(txtBox_Kopfspiel.Text, out c);
+
+                df = d - (2 * (m + c));
+                h = 2 * m + c;
+                hf = m + c;
+
+                txtblock_Ausgabe_kopfspiel.Text = (c + "mm");
+                txtblock_Ausgabe_zahnfußhöhe.Text = (hf + "mm");
+                txtblock_Ausgabe_zahnhöhe.Text = (h + "mm");
+                txtblock_Ausgabe_fußkreisdurchmesser.Text = (df + "mm");
+            }
+
+            if (cBox_Zahnflankenwinkel.IsChecked == true)
+            {
+                double.TryParse(txtBox_Zahnflankenwinkel.Text, out a);
+
+                alpha = Math.PI / 180 * a;
+                dg = d * Math.Cos(alpha);
+
+                txtblock_Ausgabe_zahnflankenwinkel.Text = (a + "°");
+                txtblock_Ausgabe_grundkreisdurchmesser.Text = (dg + "mm");
             }
         }
+
         
         private void Stirnrad_Checked(object sender, RoutedEventArgs e)
         {
@@ -255,14 +315,13 @@ namespace Sprint_2
             txtBox_Kopfspiel.Visibility = Visibility.Visible;
             txtBlock_Kopfspiel.Visibility = Visibility.Visible;
 
-            double.TryParse(txtBox_Kopfspiel.Text, out c);
-            txtblock_Ausgabe_kopfspiel.Text = ("" + c);
         }
 
         private void cBox_Zahnflankenwinkel_Checked(object sender, RoutedEventArgs e)
         {
             txtBox_Zahnflankenwinkel.Visibility = Visibility.Visible;
             txtBlock_Zahnflankenwinkel.Visibility = Visibility.Visible;
+
         }
 
         private void cBox_Verdrehen_Checked(object sender, RoutedEventArgs e)
