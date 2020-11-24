@@ -271,8 +271,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"></ColumnDefinition>
                         <ColumnDefinition Width="160" ></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
@@ -282,32 +282,52 @@
                         <RowDefinition Height="Auto" ></RowDefinition>
                         <RowDefinition Height="Auto" ></RowDefinition>
                         <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
 
                     </Grid.RowDefinitions>
 
 
-                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Padding="25" HorizontalAlignment="Center">
-                        <TextBlock FontSize="25" >Ergebnis</TextBlock>
+                    <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Padding="25" HorizontalAlignment="Center" Margin="33,0,58,0" Width="241">
+                        <TextBlock FontSize="30" RenderTransformOrigin="-0.083,0.494" >Ergebnis</TextBlock>
                     </Label>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Modul:</TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Teilkreisdurchmessser:</TextBlock>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Zähnezahl:</TextBlock>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Kopfspiel:</TextBlock>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Padding="10" FontSize="20" Width="Auto" >Zahnflankenwinkel:</TextBlock>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" VerticalAlignment="Center" >Modul:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" >Teilkreisdurchmessser:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" >Zähnezahl:</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" >Fußkreisdurchmesser:</TextBlock>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" >Grundkreisdurchmesser:</TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" >Teilung:</TextBlock>
+                    <TextBlock Grid.Row="7" Grid.Column="0" Padding="10" FontSize="18" Width="Auto" >Dicke:</TextBlock>
 
 
-                    <TextBlock x:Name="txtblock_Ausgabe_modul" Grid.Row="1" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_modul</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_teilkreis" Grid.Row="2" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_teilkreis</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_zähnezahl" Grid.Row="3" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_zähnezahl</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_kopfspiel" Grid.Row="4" Grid.Column="1" Padding="10" FontSize="20" Width="Auto" >ergebnis_kopfspiel</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_zahnflankenspiel" Grid.Row="5" Grid.Column="1"  Padding="10" FontSize="20" Width="Auto" >ergebnis_Zahnfalnkenspiel</TextBlock>
 
-                    <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="20" Width="Auto" >Dicke:</TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="20" Width="Auto" >Material:</TextBlock>
 
-                    <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="1" Grid.Column="3" Padding="10" FontSize="20" Width="Auto" >ergebnis_dickel</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="2" Grid.Column="3" Padding="10" FontSize="20" Width="Auto" >ergebnis_material</TextBlock>
+
+                    <TextBlock x:Name="txtblock_Ausgabe_modul" Grid.Row="1" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_modul</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_teilkreis" Grid.Row="2" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_teilkreis</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_zähnezahl" Grid.Row="3" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_zähnezahl</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_fußkreisdurchmesser" Grid.Row="4" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_fußkreisdurchmesser</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_grundkreisdurchmesser" Grid.Row="5" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_grundkreisdurchmesser</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_teilung" Grid.Row="6" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_teilung</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="7" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_dicke</TextBlock>
+
+                    <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnhöhe:</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnkopfhöhe:</TextBlock>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnfußhöhe:</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Kopfspiel:</TextBlock>
+                    <TextBlock Grid.Row="5" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnflankenwinkel:</TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Material:</TextBlock>
+
+                    <TextBlock x:Name="txtblock_Ausgabe_zahnhöhe" Grid.Row="1" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnhöhe</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_zahnkopfhöhe" Grid.Row="2" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnkopfhöhe</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_zahnfußhöhe" Grid.Row="3" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnfußhöhe</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_kopfspiel" Grid.Row="4" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_kopfspiel</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_zahnflankenwinkel" Grid.Row="5" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_Zahnflankenenwinkel</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="6" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_material</TextBlock>
+
 
                 </Grid>
 
