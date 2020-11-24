@@ -59,14 +59,8 @@ namespace Sprint_2
             {
                 return 2;
             }
-            else if (Kegelrad.IsChecked == true)
-            {
-                return 3;
-            }
-            else if (Schneckentrieb.IsChecked == true)
-            {
-                return 4;
-            }
+            
+       
             else
             {
                 return 0;
