@@ -85,7 +85,7 @@ namespace Sprint_2
             {
                 lbl_Material.Content = "Es wurde Messing gewählt";
 
-                txtblock_Ausgabe_material.Text = ("SMessing");
+                txtblock_Ausgabe_material.Text = ("Messing");
             }
             else if (rb_Plastik.IsChecked == true)
             {
