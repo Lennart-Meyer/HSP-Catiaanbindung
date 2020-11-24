@@ -139,6 +139,17 @@ namespace Sprint_2
 
                 z = d / m;
 
+                Int32.TryParse(Convert.ToString(z), out int i);
+                if (i == 0)
+                {
+                    MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                    txtblock_Ausgabe_zähnezahl.Text = "";
+                }
+                else
+                {
+                    z = Convert.ToDouble(i);
+                }
+
                 txtblock_Ausgabe_modul.Text = ("" + m);
                 txtblock_Ausgabe_teilkreis.Text = ("" + d);
                 txtblock_Ausgabe_zähnezahl.Text = ("" + z);
@@ -155,6 +166,17 @@ namespace Sprint_2
 
                 d = m * z;
 
+                Int32.TryParse(Convert.ToString(z), out int i);
+                if (i == 0)
+                {
+                    MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                    txtblock_Ausgabe_zähnezahl.Text = "";
+                }
+                else
+                {
+                    z = Convert.ToDouble(i);
+                }
+
                 txtblock_Ausgabe_modul.Text = ("" + m);
                 txtblock_Ausgabe_teilkreis.Text = ("" + d);
                 txtblock_Ausgabe_zähnezahl.Text = ("" + z);
@@ -170,6 +192,17 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Dicke.Text, out b);
 
                 m = d / z;
+
+                Int32.TryParse(Convert.ToString(z), out int i);
+                if (i == 0)
+                {
+                    MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                    txtblock_Ausgabe_zähnezahl.Text = "";
+                }
+                else
+                {
+                    z = Convert.ToDouble(i);
+                }
 
                 txtblock_Ausgabe_modul.Text = ("" + m);
                 txtblock_Ausgabe_teilkreis.Text = ("" + d);
