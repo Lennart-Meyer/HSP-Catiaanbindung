@@ -63,7 +63,7 @@
                     <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Bitte wählen Sie einen Zahnrad Typ aus:</Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Stirnrad_Checked" >Stirnrad</RadioButton>
+                        <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Stirnrad_Checked" >Stirnrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
                         <Image Source="/Beispielbild Zahnrad.jpg" Height="250" Width="300"  ></Image>
@@ -71,7 +71,7 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Innenverzahnung"  GroupName="Zahnradtyp" TextBlock.FontSize="16" Checked="Innenverzahnung_Checked" >Kegelrad</RadioButton>
+                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Innenverzahnung_Checked" >Kegelrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
                         <Image Source="/Kegelrad.png" Height="250" Width="300" ></Image>
