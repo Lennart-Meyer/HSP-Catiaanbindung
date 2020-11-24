@@ -127,7 +127,7 @@
                             <RadioButton Name="rb_berechnung3" GroupName="Berechnung" Checked="rb_berechnung3_Checked">Teilkreisdurchmesser und Zähnezahl</RadioButton>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1">
-                            <CheckBox Name="cBox_Kopfspiel" Checked="cBox_Kopfspiel_Checked" Unchecked="cBox_Kopfspiel_Unchecked">Kopfspiel anpassen (Standard: 0,167mm)</CheckBox>                            
+                            <CheckBox Name="cBox_Kopfspiel" Checked="cBox_Kopfspiel_Checked" Unchecked="cBox_Kopfspiel_Unchecked">Kopfspiel anpassen (Standard: 0,167mm)</CheckBox>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="1">
                             <CheckBox Name="cBox_Zahnflankenwinkel" Checked="cBox_Zahnflankenwinkel_Checked" Unchecked="cBox_Zahnflankenwinkel_Unchecked">Zahnflankenwinkel (Standard: 20°)</CheckBox>
@@ -155,7 +155,7 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_EingabeName1"  Text="Eingabe 1"></TextBlock>
                         </Label>
@@ -208,15 +208,15 @@
                             <Button Click="btnAuswahl_Click" >Bestätigen</Button>
                         </Label>
                     </Grid>
-                    
+
                     <TextBlock Name="txtBlock_Ergebnis" Margin="10,10" Text=""></TextBlock>
                 </StackPanel>
-                
+
             </TabItem>
             <!--
             Materialauswahl
             -->
-            <TabItem Height="Auto" Header="Material" TextBlock.FontSize="18" Background="{x:Null}" >
+            <TabItem Header="Material" TextBlock.FontSize="18" Background="{x:Null}" Height="28" VerticalAlignment="Top" >
                 <Grid>
                     <StackPanel>
                         <Label Content="Wählen Sie das Material des Zahnrades aus:"/>
@@ -224,16 +224,42 @@
                         <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material" Content="Stahl"/>
                         <RadioButton x:Name="rb_Messing" GroupName="Material" Content="Messing"/>
                         <RadioButton x:Name="rb_Plastik" GroupName="Material" Content="Plastik"/>
+                        <Expander>
+                            <Expander.Header>
+                                <TextBlock><Run Text="Information zum Material"/></TextBlock>
+                            </Expander.Header>
+                            <StackPanel>
+                                <Expander>
+                                    <Expander.Header>
+                                        <TextBlock><Run Text="Information zu Stahl"/></TextBlock>
+                                    </Expander.Header>
+                                    <StackPanel>
+                                        <TextBlock> Bei besonders hoch beanspruchten Zahnrädern zu wählen. Kosten pro kg...</TextBlock>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander>
+                                    <Expander.Header>
+                                        <TextBlock><Run Text="Information zu Messing"/></TextBlock>
+                                    </Expander.Header>
+                                    <StackPanel>
+                                        <TextBlock> Für weniger stark beanspruchte Zahnräder, die sich durch andere Eigenschaften auszeichnen.</TextBlock>
+                                    </StackPanel>
+                                </Expander>
+                                <Expander>
+                                    <Expander.Header>
+                                        <TextBlock><Run Text="Information zu Plastik"/></TextBlock>
+                                    </Expander.Header>
+                                    <StackPanel>
+                                        <TextBlock> Für sehr geringe Beanspruchung.</TextBlock>
+                                    </StackPanel>
+                                </Expander>
+                            </StackPanel>
 
-                        <Grid>
-                            <Expander Margin="215,6,-483,-26" Content="Wählen Sie das Material des Zahnrades aus:"/>
-                            <Label Content="Information zum Material:"/>
-                        </Grid>
 
-                        <Button Margin="50,20" Click="Button_bes" Content="Bestätigen" Width="108"/>
+                        </Expander>
+                        <Button Margin="0,20" Click="Button_bes" Content="Bestätige"/>
                         <Label x:Name="lbl_Material"/>
                     </StackPanel>
-
                 </Grid>
 
             </TabItem>
@@ -282,7 +308,7 @@
 
                     <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="1" Grid.Column="3" Padding="10" FontSize="20" Width="Auto" >ergebnis_dickel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="2" Grid.Column="3" Padding="10" FontSize="20" Width="Auto" >ergebnis_material</TextBlock>
-                    
+
                 </Grid>
 
             </TabItem>
