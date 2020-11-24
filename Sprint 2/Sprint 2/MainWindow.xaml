@@ -234,10 +234,6 @@
                         <Label x:Name="lbl_Material"/>
                     </StackPanel>
 
-                    <StackPanel Margin="30,0,-30,0">
-                        <Label Content="Geben Sie die Breite (in mm) an:" Margin="0,300" Grid.ColumnSpan="3"/>
-                    </StackPanel>
-
                 </Grid>
 
             </TabItem>
