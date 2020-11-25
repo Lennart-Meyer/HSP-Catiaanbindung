@@ -71,7 +71,7 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Kegelrad_Checked" >Kegelrad</RadioButton>
+                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Kegelrad_Checked" Unchecked="Kegelrad_Unchecked" >Kegelrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
                         <Image Source="/Kegelrad.png" Height="250" Width="300" ></Image>
