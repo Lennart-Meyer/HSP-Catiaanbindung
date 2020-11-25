@@ -171,7 +171,7 @@ namespace Sprint_2
             txtblock_Ausgabe_zahnhöhe.Text = (h + "mm");
             txtblock_Ausgabe_zahnkopfhöhe.Text = (ha + "mm");
             txtblock_Ausgabe_zahnfußhöhe.Text = (hf + "mm");
-            txtblock_Ausgabe_kopfkreisdurchmesser.Text = (da + "mm");
+            txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (da + "mm");
         }
 
 
@@ -399,12 +399,22 @@ namespace Sprint_2
             
         }
 
+
+        private void Stirnrad_Unchecked(object sender, RoutedEventArgs e)
+
+        {
+        
+
+        }
         private void Kegelrad_Checked(object sender, RoutedEventArgs e)
         {
             txtBlock_Teilkegelwinkel.Visibility = Visibility.Visible;
             txtBlock_Kopfkegelwinkel.Visibility = Visibility.Visible;
             txtBox_Teilkegelwinkel.Visibility = Visibility.Visible;
             txtBox_Kopfkegelwinkel.Visibility = Visibility.Visible;
+            cBox_Verdrehen.Visibility = Visibility.Hidden;
+            txtblock_Ausgabe_kopfkreisdurchmesser_1.Visibility = Visibility.Visible;
+            txtblock_Ausgabe_kopfkreisdurchmesser_2.Visibility = Visibility.Visible;
         }
 
         private void Kegelrad_Unchecked(object sender, RoutedEventArgs e)
@@ -413,6 +423,9 @@ namespace Sprint_2
             txtBlock_Kopfkegelwinkel.Visibility = Visibility.Hidden;
             txtBox_Teilkegelwinkel.Visibility = Visibility.Hidden;
             txtBox_Kopfkegelwinkel.Visibility = Visibility.Hidden;
+            cBox_Verdrehen.Visibility = Visibility.Visible;
+            txtblock_Ausgabe_kopfkreisdurchmesser_1.Visibility = Visibility.Hidden;
+            txtblock_Ausgabe_kopfkreisdurchmesser_2.Visibility = Visibility.Hidden;
         }
 
         private void cBox_Kopfspiel_Checked(object sender, RoutedEventArgs e)
