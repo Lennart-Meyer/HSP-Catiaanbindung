@@ -63,7 +63,7 @@
                     <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Bitte wählen Sie einen Zahnrad Typ aus:</Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
-                        <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Stirnrad_Checked" >Stirnrad</RadioButton>
+                        <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Stirnrad_Checked" Unchecked="Stirnrad_Unchecked" >Stirnrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">
                         <Image Source="/Beispielbild Zahnrad.jpg" Height="250" Width="300"  ></Image>
@@ -84,7 +84,7 @@
             <!--
             Berechnungsauswahl
             -->
-            <TabItem Height="Auto" Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}">
+            <TabItem Height="28" Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}" VerticalAlignment="Top">
                 <StackPanel>
                     <!-- Auswahlgrid-->
                     <Grid>
@@ -117,8 +117,8 @@
                         <Label Grid.Row="2" Grid.Column="1">
                             <CheckBox Name="cBox_Zahnflankenwinkel" Checked="cBox_Zahnflankenwinkel_Checked" Unchecked="cBox_Zahnflankenwinkel_Unchecked">Zahnflankenwinkel (Standard: 20°)</CheckBox>
                         </Label>
-                        <Label Grid.Row="3" Grid.Column="1">
-                            <CheckBox Name="cBox_Verdrehen" Checked="cBox_Verdrehen_Checked" Unchecked="cBox_Verdrehen_Unchecked">Verdrehen</CheckBox>
+                        <Label Grid.Row="3" Grid.Column="1" >
+                            <CheckBox Name="cBox_Verdrehen" Checked="cBox_Verdrehen_Checked" Unchecked="cBox_Verdrehen_Unchecked" Visibility="Visible" >Schrägverzahnung</CheckBox>
                         </Label>
                     </Grid>
                     <!-- Eingabegrid-->
@@ -298,7 +298,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_grundkreisdurchmesser" Grid.Row="5" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_grundkreisdurchmesser</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_teilung" Grid.Row="6" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_teilung</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="7" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_dicke</TextBlock>
-                    <TextBlock Grid.Row="7" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Kopfkreisdurchmesser:</TextBlock>
+                    
 
                     <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnhöhe:</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnkopfhöhe:</TextBlock>
@@ -306,6 +306,7 @@
                     <TextBlock Grid.Row="4" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Kopfspiel:</TextBlock>
                     <TextBlock Grid.Row="5" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnflankenwinkel:</TextBlock>
                     <TextBlock Grid.Row="6" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Material:</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_kopfkreisdurchmesser_1" Grid.Row="7" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" Visibility="Hidden"  >Kopfkreisdurchmesser:</TextBlock>
 
                     <TextBlock x:Name="txtblock_Ausgabe_zahnhöhe" Grid.Row="1" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnhöhe</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_zahnkopfhöhe" Grid.Row="2" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnkopfhöhe</TextBlock>
@@ -313,7 +314,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_kopfspiel" Grid.Row="4" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_kopfspiel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_zahnflankenwinkel" Grid.Row="5" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_Zahnflankenenwinkel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="6" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_material</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_kopfkreisdurchmesser" Grid.Row="7" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_kopfkreisdurchmesser</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_kopfkreisdurchmesser_2" Grid.Row="7" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" Visibility="Hidden" >ergebnis_kopfkreisdurchmesser</TextBlock>
 
 
                 </Grid>
