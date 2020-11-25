@@ -106,6 +106,9 @@ namespace Sprint_2
         double mt; //Stirnmodul
         double pt; //Stirnteilung
         double gamma; // beta in Rad
+        double o; //Teilkegelwinkel
+        double y; //Kopfkegelwinkel
+        double da; //Kopfkreisdurchmesser
 
         private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
@@ -149,6 +152,8 @@ namespace Sprint_2
             ha = m;
             //Zahnfußhöhe
             hf = m + c;
+            //Kopfkreisdurchmesser
+            da = d + 2 * m * Math.Cos(o);
         }
 
 
@@ -166,6 +171,7 @@ namespace Sprint_2
             txtblock_Ausgabe_zahnhöhe.Text = (h + "mm");
             txtblock_Ausgabe_zahnkopfhöhe.Text = (ha + "mm");
             txtblock_Ausgabe_zahnfußhöhe.Text = (hf + "mm");
+            txtblock_Ausgabe_kopfkreisdurchmesser.Text = (da + "mm");
         }
 
 
@@ -178,6 +184,8 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out d);
                 Double.TryParse(txtBox_Dicke.Text, out b);
+                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
+                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
 
                 if (cBox_Verdrehen.IsChecked == true)
                 {
@@ -212,6 +220,8 @@ namespace Sprint_2
                 {
                     z = d / m;
 
+
+
                     Int32.TryParse(Convert.ToString(z), out int i);
                     if (i == 0)
                     {
@@ -235,6 +245,8 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe1.Text, out m);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
                 Double.TryParse(txtBox_Dicke.Text, out b);
+                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
+                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
 
                 if (cBox_Verdrehen.IsChecked == true)
                 {
@@ -295,6 +307,8 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Eingabe1.Text, out d);
                 Double.TryParse(txtBox_Eingabe2.Text, out z);
                 Double.TryParse(txtBox_Dicke.Text, out b);
+                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
+                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
 
 
                 if (cBox_Verdrehen.IsChecked == true)
