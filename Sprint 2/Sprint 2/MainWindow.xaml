@@ -71,7 +71,7 @@
 
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Innenverzahnung_Checked" >Kegelrad</RadioButton>
+                        <RadioButton Name="Kegelrad"  GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Kegelrad_Checked" >Kegelrad</RadioButton>
                     </Label>
                     <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center">
                         <Image Source="/Kegelrad.png" Height="250" Width="300" ></Image>
@@ -160,16 +160,16 @@
                             <TextBox Name="txtBox_Dicke" Width="100"></TextBox>
                         </Label>
                         <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right">
-                            <TextBlock Name="txtBlock_SchmaleSeite" Visibility="Hidden" HorizontalAlignment="Right">Durchmesser schmale Seite</TextBlock>
+                            <TextBlock Name="txtBlock_Teilkegelwinkel" Visibility="Hidden" HorizontalAlignment="Right">Teilkegelwinkel</TextBlock>
                         </Label>
                         <Label Grid.Row="3" Grid.Column="1">
-                            <TextBox Name="txtBox_Schmaleseite" Width="100" Visibility="Hidden"></TextBox>
+                            <TextBox Name="txtBox_Teilkegelwinkel" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right">
-                            <TextBlock Name="txtBlock_BreiteSeite"  Visibility="Hidden" HorizontalAlignment="Right">Durchmesser breite Seite</TextBlock>
+                            <TextBlock Name="txtBlock_Kopfkegelwinkel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfkegelwinkel</TextBlock>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="1">
-                            <TextBox Name="txtBox_Breiteseite" Width="100" Visibility="Hidden"></TextBox>
+                            <TextBox Name="txtBox_Kopfkegelwinkel" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
                         <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Kopfspiel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfspiel:</TextBlock>
