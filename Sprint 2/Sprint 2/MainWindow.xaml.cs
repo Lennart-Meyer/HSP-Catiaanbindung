@@ -392,18 +392,18 @@ namespace Sprint_2
 
         private void Kegelrad_Checked(object sender, RoutedEventArgs e)
         {
-            txtBlock_SchmaleSeite.Visibility = Visibility.Visible;
-            txtBlock_BreiteSeite.Visibility = Visibility.Visible;
-            txtBox_Schmaleseite.Visibility = Visibility.Visible;
-            txtBox_Breiteseite.Visibility = Visibility.Visible;
+            txtBlock_Teilkegelwinkel.Visibility = Visibility.Visible;
+            txtBlock_Kopfkegelwinkel.Visibility = Visibility.Visible;
+            txtBox_Teilkegelwinkel.Visibility = Visibility.Visible;
+            txtBox_Kopfkegelwinkel.Visibility = Visibility.Visible;
         }
 
         private void Kegelrad_Unchecked(object sender, RoutedEventArgs e)
         {
-            txtBlock_SchmaleSeite.Visibility = Visibility.Hidden;
-            txtBlock_BreiteSeite.Visibility = Visibility.Hidden;
-            txtBox_Schmaleseite.Visibility = Visibility.Hidden;
-            txtBox_Breiteseite.Visibility = Visibility.Hidden;
+            txtBlock_Teilkegelwinkel.Visibility = Visibility.Hidden;
+            txtBlock_Kopfkegelwinkel.Visibility = Visibility.Hidden;
+            txtBox_Teilkegelwinkel.Visibility = Visibility.Hidden;
+            txtBox_Kopfkegelwinkel.Visibility = Visibility.Hidden;
         }
 
 
