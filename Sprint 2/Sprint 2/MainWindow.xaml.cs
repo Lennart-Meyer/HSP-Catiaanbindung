@@ -399,11 +399,6 @@ namespace Sprint_2
             
         }
 
-        private void Innenverzahnung_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Kegelrad_Checked(object sender, RoutedEventArgs e)
         {
             txtBlock_Teilkegelwinkel.Visibility = Visibility.Visible;
@@ -418,17 +413,6 @@ namespace Sprint_2
             txtBlock_Kopfkegelwinkel.Visibility = Visibility.Hidden;
             txtBox_Teilkegelwinkel.Visibility = Visibility.Hidden;
             txtBox_Kopfkegelwinkel.Visibility = Visibility.Hidden;
-        }
-
-
-        private void Schneckentrieb_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Kegelrad_Unchecked_1(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void cBox_Kopfspiel_Checked(object sender, RoutedEventArgs e)
