@@ -298,6 +298,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_grundkreisdurchmesser" Grid.Row="5" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_grundkreisdurchmesser</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_teilung" Grid.Row="6" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_teilung</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="7" Grid.Column="1" Padding="10" FontSize="18" Width="Auto" >ergebnis_dicke</TextBlock>
+                    <TextBlock Grid.Row="7" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Kopfkreisdurchmesser:</TextBlock>
 
                     <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnhöhe:</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnkopfhöhe:</TextBlock>
@@ -312,6 +313,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_kopfspiel" Grid.Row="4" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_kopfspiel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_zahnflankenwinkel" Grid.Row="5" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_Zahnflankenenwinkel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="6" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_material</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_kopfkreisdurchmesser" Grid.Row="7" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_kopfkreisdurchmesser</TextBlock>
 
 
                 </Grid>
