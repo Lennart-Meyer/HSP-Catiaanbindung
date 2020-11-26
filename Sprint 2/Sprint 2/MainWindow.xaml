@@ -36,7 +36,7 @@
             <Button Name="btnWeiter" Margin="2" Click="btnWeiter_Click">Weiter</Button>
         </StackPanel>
 
-        <Label Padding="15" HorizontalAlignment="Center" DockPanel.Dock="Top" TextBlock.FontSize="30">Berechnungsprogramm für Zahnräder Gruppe H</Label>
+        <Label Padding="15" HorizontalAlignment="Center" DockPanel.Dock="Top" TextBlock.FontSize="30">Zahnrad Zar GmbH und Co.KG</Label>
 
         <TabControl Name="Tab" TabStripPlacement="Left" Width="797" Background="{x:Null}">
             <!--
