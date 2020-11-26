@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sprint_2"
         mc:Ignorable="d"
-        Title="Berechnungprogram für Zahnräder " Height="600" Width="800" Foreground="#FF0942EE">
+        Title="Berechnungprogram für Zahnräder " Height="600" Width="800" Foreground="#FF0942EE" Icon="/icon.jpg">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>
@@ -147,11 +147,17 @@
                         <Label Grid.Row="0" Grid.Column="1">
                             <TextBox Name="txtBox_Eingabe1"  Width="100" Text="" ></TextBox>
                         </Label>
+                        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_Eingabe1Einheit"  Text=""></TextBlock>
+                        </Label>
                         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_EingabeName2"  Text="Eingabe 2" ></TextBlock>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1">
                             <TextBox Name="txtBox_Eingabe2"  Width="100" Text=""></TextBox>
+                        </Label>
+                        <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right">
+                            <TextBlock Name="txtBlock_Eingabe2Einheit"  Text=""></TextBlock>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Dicke" Text="Dicke:"></TextBlock>
@@ -165,11 +171,17 @@
                         <Label Grid.Row="3" Grid.Column="1">
                             <TextBox Name="txtBox_Teilkegelwinkel" Width="100" Visibility="Hidden"></TextBox>
                         </Label>
+                        <Label Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left">
+                            <TextBlock Name="txtBlock_TeilkegelwinkelEinheit" Visibility="Hidden" HorizontalAlignment="Right">°</TextBlock>
+                        </Label>
                         <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Kopfkegelwinkel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfkegelwinkel</TextBlock>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="1">
                             <TextBox Name="txtBox_Kopfkegelwinkel" Width="100" Visibility="Hidden"></TextBox>
+                        </Label>
+                        <Label Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left">
+                            <TextBlock Name="txtBlock_KopfkegelwinkelEinheit" Visibility="Hidden" HorizontalAlignment="Left">°</TextBlock>
                         </Label>
                         <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Kopfspiel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfspiel:</TextBlock>

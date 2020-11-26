@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Resource Include="Beispielbild Zahnrad.jpg" />
+    <Resource Include="icon.jpg" />
     <Resource Include="Kegelrad.png" />
   </ItemGroup>
 

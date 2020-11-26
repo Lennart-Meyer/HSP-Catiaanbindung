@@ -36,6 +36,22 @@ namespace Sprint_2
             if (Tab.SelectedIndex - 1 >= 0)
                 Tab.SelectedIndex--;
         }
+        //Zahnradauswahl        
+        public int zahnradAuswahl()
+        {
+            if (Stirnrad.IsChecked == true)
+            {
+                return 1;
+            }
+            else if (Kegelrad.IsChecked == true)
+            {
+                return 2;
+            }
+            else
+            {
+                return 0;
+            }
+        }
         
         private void Button_bes(object sender, RoutedEventArgs e)
         {
@@ -87,6 +103,8 @@ namespace Sprint_2
             txtBox_Eingabe1.Text = "";
             txtBox_Eingabe2.Text = "";
             txtBlock_Ergebnis.Text = "Ergebnis: ";
+            txtBlock_Eingabe1Einheit.Text = "";
+            txtBlock_Eingabe2Einheit.Text = "mm";
         }
 
         private void rb_berechnung2_Checked(object sender, RoutedEventArgs e)
@@ -96,6 +114,8 @@ namespace Sprint_2
             txtBox_Eingabe1.Text = "";
             txtBox_Eingabe2.Text = "";
             txtBlock_Ergebnis.Text = "Ergebnis: ";
+            txtBlock_Eingabe1Einheit.Text = "";
+            txtBlock_Eingabe2Einheit.Text = "";
         }
 
         private void rb_berechnung3_Checked(object sender, RoutedEventArgs e)
@@ -105,6 +125,8 @@ namespace Sprint_2
             txtBox_Eingabe1.Text = "";
             txtBox_Eingabe2.Text = "";
             txtBlock_Ergebnis.Text = "Ergebnis: ";
+            txtBlock_Eingabe1Einheit.Text = "mm";
+            txtBlock_Eingabe2Einheit.Text = "";
         }
 
         public void berechnung() //Unterprogramm für die Berechnung
@@ -164,7 +186,6 @@ namespace Sprint_2
                 }
                 else
                 {
-                    
                     if (cBox_Verdrehen.IsChecked == true)
                     {
                         double.TryParse(txtBox_Verdrehen.Text, out beta);
@@ -393,6 +414,8 @@ namespace Sprint_2
             txtBlock_Kopfkegelwinkel.Visibility = Visibility.Visible;
             txtBox_Teilkegelwinkel.Visibility = Visibility.Visible;
             txtBox_Kopfkegelwinkel.Visibility = Visibility.Visible;
+            txtBlock_KopfkegelwinkelEinheit.Visibility = Visibility.Visible;
+            txtBlock_TeilkegelwinkelEinheit.Visibility = Visibility.Visible;
             cBox_Verdrehen.Visibility = Visibility.Hidden;
             txtblock_Ausgabe_kopfkreisdurchmesser_1.Visibility = Visibility.Visible;
             txtblock_Ausgabe_kopfkreisdurchmesser_2.Visibility = Visibility.Visible;
@@ -404,6 +427,8 @@ namespace Sprint_2
             txtBlock_Kopfkegelwinkel.Visibility = Visibility.Hidden;
             txtBox_Teilkegelwinkel.Visibility = Visibility.Hidden;
             txtBox_Kopfkegelwinkel.Visibility = Visibility.Hidden;
+            txtBlock_KopfkegelwinkelEinheit.Visibility = Visibility.Hidden;
+            txtBlock_TeilkegelwinkelEinheit.Visibility = Visibility.Hidden;
             cBox_Verdrehen.Visibility = Visibility.Visible;
             txtblock_Ausgabe_kopfkreisdurchmesser_1.Visibility = Visibility.Hidden;
             txtblock_Ausgabe_kopfkreisdurchmesser_2.Visibility = Visibility.Hidden;
@@ -420,7 +445,6 @@ namespace Sprint_2
         {
             txtBox_Zahnflankenwinkel.Visibility = Visibility.Visible;
             txtBlock_Zahnflankenwinkel.Visibility = Visibility.Visible;
-
         }
 
         private void cBox_Verdrehen_Checked(object sender, RoutedEventArgs e)
