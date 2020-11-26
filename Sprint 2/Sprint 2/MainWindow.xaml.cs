@@ -105,7 +105,7 @@ namespace Sprint_2
             txtBlock_Ergebnis.Text = "Ergebnis: ";
             txtBlock_Eingabe1Einheit.Text = "";
             txtBlock_Eingabe2Einheit.Text = "mm";
-
+            cBox_Verdrehen.IsChecked = false;
             cBox_Verdrehen.Visibility = Visibility.Hidden;
         }
 
@@ -184,7 +184,7 @@ namespace Sprint_2
                 Double.TryParse(txtBox_Dicke.Text, out b);
                 Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
                 Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
-
+                
                 if (m <= 0 || d <= 0 || b <= 0)
                 {
                     MessageBox.Show("Eine der Eingaben ist nicht positiv. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
