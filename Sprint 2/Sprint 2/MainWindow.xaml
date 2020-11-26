@@ -226,7 +226,7 @@
 
                         <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material" Content="Stahl"/>
                         <RadioButton x:Name="rb_Messing" GroupName="Material" Content="Messing"/>
-                        <RadioButton x:Name="rb_Plastik" GroupName="Material" Content="Plastik"/>
+                        <RadioButton x:Name="rb_Plastik" GroupName="Material" Content="Kunststoff"/>
                         <Expander>
                             <Expander.Header>
                                 <TextBlock><Run Text="Information zum Material"/></TextBlock>
@@ -250,7 +250,7 @@
                                 </Expander>
                                 <Expander>
                                     <Expander.Header>
-                                        <TextBlock><Run Text="Information zu Plastik"/></TextBlock>
+                                        <TextBlock><Run Text="Information zu Kunststoff"/></TextBlock>
                                     </Expander.Header>
                                     <StackPanel>
                                         <TextBlock> Für sehr geringe Beanspruchung.</TextBlock>

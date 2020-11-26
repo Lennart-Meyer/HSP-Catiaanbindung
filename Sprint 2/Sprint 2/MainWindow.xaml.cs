@@ -69,9 +69,9 @@ namespace Sprint_2
             }
             else if (rb_Plastik.IsChecked == true)
             {
-                lbl_Material.Content = "Es wurde Plastik gewählt";
+                lbl_Material.Content = "Es wurde Kunststoff gewählt";
 
-                txtblock_Ausgabe_material.Text = ("Plastik");
+                txtblock_Ausgabe_material.Text = ("Kunststoff");
             }
         }
 
