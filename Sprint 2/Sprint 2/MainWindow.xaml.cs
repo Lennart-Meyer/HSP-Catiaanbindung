@@ -199,7 +199,7 @@ namespace Sprint_2
                         Int32.TryParse(Convert.ToString(z), out int i);
                         if (i == 0)
                         {
-                            MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                            MessageBox.Show("Schrägverzahnung. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
                             txtblock_Ausgabe_zähnezahl.Text = "";
                         }
                         else
@@ -260,7 +260,7 @@ namespace Sprint_2
                         Int32.TryParse(Convert.ToString(z), out int i);
                         if (i == 0)
                         {
-                            MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                            MessageBox.Show("Schrägverzahnung. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
                             txtblock_Ausgabe_zähnezahl.Text = "";
                         }
                         else
@@ -324,7 +324,7 @@ namespace Sprint_2
                         Int32.TryParse(Convert.ToString(z), out int i);
                         if (i == 0)
                         {
-                            MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                            MessageBox.Show("Schrägverzahnung. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
                             txtblock_Ausgabe_zähnezahl.Text = "";
                         }
                         else
@@ -434,37 +434,42 @@ namespace Sprint_2
         {
             txtBox_Kopfspiel.Visibility = Visibility.Visible;
             txtBlock_Kopfspiel.Visibility = Visibility.Visible;
-
+            txtBlock_KopfspielEinheit.Visibility = Visibility.Visible;
         }
 
         private void cBox_Zahnflankenwinkel_Checked(object sender, RoutedEventArgs e)
         {
             txtBox_Zahnflankenwinkel.Visibility = Visibility.Visible;
             txtBlock_Zahnflankenwinkel.Visibility = Visibility.Visible;
+            txtBlock_ZahnflankenwinkelEinheit.Visibility = Visibility.Visible;
         }
 
         private void cBox_Verdrehen_Checked(object sender, RoutedEventArgs e)
         {
             txtBox_Verdrehen.Visibility = Visibility.Visible;
             txtBlock_Verdrehen.Visibility = Visibility.Visible;
+            txtBlock_VerdrehenEinheit.Visibility = Visibility.Visible;
         }
 
         private void cBox_Kopfspiel_Unchecked(object sender, RoutedEventArgs e)
         {
             txtBox_Kopfspiel.Visibility = Visibility.Hidden;
             txtBlock_Kopfspiel.Visibility = Visibility.Hidden;
+            txtBlock_KopfspielEinheit.Visibility = Visibility.Hidden;
         }
 
         private void cBox_Zahnflankenwinkel_Unchecked(object sender, RoutedEventArgs e)
         {
             txtBox_Zahnflankenwinkel.Visibility = Visibility.Hidden;
             txtBlock_Zahnflankenwinkel.Visibility = Visibility.Hidden;
+            txtBlock_ZahnflankenwinkelEinheit.Visibility = Visibility.Hidden;
         }
 
         private void cBox_Verdrehen_Unchecked(object sender, RoutedEventArgs e)
         {
             txtBox_Verdrehen.Visibility = Visibility.Hidden;
             txtBlock_Verdrehen.Visibility = Visibility.Hidden;
+            txtBlock_VerdrehenEinheit.Visibility = Visibility.Hidden;
         }
     }
 }
