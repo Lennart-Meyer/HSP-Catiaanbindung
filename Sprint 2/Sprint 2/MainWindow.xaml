@@ -12,12 +12,7 @@
             <GradientStop Color="#FF818181" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Window.OpacityMask>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF6A67D9" Offset="0.058"/>
-            <GradientStop Color="#FF1813F2" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.OpacityMask>
+
 
     <DockPanel >
 
@@ -52,7 +47,7 @@
 
                     </Grid.ColumnDefinitions>
 
-                    <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="3" TextBlock.FontSize="25">Bitte wählen Sie einen Zahnrad Typ aus:</Label>
+                    <Label Padding="20" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" TextBlock.FontSize="25" Height="73" VerticalAlignment="Bottom">Bitte wählen Sie einen Zahnradtyp aus:</Label>
 
                     <Label VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
                         <RadioButton Name="Stirnrad" IsChecked="True" GroupName="Zahnradtyp" TextBlock.FontSize="20" Checked="Stirnrad_Checked" Unchecked="Stirnrad_Unchecked" >Stirnrad</RadioButton>
@@ -325,8 +320,8 @@
                     <TextBlock Grid.Row="5" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Kopfspiel:</TextBlock>
                     <TextBlock Grid.Row="6" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Zahnflankenwinkel:</TextBlock>
                     <TextBlock Grid.Row="7" Grid.Column="2" Padding="10" FontSize="18" Width="Auto" >Material:</TextBlock>
-                    
-                        
+
+
                     <TextBlock x:Name="txtblock_Ausgabe_dicke" Grid.Row="1" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_dicke</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_zahnhöhe" Grid.Row="2" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnhöhe</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_zahnkopfhöhe" Grid.Row="3" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_zahnkopfhöhe</TextBlock>
@@ -334,7 +329,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_kopfspiel" Grid.Row="5" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_kopfspiel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_zahnflankenwinkel" Grid.Row="6" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_Zahnflankenenwinkel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="7" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_material</TextBlock>
-                    
+
 
 
                 </Grid>
