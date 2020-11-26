@@ -36,22 +36,6 @@ namespace Sprint_2
             if (Tab.SelectedIndex - 1 >= 0)
                 Tab.SelectedIndex--;
         }
-        //Zahnradauswahl        
-        public int zahnradAuswahl()
-        {
-            if (Stirnrad.IsChecked == true)
-            {
-                return 1;
-            }
-            else if (Kegelrad.IsChecked == true)
-            {
-                return 2;
-            }
-            else
-            {
-                return 0;
-            }
-        }
         
         private void Button_bes(object sender, RoutedEventArgs e)
         {
@@ -180,6 +164,7 @@ namespace Sprint_2
                 }
                 else
                 {
+                    
                     if (cBox_Verdrehen.IsChecked == true)
                     {
                         double.TryParse(txtBox_Verdrehen.Text, out beta);
