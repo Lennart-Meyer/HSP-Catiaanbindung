@@ -206,14 +206,11 @@ namespace Sprint_2
                         pt = p / Math.Cos(beta);
 
                         ausgabe();
-
                     }
 
                     else
                     {
                         z = d / m;
-
-
 
                         Int32.TryParse(Convert.ToString(z), out int i);
                         if (i == 0)
@@ -228,8 +225,6 @@ namespace Sprint_2
 
                         berechnung();
                         ausgabe();
-
-
                     }
                 }
             }
@@ -274,15 +269,11 @@ namespace Sprint_2
                         pt = p / Math.Cos(gamma);
 
                         ausgabe();
-
                     }
 
                     else
                     {
-
                         d = m * z;
-
-
 
                         Int32.TryParse(Convert.ToString(z), out int i);
                         if (i == 0)
@@ -344,8 +335,6 @@ namespace Sprint_2
 
                         ausgabe();
                     }
-
-
                     else
                     {
                         m = d / z;
