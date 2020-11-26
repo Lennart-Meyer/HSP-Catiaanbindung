@@ -18,15 +18,7 @@
             <GradientStop Color="#FF1813F2" Offset="1"/>
         </LinearGradientBrush>
     </Window.OpacityMask>
-    <Window.BorderBrush>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FF240DD8" Offset="0.137"/>
-            <GradientStop Color="#FFE61919" Offset="1"/>
-            <GradientStop Color="#FFD01616" Offset="0.946"/>
-            <GradientStop Color="#FFD01616" Offset="0.946"/>
-            <GradientStop Color="#FFE61919" Offset="0.953"/>
-        </LinearGradientBrush>
-    </Window.BorderBrush>
+
     <DockPanel >
 
 
