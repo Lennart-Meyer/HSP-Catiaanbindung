@@ -29,24 +29,12 @@ namespace Sprint_2
         {
             if (Tab.SelectedIndex + 1 < Tab.Items.Count)
                 Tab.SelectedIndex++;
-            /*
-            int newTab = Tab.SelectedIndex + 1;
-            if (newTab >= Tab.Items.Count)
-                newTab = 0;
-            Tab.SelectedIndex = newTab;
-            */
+
         }
         private void btnZurueck_Click(object sender, RoutedEventArgs e)
         {
             if (Tab.SelectedIndex - 1 >= 0)
                 Tab.SelectedIndex--;
-            
-            /*
-            int newTab = Tab.SelectedIndex - 1;
-            if (newTab < 0 )
-                newTab = Tab.Items.Count - 1;
-            Tab.SelectedIndex = newTab;
-            */
         }
         //Zahnradauswahl        
         public int zahnradAuswahl()
