@@ -95,7 +95,7 @@
                         </Grid.ColumnDefinitions>
                         <Label Grid.Row="0" Grid.Column="0">Wählen sie die Berechnungsart aus:</Label>
                         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <RadioButton Name="rb_berechnung1" GroupName="Berechnung" Checked="Rb_berechnung1_Checked">Modul und Teilkreisdurchemsser</RadioButton>
+                            <RadioButton Name="rb_berechnung1" GroupName="Berechnung" Checked="Rb_berechnung1_Checked">Modul und Teilkreisdurchmesser</RadioButton>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="0">
                             <RadioButton Name="rb_berechnung2" GroupName="Berechnung" Checked="rb_berechnung2_Checked">Modul und Zähnezahl</RadioButton>
