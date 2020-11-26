@@ -96,7 +96,7 @@ namespace Sprint_2
         double y; //Kopfkegelwinkel
         double da; //Kopfkreisdurchmesser
 
-        private void rb_berechnung1_Checked(object sender, RoutedEventArgs e)
+        private void Rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
             txtBlock_EingabeName1.Text = "Modul";
             txtBlock_EingabeName2.Text = "Teilkreisdurchmesser";
@@ -105,6 +105,8 @@ namespace Sprint_2
             txtBlock_Ergebnis.Text = "Ergebnis: ";
             txtBlock_Eingabe1Einheit.Text = "";
             txtBlock_Eingabe2Einheit.Text = "mm";
+
+            cBox_Verdrehen.Visibility = Visibility.Hidden;
         }
 
         private void rb_berechnung2_Checked(object sender, RoutedEventArgs e)
@@ -116,6 +118,8 @@ namespace Sprint_2
             txtBlock_Ergebnis.Text = "Ergebnis: ";
             txtBlock_Eingabe1Einheit.Text = "";
             txtBlock_Eingabe2Einheit.Text = "";
+
+            cBox_Verdrehen.Visibility = Visibility.Visible;
         }
 
         private void rb_berechnung3_Checked(object sender, RoutedEventArgs e)
@@ -127,6 +131,8 @@ namespace Sprint_2
             txtBlock_Ergebnis.Text = "Ergebnis: ";
             txtBlock_Eingabe1Einheit.Text = "mm";
             txtBlock_Eingabe2Einheit.Text = "";
+
+            cBox_Verdrehen.Visibility = Visibility.Visible;
         }
 
         public void berechnung() //Unterprogramm für die Berechnung
@@ -390,8 +396,9 @@ namespace Sprint_2
 
             }
         }
-
         
+
+
         private void Stirnrad_Checked(object sender, RoutedEventArgs e)
         {
             
@@ -426,8 +433,8 @@ namespace Sprint_2
             txtBlock_KopfkegelwinkelEinheit.Visibility = Visibility.Hidden;
             txtBlock_TeilkegelwinkelEinheit.Visibility = Visibility.Hidden;
             cBox_Verdrehen.Visibility = Visibility.Visible;
-            txtblock_Ausgabe_kopfkreisdurchmesser_1.Visibility = Visibility.Hidden;
-            txtblock_Ausgabe_kopfkreisdurchmesser_2.Visibility = Visibility.Hidden;
+            txtblock_Ausgabe_kopfkreisdurchmesser_1.Visibility = Visibility.Visible;
+            txtblock_Ausgabe_kopfkreisdurchmesser_2.Visibility = Visibility.Visible;
         }
 
         private void cBox_Kopfspiel_Checked(object sender, RoutedEventArgs e)
