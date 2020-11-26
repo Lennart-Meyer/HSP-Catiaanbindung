@@ -210,7 +210,6 @@ namespace Sprint_2
                         berechnung();
 
                         pt = p / Math.Cos(beta);
-
                         ausgabe();
                     }
 
@@ -228,7 +227,6 @@ namespace Sprint_2
                         {
                             z = Convert.ToDouble(i);
                         }
-
                         berechnung();
                         ausgabe();
                     }
@@ -273,7 +271,6 @@ namespace Sprint_2
                         berechnung();
 
                         pt = p / Math.Cos(gamma);
-
                         ausgabe();
                     }
 
@@ -291,7 +288,6 @@ namespace Sprint_2
                         {
                             z = Convert.ToDouble(i);
                         }
-
                         berechnung();
                         ausgabe();
 
@@ -338,7 +334,7 @@ namespace Sprint_2
                         berechnung();
 
                         pt = p / Math.Cos(beta);
-
+                        
                         ausgabe();
                     }
                     else
@@ -355,7 +351,7 @@ namespace Sprint_2
                         {
                             z = Convert.ToDouble(i);
                         }
-
+                        
                         berechnung();
                         ausgabe();
                     }

@@ -147,7 +147,7 @@
                         <Label Grid.Row="0" Grid.Column="1">
                             <TextBox Name="txtBox_Eingabe1"  Width="100" Text="" ></TextBox>
                         </Label>
-                        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right">
+                        <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_Eingabe1Einheit"  Text=""></TextBlock>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right">
@@ -156,7 +156,7 @@
                         <Label Grid.Row="1" Grid.Column="1">
                             <TextBox Name="txtBox_Eingabe2"  Width="100" Text=""></TextBox>
                         </Label>
-                        <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right">
+                        <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_Eingabe2Einheit"  Text=""></TextBlock>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">
