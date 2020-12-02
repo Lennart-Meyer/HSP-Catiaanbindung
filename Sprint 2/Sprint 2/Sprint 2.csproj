@@ -26,4 +26,16 @@
     <Folder Include="Bilder\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Interop.INFITF">
+      <HintPath>..\..\..\..\..\Downloads\Interop.INFITF.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MECMOD">
+      <HintPath>..\..\..\..\..\Downloads\Interop.MECMOD.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PARTITF">
+      <HintPath>..\..\..\..\..\Downloads\Interop.PARTITF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
