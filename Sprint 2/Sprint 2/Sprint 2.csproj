@@ -28,22 +28,22 @@
 
   <ItemGroup>
     <Reference Include="Interop.HybridShapeTypeLib">
-      <HintPath>..\..\..\..\..\Downloads\Interop.HybridShapeTypeLib.dll</HintPath>
+      <HintPath>Verweise\Interop.HybridShapeTypeLib.dll</HintPath>
     </Reference>
     <Reference Include="Interop.INFITF">
-      <HintPath>..\..\..\..\..\Downloads\Interop.INFITF.dll</HintPath>
+      <HintPath>Verweise\Interop.INFITF.dll</HintPath>
     </Reference>
     <Reference Include="Interop.KnowledgewareTypeLib">
-      <HintPath>..\..\..\..\..\Downloads\Interop.KnowledgewareTypeLib.dll</HintPath>
+      <HintPath>Verweise\Interop.KnowledgewareTypeLib.dll</HintPath>
     </Reference>
     <Reference Include="Interop.MECMOD">
-      <HintPath>..\..\..\..\..\Downloads\Interop.MECMOD.dll</HintPath>
+      <HintPath>Verweise\Interop.MECMOD.dll</HintPath>
     </Reference>
     <Reference Include="Interop.PARTITF">
-      <HintPath>..\..\..\..\..\Downloads\Interop.PARTITF.dll</HintPath>
+      <HintPath>Verweise\Interop.PARTITF.dll</HintPath>
     </Reference>
     <Reference Include="Interop.ProductStructureTypeLib">
-      <HintPath>..\..\..\..\..\Downloads\Interop.ProductStructureTypeLib.dll</HintPath>
+      <HintPath>Verweise\Interop.ProductStructureTypeLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 
