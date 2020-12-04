@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using INFITF;
 using MECMOD;
 using PARTITF;
+using HybridShapeTypeLib;
+using KnowledgewareTypeLib;
+using ProductStructureTypeLib;
 
 namespace Sprint_2
 {
