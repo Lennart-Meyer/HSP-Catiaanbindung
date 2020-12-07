@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace Sprint_3
 {
-    class CatiaControl
+    class CatiaControl : MainWindow
     {
+        
         public CatiaControl()
         {
+            
+
+
             try
             {
 
