@@ -81,30 +81,31 @@ namespace Sprint_3
             // Skizze oeffnen
             Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
 
-            // Rechteck erzeugen
+            //Endpunkte
+            Point2D catPoint2D1 = catFactory2D1.CreatePoint(-3.470708, 39.221739);
+            Point2D catPoint2D2 = catFactory2D1.CreatePoint(3.470708, 39.221739);
+            Point2D catPoint2D3 = catFactory2D1.CreatePoint(-1.168219, 47.235556);
+            Point2D catPoint2D4 = catFactory2D1.CreatePoint(1.168219, 47.235556);
 
-            // erst die Punkte
-            Point2D catPoint2D1 = catFactory2D1.CreatePoint(-50, 50);
-            Point2D catPoint2D2 = catFactory2D1.CreatePoint(50, 50);
-            Point2D catPoint2D3 = catFactory2D1.CreatePoint(50, -50);
-            Point2D catPoint2D4 = catFactory2D1.CreatePoint(-50, -50);
+            //Kreise unten
+            Circle2D circle2D1 = catFactory2D1.CreateClosedCircle(0.000000, 0.000000, 39.375);
+            circle2D1.StartPoint = catPoint2D1;
+            circle2D1.EndPoint = catPoint2D2;
 
-            // dann die Linien
-            Line2D catLine2D1 = catFactory2D1.CreateLine(-50, 50, 50, 50);
-            catLine2D1.StartPoint = catPoint2D1;
-            catLine2D1.EndPoint = catPoint2D2;
+            //Kreise oben
+            Circle2D circle2D2 = catFactory2D1.CreateClosedCircle(0.000000, 0.000000, 47.25);
+            circle2D2.StartPoint = catPoint2D4;
+            circle2D2.EndPoint = catPoint2D3;
 
-            Line2D catLine2D2 = catFactory2D1.CreateLine(50, 50, 50, -50);
-            catLine2D2.StartPoint = catPoint2D2;
-            catLine2D2.EndPoint = catPoint2D3;
+            //Kreise links
+            Circle2D circle2D3 = catFactory2D1.CreateClosedCircle(11.611292, 39.451787, 14.963387);
+            circle2D3.StartPoint = catPoint2D3;
+            circle2D3.EndPoint = catPoint2D1;
 
-            Line2D catLine2D3 = catFactory2D1.CreateLine(50, -50, -50, -50);
-            catLine2D3.StartPoint = catPoint2D3;
-            catLine2D3.EndPoint = catPoint2D4;
-
-            Line2D catLine2D4 = catFactory2D1.CreateLine(-50, -50, -50, 50);
-            catLine2D4.StartPoint = catPoint2D4;
-            catLine2D4.EndPoint = catPoint2D1;
+            //Kreise rechts
+            Circle2D circle2D4 = catFactory2D1.CreateClosedCircle(-11.611292, 39.451787, 14.963387);
+            circle2D4.StartPoint = catPoint2D2;
+            circle2D4.EndPoint = catPoint2D4;
 
             // Skizzierer verlassen
             hsp_catiaProfil.CloseEdition();
