@@ -529,7 +529,40 @@ namespace Sprint_3
                 }
                 Console.WriteLine("Fertig - Taste drücken.");
             }
-        
 
+        private void btn_Mus_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                CatiaConnection cc = new CatiaConnection();
+
+                // Finde Catia Prozess
+                if (cc.CATIALaeuft())
+                {
+                    // Öffne ein neues Part
+                    cc.ErzeugePart();
+
+                    // Erstelle eine Skizze
+                    cc.ErstelleLeereSkizze();
+
+                    // Generiere ein Profil
+                    cc.ErzeugeProfil(20, 10);
+                    /*
+                    // Extrudiere Balken
+                    cc.ErzeugeBalken(d);
+                    Console.WriteLine("4");
+                    */
+                    cc.ErzeugeMuster(10);
+                }
+                else
+                {
+                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Exception aufgetreten");
+            }
+        }
     }
 }

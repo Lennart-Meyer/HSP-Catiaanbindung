@@ -331,6 +331,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="7" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_material</TextBlock>
 
                     <Button x:Name="btn_Vis" Grid.Row="8" Grid.Column="1" Click="btn_Vis_Click">Visualisiern</Button>
+                    <Button x:Name="btn_Mus" Grid.Row="8" Grid.Column="2" Click="btn_Mus_Click">Muster erzeugen</Button>
 
                 </Grid>
 
