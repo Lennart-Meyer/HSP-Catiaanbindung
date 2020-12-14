@@ -511,7 +511,7 @@ namespace Sprint_3
                         Console.WriteLine("2");
 
                         // Generiere ein Profil
-                        cc.ErzeugeProfil(20, 10);
+                        cc.ErzeugeProfil(df, 10);
                         Console.WriteLine("3");
 
                         // Extrudiere Balken
@@ -552,7 +552,7 @@ namespace Sprint_3
                     cc.ErzeugeBalken(d);
                     Console.WriteLine("4");
                     */
-                    cc.ErzeugeMuster(10);
+                    cc.ErzeugeMuster(z);
                 }
                 else
                 {

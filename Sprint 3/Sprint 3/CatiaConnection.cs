@@ -76,7 +76,7 @@ namespace Sprint_3
             hsp_catiaProfil.SetAbsoluteAxisData(arr);
         }
 
-        public void ErzeugeProfil(Double b, Double h)
+        public void ErzeugeProfil(Double df, Double h)
         {
             // Skizze umbenennen
             hsp_catiaProfil.set_Name("Rechteck");
@@ -92,7 +92,7 @@ namespace Sprint_3
             Point2D catPoint2D4 = catFactory2D1.CreatePoint(1.168219, 47.235556);
 
             //Kreise unten
-            Circle2D circle2D1 = catFactory2D1.CreateClosedCircle(0.000000, 0.000000, 39.375);
+            Circle2D circle2D1 = catFactory2D1.CreateClosedCircle(0.000000, 0.000000, df);
             circle2D1.StartPoint = catPoint2D1;
             circle2D1.EndPoint = catPoint2D2;
 
@@ -133,7 +133,7 @@ namespace Sprint_3
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeMuster(int Zaehnezahl)
+        public void ErzeugeMuster(double Zaehnezahl)
         {
             ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
             HybridShapeFactory HSF = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory;
