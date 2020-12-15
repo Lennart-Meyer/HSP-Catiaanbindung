@@ -470,7 +470,7 @@ namespace Sprint_3
                     }
                     else
                     {
-                        Console.WriteLine("Laufende Catia Application nicht gefunden");
+                    MessageBox.Show("");
                     }
                 }
                 catch (Exception ex)

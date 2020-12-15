@@ -130,10 +130,10 @@ namespace Sprint_3
 
             //Punkte
             //LinkerEvolKreis Mittelp. Koordinaten
-            double xMittelpunktaufEvol_links = Hilfskreisradius * Math.Cos(Gammarad);
-            double yMittelpunktaufEvol_links = Hilfskreisradius * Math.Sin(Gammarad);
+            double xMittelpunktaufEvol_links = HilfskreisradiusInnen * Math.Cos(Gammarad);
+            double yMittelpunktaufEvol_links = HilfskreisradiusInnen * Math.Sin(Gammarad);
 
-            //Schnittpkt. auf Evolvente und Teilkreisradius
+            //Schnittpunkt Evolvente und Teilkreisradius
             double xPunktAufEvolvente = -Teilkreisradius * Math.Sin(Betarad);
             double yPunktAufEvolvente = Teilkreisradius * Math.Cos(Betarad);
 
@@ -141,33 +141,34 @@ namespace Sprint_3
             double EvolventenkreisRadius = Math.Sqrt(Math.Pow((xMittelpunktaufEvol_links - xPunktAufEvolvente), 2) + Math.Pow((yMittelpunktaufEvol_links - yPunktAufEvolvente), 2));
 
             //Koordinaten Schnittpunkt Kopfkreis und Evolventenkreis
-            double xEvolventenkopfkreis_links = Schnittpunkt_X(x0, y0, Kopfkreisradius, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius);
-            double yEvolventenkopfkreis_links = Schnittpunkt_Y(x0, y0, Kopfkreisradius, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius);
+            double xEvolventenkopfkreis_links = Schnittpunkt_X(x0, y0, KopfkreisradiusInnen, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius);
+            double yEvolventenkopfkreis_links = Schnittpunkt_Y(x0, y0, KopfkreisradiusInnen, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius);
 
             //Mittelpunktkoordinaten Verrundung
-            double xMittelpunktVerrundung_links = Schnittpunkt_X(x0, y0, Fußkreisradius + Verrundungsradius, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius + Verrundungsradius);
-            double yMittelpunktVerrundung_links = Schnittpunkt_Y(x0, y0, Fußkreisradius + Verrundungsradius, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius + Verrundungsradius);
+            double xMittelpunktVerrundung_links = Schnittpunkt_X(x0, y0, FußkreisradiusInnen - Verrundungsradius, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius + Verrundungsradius);
+            double yMittelpunktVerrundung_links = Schnittpunkt_Y(x0, y0, FußkreisradiusInnen - Verrundungsradius, xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius + Verrundungsradius);
 
-            //Schnittpubktkoordinaten Verrundung - Evolventenkreis
+            //Schnittpunktkoordinaten Verrundung - Evolventenkreis
             double x_SP_EvolventeVerrundung_links = Schnittpunkt_X(xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius, xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius);
             double y_SP_EvolventeVerrundung_links = Schnittpunkt_Y(xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius, xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius);
 
             //Schnittpunktkoordinaten Verrundung - Fußkreis
-            double x_SP_FußkreisradiusVerrundung_links = Schnittpunkt_X(x0, y0, Fußkreisradius, xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius);
-            double y_SP_FußkreisradiusVerrundung_links = Schnittpunkt_Y(x0, y0, Fußkreisradius, xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius);
+            double x_SP_FußkreisradiusVerrundung_links = Schnittpunkt_X(x0, y0, FußkreisradiusInnen, xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius);
+            double y_SP_FußkreisradiusVerrundung_links = Schnittpunkt_Y(x0, y0, FußkreisradiusInnen, xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius);
 
             //Koordinaten Anfangspunkt Fußkreis
             double Hilfswinkel = Totalangelrad - Math.Atan(Math.Abs(x_SP_FußkreisradiusVerrundung_links) / Math.Abs(y_SP_FußkreisradiusVerrundung_links));
-            double x_AnfangspunktFußkreis = Fußkreisradius * Math.Sin(Hilfswinkel);
-            double y_AnfangspunktFußkreis = Fußkreisradius * Math.Cos(Hilfswinkel);
+            double x_AnfangspunktFußkreis = -FußkreisradiusInnen * Math.Sin(Hilfswinkel);
+            double y_AnfangspunktFußkreis = FußkreisradiusInnen * Math.Cos(Hilfswinkel);
 
 
-            // Skizze umbenennen und öffnen
-            hsp_catiaProfil.set_Name("Rechteck");
+            //Skizze umbenennen und öffnen
+            hsp_catiaProfil.set_Name("Zahnradskizze");
             Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
 
-            //Nun die Punkte in die Skizze
+            //
             Point2D point_Ursprung = catFactory2D1.CreatePoint(x0, y0);
+            Point2D point_Ursprung_Kopfkreis = catFactory2D1.CreatePoint(x0, 2 * KopfkreisradiusInnen);
             Point2D pointAnfangFußkreisLinks = catFactory2D1.CreatePoint(x_AnfangspunktFußkreis, y_AnfangspunktFußkreis);
             Point2D pointFußkreisVerrundungLinks = catFactory2D1.CreatePoint(x_SP_FußkreisradiusVerrundung_links, y_SP_FußkreisradiusVerrundung_links);
             Point2D pointFußkreisVerrundungRechts = catFactory2D1.CreatePoint(-x_SP_FußkreisradiusVerrundung_links, y_SP_FußkreisradiusVerrundung_links);
@@ -182,35 +183,35 @@ namespace Sprint_3
 
             //Kreise
 
-            Circle2D KreisFußkreis = catFactory2D1.CreateCircle(x0, y0, Fußkreisradius, 0, Math.PI * 2);
+            Circle2D KreisFußkreis = catFactory2D1.CreateCircle(x0, y0, FußkreisradiusInnen, 0, Math.PI * 2);
             KreisFußkreis.CenterPoint = point_Ursprung;
             KreisFußkreis.StartPoint = pointFußkreisVerrundungLinks;
             KreisFußkreis.EndPoint = pointAnfangFußkreisLinks;
 
             Circle2D KreisVerrundungLinks = catFactory2D1.CreateCircle(xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius, 0, Math.PI * 2);
             KreisVerrundungLinks.CenterPoint = pointMittelpunktVerrundungLinks;
-            KreisVerrundungLinks.StartPoint = pointFußkreisVerrundungLinks;
-            KreisVerrundungLinks.EndPoint = pointVerrundungEvolventeLinks;
+            KreisVerrundungLinks.StartPoint = pointVerrundungEvolventeLinks;
+            KreisVerrundungLinks.EndPoint = pointFußkreisVerrundungLinks;
 
             Circle2D KreisEvolventenkreisLinks = catFactory2D1.CreateCircle(xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius, 0, Math.PI * 2);
             KreisEvolventenkreisLinks.CenterPoint = pointMittelpunktevolventeLinks;
-            KreisEvolventenkreisLinks.StartPoint = pointEvolventenKopfkreisLinks;
-            KreisEvolventenkreisLinks.EndPoint = pointVerrundungEvolventeLinks;
-
-            Circle2D KreisKopfkreis = catFactory2D1.CreateCircle(x0, y0, Kopfkreisradius, 0, Math.PI * 2);
-            KreisKopfkreis.CenterPoint = point_Ursprung;
-            KreisKopfkreis.StartPoint = pointEvolventenKopfkreisRechts;
-            KreisKopfkreis.EndPoint = pointEvolventenKopfkreisLinks;
+            KreisEvolventenkreisLinks.StartPoint = pointVerrundungEvolventeLinks;
+            KreisEvolventenkreisLinks.EndPoint = pointEvolventenKopfkreisLinks;
 
             Circle2D KreisEvolventenkreisRechts = catFactory2D1.CreateCircle(-xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius, 0, Math.PI * 2);
             KreisEvolventenkreisRechts.CenterPoint = pointMittelpunktevolventeRechts;
-            KreisEvolventenkreisRechts.StartPoint = pointVerrundungEvolventeRechts;
-            KreisEvolventenkreisRechts.EndPoint = pointEvolventenKopfkreisRechts;
+            KreisEvolventenkreisRechts.StartPoint = pointEvolventenKopfkreisRechts;
+            KreisEvolventenkreisRechts.EndPoint = pointVerrundungEvolventeRechts;
 
             Circle2D KreisVerrundungRechts = catFactory2D1.CreateCircle(-xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius, 0, Math.PI * 2);
             KreisVerrundungRechts.CenterPoint = pointMittelpunktVerrundungRechts;
-            KreisVerrundungRechts.StartPoint = pointVerrundungEvolventeRechts;
-            KreisVerrundungRechts.EndPoint = pointFußkreisVerrundungRechts;
+            KreisVerrundungRechts.StartPoint = pointFußkreisVerrundungRechts;
+            KreisVerrundungRechts.EndPoint = pointVerrundungEvolventeRechts;
+
+            Circle2D KreisKopfkreis = catFactory2D1.CreateCircle(x0, 2 * KopfkreisradiusInnen, KopfkreisradiusInnen, 0, Math.PI * 2);
+            KreisKopfkreis.CenterPoint = point_Ursprung_Kopfkreis;
+            KreisKopfkreis.StartPoint = pointEvolventenKopfkreisLinks;
+            KreisKopfkreis.EndPoint = pointEvolventenKopfkreisRechts;
 
             // Skizzierer verlassen
             hsp_catiaProfil.CloseEdition();
