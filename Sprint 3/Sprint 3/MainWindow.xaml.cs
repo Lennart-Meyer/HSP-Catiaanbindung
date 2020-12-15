@@ -26,6 +26,8 @@ namespace Sprint_3
     /// </summary>
     public partial class MainWindow : System.Windows.Window
     {
+
+        Zahnrad Zahnrad1 = new Zahnrad();
         public MainWindow()
         {
             InitializeComponent();
@@ -81,26 +83,7 @@ namespace Sprint_3
             }
         }
 
-        double z; //Zähnezahl
-        double m; //Modul
-        double d; //Teilkreisdurchmesser
-        double c = 0.167; //Kopfspiel
-        double a = 20; //Zahnflankenwinkel
-        double b; //Breite
-        double h; //Zahnhöhe
-        double p; //Teilung
-        double df; //Fußkreisdurchmesser
-        double dg; //Grundkreisdurchmesser
-        double ha; //Zahnkopfhöhe
-        double hf; //Zahnfußhöhe
-        double alpha; // a in Rad
-        double beta; // Schrägungswinkel
-        double mt; //Stirnmodul
-        double pt; //Stirnteilung
-        double gamma; // beta in Rad
-        double o; //Teilkegelwinkel
-        double y; //Kopfkegelwinkel
-        double da; //Kopfkreisdurchmesser
+        
 
         private void Rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
@@ -141,41 +124,22 @@ namespace Sprint_3
             cBox_Verdrehen.Visibility = Visibility.Visible;
         }
 
-        public void berechnung() //Unterprogramm für die Berechnung
-        {
-            //Zahnhöhe
-            h = 2 * m + c;
-            //Teilung
-            p = Math.PI * m;
-            //Fußkreisdurchmesser
-            df = d - (2 * (m + c));
-            //Grundkreisdurchmesser
-            alpha = Math.PI / 180 * a; // Winkel in Radiant umrechnen
-            dg = d * Math.Cos(alpha);
-            //Zahnkopfhöhe
-            ha = m;
-            //Zahnfußhöhe
-            hf = m + c;
-            //Kopfkreisdurchmesser
-            da = d + 2 * m * Math.Cos(o);
-        }
-
-
+        
         public void ausgabe() //Unterprogramm für die Ausgabe
         {
-            txtblock_Ausgabe_modul.Text = (m + "mm");
-            txtblock_Ausgabe_teilkreis.Text = (d + "mm");
-            txtblock_Ausgabe_zähnezahl.Text = ("" + z);
-            txtblock_Ausgabe_kopfspiel.Text = (c + "mm");
-            txtblock_Ausgabe_zahnflankenwinkel.Text = (a + "°");
-            txtblock_Ausgabe_dicke.Text = (b + "mm");
-            txtblock_Ausgabe_fußkreisdurchmesser.Text = (df + "mm");
-            txtblock_Ausgabe_grundkreisdurchmesser.Text = (dg + "mm");
-            txtblock_Ausgabe_teilung.Text = (p + "");
-            txtblock_Ausgabe_zahnhöhe.Text = (h + "mm");
-            txtblock_Ausgabe_zahnkopfhöhe.Text = (ha + "mm");
-            txtblock_Ausgabe_zahnfußhöhe.Text = (hf + "mm");
-            txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (da + "mm");
+            txtblock_Ausgabe_modul.Text = (Zahnrad1.m + "mm");
+            txtblock_Ausgabe_teilkreis.Text = (Zahnrad1.d + "mm");
+            txtblock_Ausgabe_zähnezahl.Text = ("" + Zahnrad1.z);
+            txtblock_Ausgabe_kopfspiel.Text = (Zahnrad1.c + "mm");
+            txtblock_Ausgabe_zahnflankenwinkel.Text = (Zahnrad1.a + "°");
+            txtblock_Ausgabe_dicke.Text = (Zahnrad1.b + "mm");
+            txtblock_Ausgabe_fußkreisdurchmesser.Text = (Zahnrad1.df + "mm");
+            txtblock_Ausgabe_grundkreisdurchmesser.Text = (Zahnrad1.dg + "mm");
+            txtblock_Ausgabe_teilung.Text = (Zahnrad1.p + "");
+            txtblock_Ausgabe_zahnhöhe.Text = (Zahnrad1.h + "mm");
+            txtblock_Ausgabe_zahnkopfhöhe.Text = (Zahnrad1.ha + "mm");
+            txtblock_Ausgabe_zahnfußhöhe.Text = (Zahnrad1.hf + "mm");
+            txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (Zahnrad1.a + "mm");
         }
 
 
@@ -185,13 +149,13 @@ namespace Sprint_3
         {
             if (rb_berechnung1.IsChecked == true)
             {
-                Double.TryParse(txtBox_Eingabe1.Text, out m);
-                Double.TryParse(txtBox_Eingabe2.Text, out d);
-                Double.TryParse(txtBox_Dicke.Text, out b);
-                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
-                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
+                Double.TryParse(txtBox_Eingabe1.Text, out Zahnrad1.m);
+                Double.TryParse(txtBox_Eingabe2.Text, out Zahnrad1.d);
+                Double.TryParse(txtBox_Dicke.Text, out Zahnrad1.b);
+                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out Zahnrad1.o);
+                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out Zahnrad1.y);
 
-                if (m <= 0 || d <= 0 || b <= 0)
+                if (Zahnrad1.m <= 0 || Zahnrad1.d <= 0 || Zahnrad1.b <= 0)
                 {
                     MessageBox.Show("Eine der Eingaben ist nicht positiv. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
                     txtblock_Ausgabe_zähnezahl.Text = "";
@@ -200,15 +164,15 @@ namespace Sprint_3
                 {
                     if (cBox_Verdrehen.IsChecked == true)
                     {
-                        double.TryParse(txtBox_Verdrehen.Text, out beta);
+                        double.TryParse(txtBox_Verdrehen.Text, out Zahnrad1.beta);
 
-                        gamma = beta * (Math.PI / 180);
+                        Zahnrad1.gamma = Zahnrad1.beta * (Math.PI / 180);
 
-                        mt = m / Math.Cos(gamma);
+                        Zahnrad1.mt = Zahnrad1.m / Math.Cos(Zahnrad1.gamma);
 
-                        z = d / mt;
+                        Zahnrad1.z = Zahnrad1.d / Zahnrad1.mt;
 
-                        Int32.TryParse(Convert.ToString(z), out int i);
+                        Int32.TryParse(Convert.ToString(Zahnrad1.z), out int i);
                         if (i == 0)
                         {
                             MessageBox.Show("Schrägverzahnung. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
@@ -216,20 +180,20 @@ namespace Sprint_3
                         }
                         else
                         {
-                            z = Convert.ToDouble(i);
+                            Zahnrad1.z = Convert.ToDouble(i);
                         }
 
-                        berechnung();
+                        Zahnrad1.berechnung();
 
-                        pt = p / Math.Cos(beta);
+                        Zahnrad1.pt = Zahnrad1.p / Math.Cos(Zahnrad1.beta);
                         ausgabe();
                     }
 
                     else
                     {
-                        z = d / m;
+                        Zahnrad1.z = Zahnrad1.d / Zahnrad1.m;
 
-                        Int32.TryParse(Convert.ToString(z), out int i);
+                        Int32.TryParse(Convert.ToString(Zahnrad1.z), out int i);
                         if (i == 0)
                         {
                             MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
@@ -237,22 +201,22 @@ namespace Sprint_3
                         }
                         else
                         {
-                            z = Convert.ToDouble(i);
+                            Zahnrad1.z = Convert.ToDouble(i);
                         }
-                        berechnung();
+                        Zahnrad1.berechnung();
                         ausgabe();
                     }
                 }
             }
             else if (rb_berechnung2.IsChecked == true)
             {
-                Double.TryParse(txtBox_Eingabe1.Text, out m);
-                Double.TryParse(txtBox_Eingabe2.Text, out z);
-                Double.TryParse(txtBox_Dicke.Text, out b);
-                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
-                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
+                Double.TryParse(txtBox_Eingabe1.Text, out Zahnrad1.m);
+                Double.TryParse(txtBox_Eingabe2.Text, out Zahnrad1.z);
+                Double.TryParse(txtBox_Dicke.Text, out Zahnrad1.b);
+                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out Zahnrad1.o);
+                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out Zahnrad1.y);
 
-                if (m <= 0 || z <= 0 || b <= 0)
+                if (Zahnrad1.m <= 0 || Zahnrad1.z <= 0 || Zahnrad1.b <= 0)
                 {
                     MessageBox.Show("Eine der Eingaben ist nicht positiv. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
                     txtblock_Ausgabe_zähnezahl.Text = "";
@@ -261,15 +225,15 @@ namespace Sprint_3
                 {
                     if (cBox_Verdrehen.IsChecked == true)
                     {
-                        double.TryParse(txtBox_Verdrehen.Text, out beta);
+                        double.TryParse(txtBox_Verdrehen.Text, out Zahnrad1.beta);
 
-                        gamma = beta * (Math.PI / 180);
+                        Zahnrad1.gamma = Zahnrad1.beta * (Math.PI / 180);
 
-                        mt = m / Math.Cos(gamma);
+                        Zahnrad1.mt = Zahnrad1.m / Math.Cos(Zahnrad1.gamma);
 
-                        d = mt * z;
+                        Zahnrad1.d = Zahnrad1.mt * Zahnrad1.z;
 
-                        Int32.TryParse(Convert.ToString(z), out int i);
+                        Int32.TryParse(Convert.ToString(Zahnrad1.z), out int i);
                         if (i == 0)
                         {
                             MessageBox.Show("Schrägverzahnung. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
@@ -277,20 +241,20 @@ namespace Sprint_3
                         }
                         else
                         {
-                            z = Convert.ToDouble(i);
+                            Zahnrad1.z = Convert.ToDouble(i);
                         }
 
-                        berechnung();
+                        Zahnrad1.berechnung();
 
-                        pt = p / Math.Cos(gamma);
+                        Zahnrad1.pt = Zahnrad1.p / Math.Cos(Zahnrad1.gamma);
                         ausgabe();
                     }
 
                     else
                     {
-                        d = m * z;
+                        Zahnrad1.d = Zahnrad1.m * Zahnrad1.z;
 
-                        Int32.TryParse(Convert.ToString(z), out int i);
+                        Int32.TryParse(Convert.ToString(Zahnrad1.z), out int i);
                         if (i == 0)
                         {
                             MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
@@ -298,9 +262,9 @@ namespace Sprint_3
                         }
                         else
                         {
-                            z = Convert.ToDouble(i);
+                            Zahnrad1.z = Convert.ToDouble(i);
                         }
-                        berechnung();
+                        Zahnrad1.berechnung();
                         ausgabe();
 
                     }
@@ -309,14 +273,14 @@ namespace Sprint_3
 
             else if (rb_berechnung3.IsChecked == true)
             {
-                Double.TryParse(txtBox_Eingabe1.Text, out d);
-                Double.TryParse(txtBox_Eingabe2.Text, out z);
-                Double.TryParse(txtBox_Dicke.Text, out b);
-                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out o);
-                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out y);
+                Double.TryParse(txtBox_Eingabe1.Text, out Zahnrad1.d);
+                Double.TryParse(txtBox_Eingabe2.Text, out Zahnrad1.z);
+                Double.TryParse(txtBox_Dicke.Text, out Zahnrad1.b);
+                Double.TryParse(txtBlock_Teilkegelwinkel.Text, out Zahnrad1.o);
+                Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out Zahnrad1.y);
 
 
-                if (d <= 0 || z <= 0 || b <= 0)
+                if (Zahnrad1.d <= 0 || Zahnrad1.z <= 0 || Zahnrad1.b <= 0)
                 {
                     MessageBox.Show("Eine der Eingaben ist nicht positiv. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
                     txtblock_Ausgabe_zähnezahl.Text = "";
@@ -325,15 +289,15 @@ namespace Sprint_3
                 {
                     if (cBox_Verdrehen.IsChecked == true)
                     {
-                        double.TryParse(txtBox_Verdrehen.Text, out beta);
+                        double.TryParse(txtBox_Verdrehen.Text, out Zahnrad1.beta);
 
-                        gamma = beta * (Math.PI / 180);
+                        Zahnrad1.gamma = Zahnrad1.beta * (Math.PI / 180);
 
-                        mt = m / Math.Cos(gamma);
+                        Zahnrad1.mt = Zahnrad1.m / Math.Cos(Zahnrad1.gamma);
 
-                        mt = d / z;
+                        Zahnrad1.mt = Zahnrad1.d / Zahnrad1.z;
 
-                        Int32.TryParse(Convert.ToString(z), out int i);
+                        Int32.TryParse(Convert.ToString(Zahnrad1.z), out int i);
                         if (i == 0)
                         {
                             MessageBox.Show("Schrägverzahnung. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
@@ -341,19 +305,19 @@ namespace Sprint_3
                         }
                         else
                         {
-                            z = Convert.ToDouble(i);
+                            Zahnrad1.z = Convert.ToDouble(i);
                         }
-                        berechnung();
+                        Zahnrad1.berechnung();
 
-                        pt = p / Math.Cos(beta);
+                        Zahnrad1.pt = Zahnrad1.p / Math.Cos(Zahnrad1.beta);
 
                         ausgabe();
                     }
                     else
                     {
-                        m = d / z;
+                        Zahnrad1.m = Zahnrad1.d / Zahnrad1.z;
 
-                        Int32.TryParse(Convert.ToString(z), out int i);
+                        Int32.TryParse(Convert.ToString(Zahnrad1.z), out int i);
                         if (i == 0)
                         {
                             MessageBox.Show("Die Anzahl der Zähne ist keine ganze Zahl. Bitte wiederholen sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
@@ -361,10 +325,10 @@ namespace Sprint_3
                         }
                         else
                         {
-                            z = Convert.ToDouble(i);
+                            Zahnrad1.z = Convert.ToDouble(i);
                         }
 
-                        berechnung();
+                        Zahnrad1.berechnung();
                         ausgabe();
                     }
                 }
@@ -373,27 +337,27 @@ namespace Sprint_3
 
             if (cBox_Kopfspiel.IsChecked == true)
             {
-                double.TryParse(txtBox_Kopfspiel.Text, out c);
+                double.TryParse(txtBox_Kopfspiel.Text, out Zahnrad1.c);
 
-                df = d - (2 * (m + c));
-                h = 2 * m + c;
-                hf = m + c;
+                Zahnrad1.df = Zahnrad1.d - (2 * (Zahnrad1.m + Zahnrad1.c));
+                Zahnrad1.h = 2 * Zahnrad1.m + Zahnrad1.c;
+                Zahnrad1.hf = Zahnrad1.m + Zahnrad1.c;
 
-                txtblock_Ausgabe_kopfspiel.Text = (c + "mm");
-                txtblock_Ausgabe_zahnfußhöhe.Text = (hf + "mm");
-                txtblock_Ausgabe_zahnhöhe.Text = (h + "mm");
-                txtblock_Ausgabe_fußkreisdurchmesser.Text = (df + "mm");
+                txtblock_Ausgabe_kopfspiel.Text = (Zahnrad1.c + "mm");
+                txtblock_Ausgabe_zahnfußhöhe.Text = (Zahnrad1.hf + "mm");
+                txtblock_Ausgabe_zahnhöhe.Text = (Zahnrad1.h + "mm");
+                txtblock_Ausgabe_fußkreisdurchmesser.Text = (Zahnrad1.df + "mm");
             }
 
             if (cBox_Zahnflankenwinkel.IsChecked == true)
             {
-                double.TryParse(txtBox_Zahnflankenwinkel.Text, out a);
+                double.TryParse(txtBox_Zahnflankenwinkel.Text, out Zahnrad1.a);
 
-                alpha = Math.PI / 180 * a;
-                dg = d * Math.Cos(alpha);
+                Zahnrad1.alpha = Math.PI / 180 * Zahnrad1.a;
+                Zahnrad1.dg = Zahnrad1.d * Math.Cos(Zahnrad1.alpha);
 
-                txtblock_Ausgabe_zahnflankenwinkel.Text = (a + "°");
-                txtblock_Ausgabe_grundkreisdurchmesser.Text = (dg + "mm");
+                txtblock_Ausgabe_zahnflankenwinkel.Text = (Zahnrad1.a + "°");
+                txtblock_Ausgabe_grundkreisdurchmesser.Text = (Zahnrad1.dg + "mm");
             }
 
             if (cBox_Verdrehen.IsChecked == true)
@@ -488,10 +452,6 @@ namespace Sprint_3
         private void btn_Vis_Click(object sender, RoutedEventArgs e)
         {
             
-          
-
-
-
                 try
                 {
 
@@ -511,11 +471,11 @@ namespace Sprint_3
                         Console.WriteLine("2");
 
                         // Generiere ein Profil
-                        cc.ErzeugeProfil(df, 10);
+                        cc.ErzeugeProfil(Zahnrad1);
                         Console.WriteLine("3");
 
                         // Extrudiere Balken
-                        cc.ErzeugeBalken(d);
+                        cc.ErzeugeBalken(Zahnrad1.d);
                         Console.WriteLine("4");
                     }
                     else
@@ -542,17 +502,8 @@ namespace Sprint_3
                     // Öffne ein neues Part
                     cc.ErzeugePart();
 
-                    // Erstelle eine Skizze
-                    cc.ErstelleLeereSkizze();
-
                     // Generiere ein Profil
-                    cc.ErzeugeProfil(20, 10);
-                    /*
-                    // Extrudiere Balken
-                    cc.ErzeugeBalken(d);
-                    Console.WriteLine("4");
-                    */
-                    cc.ErzeugeMuster(z);
+                    cc.ErzeugeProfil(Zahnrad1);
                 }
                 else
                 {

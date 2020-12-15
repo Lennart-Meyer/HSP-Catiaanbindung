@@ -71,7 +71,7 @@
             <!--
             Berechnungsauswahl
             -->
-            <TabItem Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}" Height="28" VerticalAlignment="Center" HorizontalAlignment="Left" Width="107">
+            <TabItem Header="Berechnung" TextBlock.FontSize="18" Background="{x:Null}" Height="28" VerticalAlignment="Center" Margin="-2,0,2,0">
                 <StackPanel>
                     <!-- Auswahlgrid-->
                     <Grid>
