@@ -282,7 +282,7 @@
                         <RowDefinition Height="Auto" ></RowDefinition>
                         <RowDefinition Height="Auto" ></RowDefinition>
                         <RowDefinition Height="Auto" ></RowDefinition>
-                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="50" ></RowDefinition>
                         <RowDefinition Height="Auto" ></RowDefinition>
 
                     </Grid.RowDefinitions>
@@ -330,8 +330,9 @@
                     <TextBlock x:Name="txtblock_Ausgabe_zahnflankenwinkel" Grid.Row="6" Grid.Column="3"  Padding="10" FontSize="18" Width="Auto" >ergebnis_Zahnflankenenwinkel</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_material" Grid.Row="7" Grid.Column="3" Padding="10" FontSize="18" Width="Auto" >ergebnis_material</TextBlock>
 
-                    <Button x:Name="btn_Vis" Grid.Row="8" Grid.Column="1" Click="btn_Vis_Click">Visualisiern</Button>
-                    <Button x:Name="btn_Mus" Grid.Row="8" Grid.Column="2" Click="btn_Mus_Click">Muster erzeugen</Button>
+
+                    <Button Width="200" x:Name="btn_Mus" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Click="btn_Mus_Click" Margin="0,0,110,0">Zahnrad erzeugen</Button>
+
 
                 </Grid>
 
