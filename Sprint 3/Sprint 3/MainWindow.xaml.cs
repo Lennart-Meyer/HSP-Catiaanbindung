@@ -460,23 +460,13 @@ namespace Sprint_3
                     // Finde Catia Prozess
                     if (cc.CATIALaeuft())
                     {
-                        Console.WriteLine("0");
 
-                        // Öffne ein neues Part
                         cc.ErzeugePart();
-                        Console.WriteLine("1");
 
-                        // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
-                        Console.WriteLine("2");
 
-                        // Generiere ein Profil
                         cc.ErzeugeProfil(Zahnrad1);
-                        Console.WriteLine("3");
 
-                        // Extrudiere Balken
-                        cc.ErzeugeBalken(Zahnrad1.d);
-                        Console.WriteLine("4");
                     }
                     else
                     {

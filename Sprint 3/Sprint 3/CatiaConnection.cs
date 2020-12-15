@@ -162,10 +162,6 @@ namespace Sprint_3
             double y_AnfangspunktFußkreis = Fußkreisradius * Math.Cos(Hilfswinkel);
 
 
-
-
-
-
             // Skizze umbenennen und öffnen
             hsp_catiaProfil.set_Name("Rechteck");
             Factory2D catFactory2D1 = hsp_catiaProfil.OpenEdition();
@@ -252,8 +248,6 @@ namespace Sprint_3
 
             hsp_catiaPart.Part.MainBody.InsertHybridShape(verbindung);
 
-
-
             hsp_catiaPart.Part.Update();
 
             ErzeugedenNeuenBlock(Zahnrad1, refVerbindung, shapeFactory1);
@@ -299,10 +293,11 @@ namespace Sprint_3
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugedenNeuenBlock(Zahnrad ZR1, Reference refVerbindung, ShapeFactory sf1)
+        public void ErzeugedenNeuenBlock(Zahnrad Zahnrad1, Reference refVerbindung, ShapeFactory sf1)
         {
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
-            Pad catPad1 = sf1.AddNewPadFromRef(refVerbindung, ZR1.b);
+            Pad catPad1 = sf1.AddNewPadFromRef(refVerbindung, Zahnrad1.b);
+            catPad1.set_Name("Block");
             hsp_catiaPart.Part.Update();
         }
 
