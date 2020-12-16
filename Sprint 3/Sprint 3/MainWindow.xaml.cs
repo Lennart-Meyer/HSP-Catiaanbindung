@@ -183,11 +183,7 @@ namespace Sprint_3
                 Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out Zahnrad1.y);
                 Double.TryParse(txtBox_Bohrungsdurchmesser.Text, out Zahnrad1.bd);
 
-                if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
-                {
-                    MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
-
-                }
+                
 
                 if (Zahnrad1.m <= 0 || Zahnrad1.d <= 0 || Zahnrad1.b <= 0)
                 {
@@ -221,6 +217,10 @@ namespace Sprint_3
 
                         Zahnrad1.pt = Zahnrad1.p / Math.Cos(Zahnrad1.beta);
                         ausgabe();
+                        if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
+                        {
+                            MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        }
                     }
 
                     else
@@ -239,6 +239,10 @@ namespace Sprint_3
                         }
                         Zahnrad1.berechnung();
                         ausgabe();
+                        if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
+                        {
+                            MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        }
                     }
                 }
             }
@@ -251,11 +255,6 @@ namespace Sprint_3
                 Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out Zahnrad1.y);
                 Double.TryParse(txtBox_Bohrungsdurchmesser.Text, out Zahnrad1.bd);
 
-                if(Zahnrad1.bd > Zahnrad1.d*0.9  || Zahnrad1.bd <= 0 )
-                {
-                    MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK );
-
-                }
 
 
                 if (Zahnrad1.m <= 0 || Zahnrad1.z <= 0 || Zahnrad1.b <= 0)
@@ -290,6 +289,10 @@ namespace Sprint_3
 
                         Zahnrad1.pt = Zahnrad1.p / Math.Cos(Zahnrad1.gamma);
                         ausgabe();
+                        if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
+                        {
+                            MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        }
                     }
 
                     else
@@ -308,6 +311,10 @@ namespace Sprint_3
                         }
                         Zahnrad1.berechnung();
                         ausgabe();
+                        if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
+                        {
+                            MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        }
 
                     }
                 }
@@ -322,11 +329,7 @@ namespace Sprint_3
                 Double.TryParse(txtBlock_Kopfkegelwinkel.Text, out Zahnrad1.y);
                 Double.TryParse(txtBox_Bohrungsdurchmesser.Text, out Zahnrad1.bd);
 
-                if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
-                {
-                    MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
-
-                }
+                
 
                 if (Zahnrad1.d <= 0 || Zahnrad1.z <= 0 || Zahnrad1.b <= 0)
                 {
@@ -360,6 +363,10 @@ namespace Sprint_3
                         Zahnrad1.pt = Zahnrad1.p / Math.Cos(Zahnrad1.beta);
 
                         ausgabe();
+                        if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
+                        {
+                            MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        }
                     }
                     else
                     {
@@ -378,6 +385,10 @@ namespace Sprint_3
 
                         Zahnrad1.berechnung();
                         ausgabe();
+                        if (Zahnrad1.bd > Zahnrad1.d * 0.9 || Zahnrad1.bd <= 0)
+                        {
+                            MessageBox.Show("Der Durchmesser der Bohrung ist zu klein oder zu groß!. Bitte wiederholen Sie die Eingabe!", "Fehler!", MessageBoxButton.OK);
+                        }
                     }
                 }
 
