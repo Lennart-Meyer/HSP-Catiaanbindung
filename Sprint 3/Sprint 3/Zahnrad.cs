@@ -28,7 +28,7 @@ namespace Sprint_3
         public double o;                                    //Teilkegelwinkel
         public double y;                                    //Kopfkegelwinkel
         public double da;                                   //Kopfkreisdurchmesser
-        public double bd = 2;                                   //Bohrungsdurchmesser
+        public double bd;                                   //Bohrungsdurchmesser
         public void berechnung() //Unterprogramm für die Berechnung
         {
             //Zahnhöhe
