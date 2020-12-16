@@ -149,22 +149,22 @@ namespace Sprint_3
         
         public void ausgabe() //Unterprogramm für die Ausgabe
         {
-            txtblock_Ausgabe_modul.Text = (Zahnrad1.m + "mm");
-            txtblock_Ausgabe_teilkreis.Text = (Zahnrad1.d + "mm");
-            txtblock_Ausgabe_zähnezahl.Text = ("" + Zahnrad1.z);
-            txtblock_Ausgabe_kopfspiel.Text = (Zahnrad1.c + "mm");
-            txtblock_Ausgabe_zahnflankenwinkel.Text = (Zahnrad1.a + "°");
-            txtblock_Ausgabe_dicke.Text = (Zahnrad1.b + "mm");
-            txtblock_Ausgabe_fußkreisdurchmesser.Text = (Zahnrad1.df + "mm");
-            txtblock_Ausgabe_grundkreisdurchmesser.Text = (Zahnrad1.dg + "mm");
-            txtblock_Ausgabe_teilung.Text = (Zahnrad1.p + "");
-            txtblock_Ausgabe_zahnhöhe.Text = (Zahnrad1.h + "mm");
-            txtblock_Ausgabe_zahnkopfhöhe.Text = (Zahnrad1.ha + "mm");
-            txtblock_Ausgabe_zahnfußhöhe.Text = (Zahnrad1.hf + "mm");
-            txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (Zahnrad1.a + "mm");
-            txtblock_Ausgabe_bohrungsdurchmesser.Text = (Zahnrad1.bd + "mm");
-            txtblock_Ausgabe_volumen.Text = (Zahnrad1.V + "cm^3");
-            txtblock_Ausgabe_gewicht.Text = (Zahnrad1.G + "kg");
+            txtblock_Ausgabe_modul.Text = (Math.Round(Zahnrad1.m,2) + "mm");
+            txtblock_Ausgabe_teilkreis.Text = (Math.Round(Zahnrad1.d,2) + "mm");
+            txtblock_Ausgabe_zähnezahl.Text = (Convert.ToString(Zahnrad1.z));
+            txtblock_Ausgabe_kopfspiel.Text = (Math.Round(Zahnrad1.c,3) + "mm");
+            txtblock_Ausgabe_zahnflankenwinkel.Text = (Math.Round(Zahnrad1.a,2) + "°");
+            txtblock_Ausgabe_dicke.Text = (Math.Round(Zahnrad1.b,2) + "mm");
+            txtblock_Ausgabe_fußkreisdurchmesser.Text = (Math.Round(Zahnrad1.df,2) + "mm");
+            txtblock_Ausgabe_grundkreisdurchmesser.Text = (Math.Round(Zahnrad1.dg,2) + "mm");
+            txtblock_Ausgabe_teilung.Text = (Math.Round(Zahnrad1.p,2) + "");
+            txtblock_Ausgabe_zahnhöhe.Text = (Math.Round(Zahnrad1.h,3) + "mm");
+            txtblock_Ausgabe_zahnkopfhöhe.Text = (Math.Round(Zahnrad1.ha,3) + "mm");
+            txtblock_Ausgabe_zahnfußhöhe.Text = (Math.Round(Zahnrad1.hf,3) + "mm");
+            txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (Math.Round(Zahnrad1.a,2) + "mm");
+            txtblock_Ausgabe_bohrungsdurchmesser.Text = (Math.Round(Zahnrad1.bd, 2) + "mm");
+            txtblock_Ausgabe_volumen.Text = (Math.Round(Zahnrad1.V,2) + "cm³");
+            txtblock_Ausgabe_gewicht.Text = (Math.Round(Zahnrad1.G,2) + "kg");
         }
 
 
