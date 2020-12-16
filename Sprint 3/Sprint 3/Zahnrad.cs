@@ -51,7 +51,7 @@ namespace Sprint_3
             //Kopfkreisdurchmesser
             da = d + 2 * m * Math.Cos(o);
             //Volumen
-            V = (((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b;
+            V = ((((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b)/1000;
             //Gewicht
             G = V * materialDichte;
         }
