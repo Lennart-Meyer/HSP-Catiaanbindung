@@ -18,6 +18,8 @@ using PARTITF;
 using HybridShapeTypeLib;
 using KnowledgewareTypeLib;
 using ProductStructureTypeLib;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Sprint_3
 {
@@ -482,9 +484,7 @@ namespace Sprint_3
 
         private void btn_Mus_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                CatiaConnection cc = new CatiaConnection();
+            CatiaConnection cc = new CatiaConnection();
 
                 // Finde Catia Prozess
                 if (cc.CATIALaeuft())
@@ -497,13 +497,21 @@ namespace Sprint_3
                 }
                 else
                 {
-                    Console.WriteLine("Laufende Catia Application nicht gefunden");
+                MessageBoxResult result = MessageBox.Show("Catia Anwendung wurde noch nicht  gestartet.\nWollen sie Catia starten?", "Berechnungprogramm für Zahnräder", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+
+                switch(result)
+                {
+                    case MessageBoxResult.Yes:
+                        Process Catia = new Process();
+                        Catia.StartInfo.FileName = "CNEXT.exe";
+                        Catia.Start();
+                        break;
+                    case MessageBoxResult.No:
+
+                        break;
+
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Exception aufgetreten");
-            }
+                }
         }
     }
 }
