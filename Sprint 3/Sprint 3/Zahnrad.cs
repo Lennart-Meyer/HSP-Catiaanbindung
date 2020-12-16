@@ -31,6 +31,8 @@ namespace Sprint_3
         public double bd;                                   //Bohrungsdurchmesser
         public string materialName;
         public double materialDichte;
+        public double V;                                    //Volumen
+        public double G;                                    //Gewicht
         public void berechnung() //Unterprogramm für die Berechnung
         {
             //Zahnhöhe
@@ -48,6 +50,10 @@ namespace Sprint_3
             hf = m + c;
             //Kopfkreisdurchmesser
             da = d + 2 * m * Math.Cos(o);
+            //Volumen
+            V = (((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b;
+            //Gewicht
+            G = V * materialDichte;
         }
 
         public void material(string material)
