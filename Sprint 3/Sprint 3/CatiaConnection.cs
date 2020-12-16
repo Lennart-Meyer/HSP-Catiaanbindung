@@ -183,8 +183,8 @@ namespace Sprint_3
 
             Circle2D KreisFußkreis = catfactory2D1.CreateCircle(x0, y0, Fußkreisradius, 0, Math.PI * 2);
             KreisFußkreis.CenterPoint = point_Ursprung;
-            KreisFußkreis.StartPoint = pointFußkreisVerrundungLinks;
-            KreisFußkreis.EndPoint = pointAnfangFußkreisLinks;
+            KreisFußkreis.StartPoint = pointAnfangFußkreisLinks;
+            KreisFußkreis.EndPoint = pointFußkreisVerrundungRechts;
 
             Circle2D KreisVerrundungLinks = catfactory2D1.CreateCircle(xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius, 0, Math.PI * 2);
             KreisVerrundungLinks.CenterPoint = pointMittelpunktVerrundungLinks;
