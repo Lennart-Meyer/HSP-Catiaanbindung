@@ -160,6 +160,9 @@ namespace Sprint_3
             txtblock_Ausgabe_zahnkopfhöhe.Text = (Zahnrad1.ha + "mm");
             txtblock_Ausgabe_zahnfußhöhe.Text = (Zahnrad1.hf + "mm");
             txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (Zahnrad1.a + "mm");
+            txtblock_Ausgabe_bohrungsdurchmesser.Text = (Zahnrad1.bd + "mm");
+            txtblock_Ausgabe_volumen.Text = (Zahnrad1.V + "mm^3");
+            txtblock_Ausgabe_gewicht.Text = (Zahnrad1.G + "kg");
         }
 
 
