@@ -84,6 +84,8 @@ namespace Sprint_3
             }
             txtblock_Ausgabe_material.Text = (Zahnrad1.materialName);
             lbl_Material.Content = "Es wurde " + Zahnrad1.materialName + " gewählt";
+            Zahnrad1.berechnungMaterial();
+            ausgabe();
         }
 
         private void rb_EigenesMaterial_Checked(object sender, RoutedEventArgs e)

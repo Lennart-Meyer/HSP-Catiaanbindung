@@ -52,14 +52,17 @@ namespace Sprint_3
             hf = m + c;
             //Kopfkreisdurchmesser
             da = d + 2 * m * Math.Cos(o);
+
+        }
+        public void berechnungMaterial()
+        {
             //Volumen
-            V = ((((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b)/1000;
+            V = ((((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b) / 1000;
             //Gewicht
             G = V * materialDichte;
             //Preis
             Pr = G * materialKosten;
         }
-
         public void material(string material)
         {
             switch(material)
@@ -67,17 +70,17 @@ namespace Sprint_3
                 case "Stahl":
                     materialName = material;
                     materialDichte = 7.85;
-                    //materialKosten = 2; 2€ das kg
+                    materialKosten = 2;             //2€ das kg
                     break;
                 case "Messing":
                     materialName = material;
                     materialDichte = 8.73;
-                    //materialKosten = 4;
+                    materialKosten = 4;
                     break;
                 case "Kunststoff":
                     materialName = material;
                     materialDichte = 2.2;
-                    //materialKosten = 1.20;
+                    materialKosten = 1.20;
                     break;
             }
         }
