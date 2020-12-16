@@ -166,50 +166,50 @@ namespace Sprint_3
             Factory2D catfactory2D1 = hsp_catiaProfil.OpenEdition();
 
             //Nun die Punkte in die Skizze
-            Point2D point_Ursprung = catfactory2D1.CreatePoint(x0, y0);
-            Point2D pointAnfangFußkreisLinks = catfactory2D1.CreatePoint(x_AnfangspunktFußkreis, y_AnfangspunktFußkreis);
-            Point2D pointFußkreisVerrundungLinks = catfactory2D1.CreatePoint(x_SP_FußkreisradiusVerrundung_links, y_SP_FußkreisradiusVerrundung_links);
-            Point2D pointFußkreisVerrundungRechts = catfactory2D1.CreatePoint(-x_SP_FußkreisradiusVerrundung_links, y_SP_FußkreisradiusVerrundung_links);
-            Point2D pointMittelpunktVerrundungLinks = catfactory2D1.CreatePoint(xMittelpunktVerrundung_links, yMittelpunktVerrundung_links);
-            Point2D pointMittelpunktVerrundungRechts = catfactory2D1.CreatePoint(-xMittelpunktVerrundung_links, yMittelpunktVerrundung_links);
-            Point2D pointVerrundungEvolventeLinks = catfactory2D1.CreatePoint(x_SP_EvolventeVerrundung_links, y_SP_EvolventeVerrundung_links);
-            Point2D pointVerrundungEvolventeRechts = catfactory2D1.CreatePoint(-x_SP_EvolventeVerrundung_links, y_SP_EvolventeVerrundung_links);
-            Point2D pointMittelpunktevolventeLinks = catfactory2D1.CreatePoint(xMittelpunktaufEvol_links, yMittelpunktaufEvol_links);
-            Point2D pointMittelpunktevolventeRechts = catfactory2D1.CreatePoint(-xMittelpunktaufEvol_links, yMittelpunktaufEvol_links);
-            Point2D pointEvolventenKopfkreisLinks = catfactory2D1.CreatePoint(xEvolventenkopfkreis_links, yEvolventenkopfkreis_links);
-            Point2D pointEvolventenKopfkreisRechts = catfactory2D1.CreatePoint(-xEvolventenkopfkreis_links, yEvolventenkopfkreis_links);
+            Point2D Ursprung = catfactory2D1.CreatePoint(x0, y0);
+            Point2D EndpunktEvolventenkreis = catfactory2D1.CreatePoint(x_AnfangspunktFußkreis, y_AnfangspunktFußkreis);
+            Point2D VerrundungLinksAnfang = catfactory2D1.CreatePoint(x_SP_FußkreisradiusVerrundung_links, y_SP_FußkreisradiusVerrundung_links);
+            Point2D VerrundungRechtsEnde = catfactory2D1.CreatePoint(-x_SP_FußkreisradiusVerrundung_links, y_SP_FußkreisradiusVerrundung_links);
+            Point2D MPVerrundungLinks = catfactory2D1.CreatePoint(xMittelpunktVerrundung_links, yMittelpunktVerrundung_links);
+            Point2D MPVerrundungRechts = catfactory2D1.CreatePoint(-xMittelpunktVerrundung_links, yMittelpunktVerrundung_links);
+            Point2D VerrundungEndeLinks = catfactory2D1.CreatePoint(x_SP_EvolventeVerrundung_links, y_SP_EvolventeVerrundung_links);
+            Point2D VerrundungAnfangRechts = catfactory2D1.CreatePoint(-x_SP_EvolventeVerrundung_links, y_SP_EvolventeVerrundung_links);
+            Point2D MPEvolventeLinks = catfactory2D1.CreatePoint(xMittelpunktaufEvol_links, yMittelpunktaufEvol_links);
+            Point2D MPEvolventeRechts = catfactory2D1.CreatePoint(-xMittelpunktaufEvol_links, yMittelpunktaufEvol_links);
+            Point2D EvolventenEndeLinks = catfactory2D1.CreatePoint(xEvolventenkopfkreis_links, yEvolventenkopfkreis_links);
+            Point2D EvolventenEndeRechts = catfactory2D1.CreatePoint(-xEvolventenkopfkreis_links, yEvolventenkopfkreis_links);
 
             //Kreise
 
             Circle2D KreisFußkreis = catfactory2D1.CreateCircle(x0, y0, Fußkreisradius, 0, Math.PI * 2);
-            KreisFußkreis.CenterPoint = point_Ursprung;
-            KreisFußkreis.StartPoint = pointAnfangFußkreisLinks;
-            KreisFußkreis.EndPoint = pointFußkreisVerrundungRechts;
+            KreisFußkreis.CenterPoint = Ursprung;
+            KreisFußkreis.StartPoint = EndpunktEvolventenkreis;
+            KreisFußkreis.EndPoint = VerrundungRechtsEnde;
 
             Circle2D KreisVerrundungLinks = catfactory2D1.CreateCircle(xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius, 0, Math.PI * 2);
-            KreisVerrundungLinks.CenterPoint = pointMittelpunktVerrundungLinks;
-            KreisVerrundungLinks.StartPoint = pointFußkreisVerrundungLinks;
-            KreisVerrundungLinks.EndPoint = pointVerrundungEvolventeLinks;
+            KreisVerrundungLinks.CenterPoint = MPVerrundungLinks;
+            KreisVerrundungLinks.StartPoint = VerrundungLinksAnfang;
+            KreisVerrundungLinks.EndPoint = VerrundungEndeLinks;
 
             Circle2D KreisEvolventenkreisLinks = catfactory2D1.CreateCircle(xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius, 0, Math.PI * 2);
-            KreisEvolventenkreisLinks.CenterPoint = pointMittelpunktevolventeLinks;
-            KreisEvolventenkreisLinks.StartPoint = pointEvolventenKopfkreisLinks;
-            KreisEvolventenkreisLinks.EndPoint = pointVerrundungEvolventeLinks;
+            KreisEvolventenkreisLinks.CenterPoint = MPEvolventeLinks;
+            KreisEvolventenkreisLinks.StartPoint = EvolventenEndeLinks;
+            KreisEvolventenkreisLinks.EndPoint = VerrundungEndeLinks;
 
             Circle2D KreisKopfkreis = catfactory2D1.CreateCircle(x0, y0, Kopfkreisradius, 0, Math.PI * 2);
-            KreisKopfkreis.CenterPoint = point_Ursprung;
-            KreisKopfkreis.StartPoint = pointEvolventenKopfkreisRechts;
-            KreisKopfkreis.EndPoint = pointEvolventenKopfkreisLinks;
+            KreisKopfkreis.CenterPoint = Ursprung;
+            KreisKopfkreis.StartPoint = EvolventenEndeRechts;
+            KreisKopfkreis.EndPoint = EvolventenEndeLinks;
 
             Circle2D KreisEvolventenkreisRechts = catfactory2D1.CreateCircle(-xMittelpunktaufEvol_links, yMittelpunktaufEvol_links, EvolventenkreisRadius, 0, Math.PI * 2);
-            KreisEvolventenkreisRechts.CenterPoint = pointMittelpunktevolventeRechts;
-            KreisEvolventenkreisRechts.StartPoint = pointVerrundungEvolventeRechts;
-            KreisEvolventenkreisRechts.EndPoint = pointEvolventenKopfkreisRechts;
+            KreisEvolventenkreisRechts.CenterPoint = MPEvolventeRechts;
+            KreisEvolventenkreisRechts.StartPoint = VerrundungAnfangRechts;
+            KreisEvolventenkreisRechts.EndPoint = EvolventenEndeRechts;
 
             Circle2D KreisVerrundungRechts = catfactory2D1.CreateCircle(-xMittelpunktVerrundung_links, yMittelpunktVerrundung_links, Verrundungsradius, 0, Math.PI * 2);
-            KreisVerrundungRechts.CenterPoint = pointMittelpunktVerrundungRechts;
-            KreisVerrundungRechts.StartPoint = pointVerrundungEvolventeRechts;
-            KreisVerrundungRechts.EndPoint = pointFußkreisVerrundungRechts;
+            KreisVerrundungRechts.CenterPoint = MPVerrundungRechts;
+            KreisVerrundungRechts.StartPoint = VerrundungAnfangRechts;
+            KreisVerrundungRechts.EndPoint = VerrundungRechtsEnde;
 
             // Skizzierer verlassen
             hsp_catiaProfil.CloseEdition();
