@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sprint_3"
         mc:Ignorable="d"
-        Title="Berechnungprogram für Zahnräder " Height="600" Width="800" Foreground="#FF0942EE" Icon="icon.jpg">
+        Title="Berechnungprogram für Zahnräder " Height="620" Width="800" Foreground="#FF0942EE" Icon="icon.jpg">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>
@@ -111,7 +111,7 @@
 
 
                     <!-- Eingabegrid-->
-                    <Grid>
+                    <Grid Margin="0,20,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -124,7 +124,9 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="230"></ColumnDefinition>
+                            <ColumnDefinition Width="180"></ColumnDefinition>
+                            <ColumnDefinition Width="85"></ColumnDefinition>
+                            <ColumnDefinition Width="70"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -134,7 +136,7 @@
                             <TextBlock Name="txtBlock_EingabeName1"  Text="Eingabe 1"></TextBlock>
                         </Label>
                         <Label Grid.Row="0" Grid.Column="1">
-                            <TextBox Name="txtBox_Eingabe1"  Width="100" Text="" ></TextBox>
+                            <TextBox Name="txtBox_Eingabe1"  Width="80" Text="" ></TextBox>
                         </Label>
                         <Label Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_Eingabe1Einheit"  Text=""></TextBlock>
@@ -143,7 +145,7 @@
                             <TextBlock Name="txtBlock_EingabeName2"  Text="Eingabe 2" ></TextBlock>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="1">
-                            <TextBox Name="txtBox_Eingabe2"  Width="100" Text=""></TextBox>
+                            <TextBox Name="txtBox_Eingabe2"  Width="80" Text=""></TextBox>
                         </Label>
                         <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_Eingabe2Einheit"  Text=""></TextBlock>
@@ -152,7 +154,7 @@
                             <TextBlock Name="txtBlock_Dicke" Text="Dicke:"></TextBlock>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="1">
-                            <TextBox Name="txtBox_Dicke" Width="100"></TextBox>
+                            <TextBox Name="txtBox_Dicke" Width="80"></TextBox>
                         </Label>
                         <Label Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_DickeEinheit" Text="mm"></TextBlock>
@@ -161,7 +163,7 @@
                             <TextBlock Name="txtBlock_Teilkegelwinkel" Visibility="Hidden" HorizontalAlignment="Right">Teilkegelwinkel</TextBlock>
                         </Label>
                         <Label Grid.Row="3" Grid.Column="1">
-                            <TextBox Name="txtBox_Teilkegelwinkel" Width="100" Visibility="Hidden"></TextBox>
+                            <TextBox Name="txtBox_Teilkegelwinkel" Width="80" Visibility="Hidden"></TextBox>
                         </Label>
                         <Label Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_TeilkegelwinkelEinheit" Visibility="Hidden" HorizontalAlignment="Right">°</TextBlock>
@@ -170,7 +172,7 @@
                             <TextBlock Name="txtBlock_Kopfkegelwinkel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfkegelwinkel</TextBlock>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="1">
-                            <TextBox Name="txtBox_Kopfkegelwinkel" Width="100" Visibility="Hidden"></TextBox>
+                            <TextBox Name="txtBox_Kopfkegelwinkel" Width="80" Visibility="Hidden"></TextBox>
                         </Label>
                         <Label Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_KopfkegelwinkelEinheit" Visibility="Hidden" HorizontalAlignment="Left">°</TextBlock>
@@ -179,31 +181,40 @@
                             <TextBlock Name="txtBlock_Kopfspiel"  Visibility="Hidden" HorizontalAlignment="Right">Kopfspiel:</TextBlock>
                         </Label>
                         <Label Grid.Row="5" Grid.Column="1">
-                            <TextBox Name="txtBox_Kopfspiel" Width="100" Visibility="Hidden"></TextBox>
+                            <TextBox Name="txtBox_Kopfspiel" Width="80" Visibility="Hidden"></TextBox>
                         </Label>
-                        <Label Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right">
+                        <Label Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_KopfspielEinheit"  Visibility="Hidden" HorizontalAlignment="Left">mm</TextBlock>
                         </Label>
                         <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Zahnflankenwinkel"  Visibility="Hidden" HorizontalAlignment="Right">Zahnflankenwinkel:</TextBlock>
                         </Label>
                         <Label Grid.Row="6" Grid.Column="1">
-                            <TextBox Name="txtBox_Zahnflankenwinkel" Width="100" Visibility="Hidden"></TextBox>
+                            <TextBox Name="txtBox_Zahnflankenwinkel" Width="80" Visibility="Hidden"></TextBox>
                         </Label>
-                        <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right">
+                        <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_ZahnflankenwinkelEinheit"  Visibility="Hidden" HorizontalAlignment="Left">°</TextBlock>
                         </Label>
                         <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right">
                             <TextBlock Name="txtBlock_Verdrehen"  Visibility="Hidden" HorizontalAlignment="Right">Verdrehen um:</TextBlock>
                         </Label>
-                        <Label Grid.Row="7" Grid.Column="1">
-                            <TextBox Name="txtBox_Verdrehen" Width="100" Visibility="Hidden"></TextBox>
+                        <Label Grid.Row="7" Grid.Column="1" Height="36" VerticalAlignment="Top">
+                            <TextBox Name="txtBox_Verdrehen" Width="80" Visibility="Hidden"></TextBox>
                         </Label>
-                        <Label Grid.Row="7" Grid.Column="2" HorizontalAlignment="Right">
+                        <Label Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left">
                             <TextBlock Name="txtBlock_VerdrehenEinheit"  Visibility="Hidden" HorizontalAlignment="Left">°</TextBlock>
                         </Label>
-                        <Label Grid.Row="9" Grid.Column="1">
-                            <Button Click="btnAuswahl_Click" >Bestätigen</Button>
+                        <Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Margin="54,0,0,0">
+                            <Button Click="btnAuswahl_Click" Height="27" >Bestätigen</Button>
+                        </Label>
+                        <Label Grid.Row="0" Grid.Column="3">
+                            <TextBlock>Bohrungsdurchmessser:</TextBlock>
+                        </Label>
+                        <Label Grid.Row="0" Grid.Column="4">
+                            <TextBox Name="txtBox_Bohrungsdurchmesser" Width="80"></TextBox>
+                        </Label>
+                        <Label Grid.Row="0" Grid.Column="5" HorizontalAlignment="Left">
+                            <TextBlock Name="txtBlock_BohrungsdurchmesserEinheit" HorizontalAlignment="Left">mm</TextBlock>
                         </Label>
                     </Grid>
 
