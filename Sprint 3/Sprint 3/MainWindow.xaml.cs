@@ -67,25 +67,43 @@ namespace Sprint_3
         {
             if (rb_Stahl.IsChecked == true)
             {
-                lbl_Material.Content = "Es wurde Stahl gewählt";
-
-                txtblock_Ausgabe_material.Text = ("Stahl");
+                Zahnrad1.material("Stahl");
             }
             else if (rb_Messing.IsChecked == true)
             {
-                lbl_Material.Content = "Es wurde Messing gewählt";
-
-                txtblock_Ausgabe_material.Text = ("Messing");
+                Zahnrad1.material("Messing");
             }
             else if (rb_Plastik.IsChecked == true)
             {
-                lbl_Material.Content = "Es wurde Kunststoff gewählt";
-
-                txtblock_Ausgabe_material.Text = ("Kunststoff");
+                Zahnrad1.material("Kunststoff");
             }
+            else if (rb_EigenesMaterial.IsChecked == true)
+            {
+                Zahnrad1.materialName = txtBox_materialNameEingabe.Text;
+                Zahnrad1.materialDichte = Convert.ToDouble(txtBox_materialDichteEingabe.Text);
+            }
+            txtblock_Ausgabe_material.Text = (Zahnrad1.materialName);
+            lbl_Material.Content = "Es wurde " + Zahnrad1.materialName + " gewählt";
         }
 
-        
+        private void rb_EigenesMaterial_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBlock_materialName.Visibility = Visibility.Visible;
+            txtBox_materialNameEingabe.Visibility = Visibility.Visible;
+
+            txtBlock_materialDichte.Visibility = Visibility.Visible;
+            txtBox_materialDichteEingabe.Visibility = Visibility.Visible;
+            txtBlock_materialDichteEinheit.Visibility = Visibility.Visible;
+        }
+        private void rb_EigenesMaterial_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBlock_materialName.Visibility = Visibility.Hidden;
+            txtBox_materialNameEingabe.Visibility = Visibility.Hidden;
+
+            txtBlock_materialDichte.Visibility = Visibility.Hidden;
+            txtBox_materialDichteEingabe.Visibility = Visibility.Hidden;
+            txtBlock_materialDichteEinheit.Visibility = Visibility.Hidden;
+        }
 
         private void Rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
@@ -534,5 +552,7 @@ namespace Sprint_3
                 }
                 }
         }
+
+        
     }
 }

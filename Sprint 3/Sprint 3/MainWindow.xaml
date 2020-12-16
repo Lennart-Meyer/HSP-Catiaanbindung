@@ -233,6 +233,7 @@
                         <RadioButton x:Name="rb_Stahl" IsChecked="True" GroupName="Material" Content="Stahl"/>
                         <RadioButton x:Name="rb_Messing" GroupName="Material" Content="Messing"/>
                         <RadioButton x:Name="rb_Plastik" GroupName="Material" Content="Kunststoff"/>
+                        <RadioButton x:Name="rb_EigenesMaterial" GroupName="Material" Checked="rb_EigenesMaterial_Checked" Unchecked="rb_EigenesMaterial_Unchecked" Content="Eigenens Material"/>
                         <Expander>
                             <Expander.Header>
                                 <TextBlock><Run Text="Information zum Material"/></TextBlock>
@@ -266,7 +267,36 @@
 
 
                         </Expander>
-                        <Button Margin="0,20" Click="Button_bes" Content="Bestätige"/>
+                        
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0">
+                                <TextBlock Name="txtBlock_materialName" Visibility="Hidden">MaterialName</TextBlock>
+                            </Label>
+                            <Label Grid.Row="0" Grid.Column="1">
+                                <TextBox Name="txtBox_materialNameEingabe" Visibility="Hidden" Width="180"></TextBox>
+                            </Label>
+
+                            <Label Grid.Row="1" Grid.Column="0">
+                                <TextBlock Name="txtBlock_materialDichte" Visibility="Hidden">Materialdichte</TextBlock>
+                            </Label>
+                            <Label Grid.Row="1" Grid.Column="1">
+                                <TextBox Name="txtBox_materialDichteEingabe" Visibility="Hidden" Width="180"></TextBox>
+                            </Label>
+                            <Label Grid.Row="1" Grid.Column="2">
+                                <TextBlock Name="txtBlock_materialDichteEinheit" Visibility="Hidden">g / cm³</TextBlock>
+                            </Label>
+                        </Grid>
+                        <Button Margin="0,20" Click="Button_bes" Width="180" Content="Bestätige"/>
                         <Label x:Name="lbl_Material"/>
                     </StackPanel>
                 </Grid>

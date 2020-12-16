@@ -29,6 +29,8 @@ namespace Sprint_3
         public double y;                                    //Kopfkegelwinkel
         public double da;                                   //Kopfkreisdurchmesser
         public double bd;                                   //Bohrungsdurchmesser
+        public string materialName;
+        public double materialDichte;
         public void berechnung() //Unterprogramm für die Berechnung
         {
             //Zahnhöhe
@@ -46,6 +48,25 @@ namespace Sprint_3
             hf = m + c;
             //Kopfkreisdurchmesser
             da = d + 2 * m * Math.Cos(o);
+        }
+
+        public void material(string material)
+        {
+            switch(material)
+            {
+                case "Stahl":
+                    materialName = material;
+                    materialDichte = 7.85;
+                    break;
+                case "Messing":
+                    materialName = material;
+                    materialDichte = 8.73;
+                    break;
+                case "Kunststoff":
+                    materialName = material;
+                    materialDichte = 2.2;
+                    break;
+            }
         }
     }
 }
