@@ -87,8 +87,8 @@ namespace Sprint_3
 
         private void Rb_berechnung1_Checked(object sender, RoutedEventArgs e)
         {
-            txtBlock_EingabeName1.Text = "Modul:";
-            txtBlock_EingabeName2.Text = "Teilkreisdurchmesser:";
+            txtBlock_EingabeName1.Text = "Modul";
+            txtBlock_EingabeName2.Text = "Teilkreisdurchmesser";
             txtBox_Eingabe1.Text = "";
             txtBox_Eingabe2.Text = "";
             txtBlock_Ergebnis.Text = "Ergebnis: ";
@@ -100,8 +100,8 @@ namespace Sprint_3
 
         private void rb_berechnung2_Checked(object sender, RoutedEventArgs e)
         {
-            txtBlock_EingabeName1.Text = "Modul:";
-            txtBlock_EingabeName2.Text = "Zähnezahl:";
+            txtBlock_EingabeName1.Text = "Modul";
+            txtBlock_EingabeName2.Text = "Zähnezahl";
             txtBox_Eingabe1.Text = "";
             txtBox_Eingabe2.Text = "";
             txtBlock_Ergebnis.Text = "Ergebnis: ";
@@ -113,8 +113,8 @@ namespace Sprint_3
 
         private void rb_berechnung3_Checked(object sender, RoutedEventArgs e)
         {
-            txtBlock_EingabeName1.Text = "Teilkreisdurchmesser:";
-            txtBlock_EingabeName2.Text = "Zähnezahl:";
+            txtBlock_EingabeName1.Text = "Teilkreisdurchmesser";
+            txtBlock_EingabeName2.Text = "Zähnezahl";
             txtBox_Eingabe1.Text = "";
             txtBox_Eingabe2.Text = "";
             txtBlock_Ergebnis.Text = "Ergebnis: ";
