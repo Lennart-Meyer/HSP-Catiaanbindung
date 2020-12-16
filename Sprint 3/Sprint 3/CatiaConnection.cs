@@ -278,22 +278,6 @@ namespace Sprint_3
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugeBalken(Double l)
-        {
-            // Hauptkoerper in Bearbeitung definieren
-            hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
-
-            // Block(Balken) erzeugen
-            ShapeFactory catShapeFactory1 = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
-            Pad catPad1 = catShapeFactory1.AddNewPad(hsp_catiaProfil, l);
-
-            // Block umbenennen
-            catPad1.set_Name("Balken");
-
-            // Part aktualisieren
-            hsp_catiaPart.Part.Update();
-        }
-
         public void ErzeugedenNeuenBlock(Zahnrad Zahnrad1, Reference refVerbindung, ShapeFactory sf1)
         {
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
