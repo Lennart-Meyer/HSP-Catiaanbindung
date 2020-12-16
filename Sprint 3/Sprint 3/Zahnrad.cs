@@ -33,6 +33,8 @@ namespace Sprint_3
         public double materialDichte;
         public double V;                                    //Volumen
         public double G;                                    //Gewicht
+        public double Pr;                                   //Preis
+        public double materialKosten;                       //Materialkosten
         public void berechnung() //Unterprogramm für die Berechnung
         {
             //Zahnhöhe
@@ -54,6 +56,8 @@ namespace Sprint_3
             V = ((((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b)/1000;
             //Gewicht
             G = V * materialDichte;
+            //Preis
+            Pr = G * materialKosten;
         }
 
         public void material(string material)
@@ -63,14 +67,17 @@ namespace Sprint_3
                 case "Stahl":
                     materialName = material;
                     materialDichte = 7.85;
+                    //materialKosten = 2; 2€ das kg
                     break;
                 case "Messing":
                     materialName = material;
                     materialDichte = 8.73;
+                    //materialKosten = 4;
                     break;
                 case "Kunststoff":
                     materialName = material;
                     materialDichte = 2.2;
+                    //materialKosten = 1.20;
                     break;
             }
         }
