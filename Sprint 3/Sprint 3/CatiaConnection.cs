@@ -265,7 +265,7 @@ namespace Sprint_3
 
             Factory2D catfactory2D2 = hsp_catiaProfil.OpenEdition();
 
-            Circle2D KreisFürBohrungsskizze = catfactory2D2.CreateClosedCircle(x0, y0, Zahnrad1.b / 2);
+            Circle2D KreisFürBohrungsskizze = catfactory2D2.CreateClosedCircle(x0, y0, Zahnrad1.bd / 2);
 
             hsp_catiaProfil.CloseEdition();
 
