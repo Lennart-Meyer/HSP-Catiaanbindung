@@ -52,14 +52,18 @@ namespace Sprint_3
             hf = m + c;
             //Kopfkreisdurchmesser
             da = d + 2 * m * Math.Cos(o);
+            
+        }
+
+        public void berechnungMaterial() 
+        {
             //Volumen
-            V = ((((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b)/1000;
+            V = ((((Math.PI * d * d) / 4) - ((Math.PI * bd * bd) / 4)) * b) / 1000;
             //Gewicht
             G = V * materialDichte;
             //Preis
             Pr = G * materialKosten;
         }
-
         public void material(string material)
         {
             switch(material)
