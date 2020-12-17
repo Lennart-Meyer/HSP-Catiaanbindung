@@ -244,7 +244,8 @@
                                         <TextBlock><Run Text="Information zu Stahl"/></TextBlock>
                                     </Expander.Header>
                                     <StackPanel>
-                                        <TextBlock> Bei besonders hoch beanspruchten Zahnrädern zu wählen. Kosten pro kg...</TextBlock>
+                                        <TextBlock> Bei besonders hoch beanspruchten Zahnrädern zu wählen.</TextBlock>
+                                        <TextBlock> 2€ pro kg mit einer Dichte von 7,85 g/cm^2</TextBlock>
                                     </StackPanel>
                                 </Expander>
                                 <Expander>
@@ -253,6 +254,7 @@
                                     </Expander.Header>
                                     <StackPanel>
                                         <TextBlock> Für weniger stark beanspruchte Zahnräder.</TextBlock>
+                                        <TextBlock> 4€ pro kg mit einer Dichte von 8,73 g/cm^2</TextBlock>
                                     </StackPanel>
                                 </Expander>
                                 <Expander>
@@ -261,6 +263,7 @@
                                     </Expander.Header>
                                     <StackPanel>
                                         <TextBlock> Für sehr geringe Beanspruchung.</TextBlock>
+                                        <TextBlock> 1,2€ pro kg mit einer Dichte von 2,2 g/cm^2</TextBlock>
                                     </StackPanel>
                                 </Expander>
                             </StackPanel>
