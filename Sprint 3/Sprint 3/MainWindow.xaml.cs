@@ -164,7 +164,7 @@ namespace Sprint_3
             txtblock_Ausgabe_kopfkreisdurchmesser_2.Text = (Math.Round(Zahnrad1.a,2) + "mm");
             txtblock_Ausgabe_bohrungsdurchmesser.Text = (Math.Round(Zahnrad1.bd, 2) + "mm");
             txtblock_Ausgabe_volumen.Text = (Math.Round(Zahnrad1.V,2) + "cm³");
-            txtblock_Ausgabe_gewicht.Text = (Math.Round(Zahnrad1.G,2) + "kg");
+            txtblock_Ausgabe_gewicht.Text = (Math.Round(Zahnrad1.G,2) + "g");
             txtblock_Ausgabe_Preis.Text = (Math.Round(Zahnrad1.Pr, 2) + "€");
 
         }
