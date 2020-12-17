@@ -244,7 +244,7 @@
                                         <TextBlock><Run Text="Information zu Stahl"/></TextBlock>
                                     </Expander.Header>
                                     <StackPanel>
-                                        <TextBlock> Bei besonders hoch beanspruchten Zahnrädern zu wählen. Kosten pro kg...</TextBlock>
+                                        <TextBlock> Bei besonders hoch beanspruchten Zahnrädern zu wählen.</TextBlock>
                                         <TextBlock> 2€ pro kg mit einer Dichte von 7,85 g/cm^3</TextBlock>
                                     </StackPanel>
                                 </Expander>
