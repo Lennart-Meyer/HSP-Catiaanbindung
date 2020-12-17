@@ -270,7 +270,7 @@
 
 
                         </Expander>
-                        
+
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"></RowDefinition>
@@ -299,9 +299,10 @@
                                 <TextBlock Name="txtBlock_materialDichteEinheit" Visibility="Hidden">g / cm³</TextBlock>
                             </Label>
                         </Grid>
-                        <Button Margin="0,20" Click="Button_bes" Width="180" Content="Bestätige"/>
+                        <Button VerticalAlignment="Bottom" Margin="0,20" Click="Button_bes" Width="180" Content="Bestätige"/>
                         <Label x:Name="lbl_Material"/>
-                    </StackPanel>
+                        </StackPanel>
+                    
                 </Grid>
 
             </TabItem>
@@ -357,7 +358,7 @@
                     <TextBlock x:Name="txtblock_Ausgabe_teilung" Grid.Row="6" Grid.Column="1" Padding="10" FontSize="16" Width="Auto" >ergebnis_teilung</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_kopfkreisdurchmesser_2" Grid.Row="7" Grid.Column="1" Padding="10" FontSize="16" Width="Auto" Visibility="Visible" >ergebnis_kopfkreisdurchmesser</TextBlock>
                     <TextBlock x:Name="txtblock_Ausgabe_bohrungsdurchmesser" Grid.Row="8" Grid.Column="1" Padding="10" FontSize="16" Width="Auto" >ergebnis_bohrungsdurchmesser</TextBlock>
-                    <TextBlock x:Name="txtblock_Ausgabe_Preis" Grid.Row="9" Grid.Column="1" Padding="10" FontSize="16" Width="Auto" >ergebnis_Preis</TextBlock>
+                    <TextBlock x:Name="txtblock_Ausgabe_preis" Grid.Row="9" Grid.Column="1" Padding="10" FontSize="16" Width="Auto" >ergebnis_Preis</TextBlock>
 
                     <TextBlock Grid.Row="1" Grid.Column="2" Padding="10" FontSize="16" Width="Auto" >Dicke:</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="2" Padding="10" FontSize="16" Width="Auto" >Zahnhöhe:</TextBlock>

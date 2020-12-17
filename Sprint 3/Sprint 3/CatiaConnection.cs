@@ -20,8 +20,7 @@ namespace Sprint_3
         {
             try
             {
-                object catiaObject = System.Runtime.InteropServices.Marshal.GetActiveObject(
-                    "CATIA.Application");
+                object catiaObject = System.Runtime.InteropServices.Marshal.GetActiveObject("CATIA.Application");
                 hsp_catiaApp = (INFITF.Application)catiaObject;
                 return true;
             }
@@ -246,7 +245,7 @@ namespace Sprint_3
 
             hsp_catiaPart.Part.Update();
 
-            ErzeugedenNeuenBlock(Zahnrad1, refVerbindung, shapeFactory1);
+            ErzeugeBlock(Zahnrad1, refVerbindung, shapeFactory1);
 
 
             Sketches sketchesBohrung = catHybridBody1.HybridSketches;
@@ -273,7 +272,7 @@ namespace Sprint_3
             hsp_catiaPart.Part.Update();
         }
 
-        public void ErzeugedenNeuenBlock(Zahnrad Zahnrad1, Reference refVerbindung, ShapeFactory sf1)
+        public void ErzeugeBlock(Zahnrad Zahnrad1, Reference refVerbindung, ShapeFactory sf1)
         {
             hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
             Pad catPad1 = sf1.AddNewPadFromRef(refVerbindung, Zahnrad1.b);
@@ -281,47 +280,47 @@ namespace Sprint_3
             hsp_catiaPart.Part.Update();
         }
 
-        private double Schnittpunkt_X(double xMittelpunkt, double yMittelpunkt, double Radius1, double xMittelpunkt2, double yMittelpunkt2, double Radius2)
+        private double Schnittpunkt_X(double xMittelpunkt, double yMittelpunkt, double radius1, double xMittelpunkt2, double yMittelpunkt2, double radius2)
         {
             double d = Math.Sqrt(Math.Pow((xMittelpunkt - xMittelpunkt2), 2) + Math.Pow((yMittelpunkt - yMittelpunkt2), 2));
-            double l = (Math.Pow(Radius1, 2) - Math.Pow(Radius2, 2) + Math.Pow(d, 2)) / (d * 2);
+            double l = (Math.Pow(radius1, 2) - Math.Pow(radius2, 2) + Math.Pow(d, 2)) / (d * 2);
             double h;
-            double Verbindungsabfrage = 0.00001;
+            double kontrollWert = 0.00001;
 
-            if (Radius1 - l < -Verbindungsabfrage)
+            if (radius1 - l < -kontrollWert)
             {
                 MessageBox.Show("Fehler X");
             }
-            if (Math.Abs(Radius1 - l) < Verbindungsabfrage)
+            if (Math.Abs(radius1 - l) < kontrollWert)
             {
                 h = 0;
             }
             else
             {
-                h = Math.Sqrt(Math.Pow(Radius1, 2) - Math.Pow(l, 2));
+                h = Math.Sqrt(Math.Pow(radius1, 2) - Math.Pow(l, 2));
             }
 
             return l * (xMittelpunkt2 - xMittelpunkt) / d - h * (yMittelpunkt2 - yMittelpunkt) / d + xMittelpunkt;
         }
 
-        private double Schnittpunkt_Y(double xMittelpunkt, double yMittelpunkt, double Radius1, double xMittelpunkt2, double yMittelpunkt2, double Radius2)
+        private double Schnittpunkt_Y(double xMittelpunkt, double yMittelpunkt, double radius1, double xMittelpunkt2, double yMittelpunkt2, double radius2)
         {
             double d = Math.Sqrt(Math.Pow((xMittelpunkt - xMittelpunkt2), 2) + Math.Pow((yMittelpunkt - yMittelpunkt2), 2));
-            double l = (Math.Pow(Radius1, 2) - Math.Pow(Radius2, 2) + Math.Pow(d, 2)) / (d * 2);
+            double l = (Math.Pow(radius1, 2) - Math.Pow(radius2, 2) + Math.Pow(d, 2)) / (d * 2);
             double h;
-            double Verbindungsabfrage = 0.00001;
+            double kontrollWert = 0.00001;
 
-            if (Radius1 - l < -Verbindungsabfrage)
+            if (radius1 - l < -kontrollWert)
             {
                 MessageBox.Show("Fehler Y");
             }
-            if (Math.Abs(Radius1 - l) < Verbindungsabfrage)
+            if (Math.Abs(radius1 - l) < kontrollWert)
             {
                 h = 0;
             }
             else
             {
-                h = Math.Sqrt(Math.Pow(Radius1, 2) - Math.Pow(l, 2));
+                h = Math.Sqrt(Math.Pow(radius1, 2) - Math.Pow(l, 2));
             }
 
             return l * (yMittelpunkt2 - yMittelpunkt) / d + h * (xMittelpunkt2 - xMittelpunkt) / d + yMittelpunkt;
