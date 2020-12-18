@@ -146,7 +146,6 @@ namespace Sprint_3
             cBox_Verdrehen.Visibility = Visibility.Visible;
         }
 
-        
         public void ausgabe() //Unterprogramm für die Ausgabe
         {
             txtblock_Ausgabe_modul.Text = (Math.Round(Zahnrad1.m,2) + "mm");
